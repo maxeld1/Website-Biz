@@ -23,59 +23,64 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- /partials/header.html -->
+
+<!-- Inter — modern, clean, agency standard -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <header>
-  <div class="container nav nav-centered">
+  <div class="container nav">
 
-    <nav id="mobile-menu" class="nav-left site-nav">
+    <!-- Brand -->
+    <a class="brand" href="{{P}}index.html" aria-label="Home">
+      <!-- Replace with your LLC logo or text -->
+      <!-- Option A: logo image -->
+      <!-- <img src="{{P}}assets/images/logo.svg" alt="Your Company Name" class="brand-logo"> -->
+
+      <!-- Option B: text logo -->
+      <span class="brand-name">Your Company</span>
+    </a>
+
+    <!-- Desktop navigation -->
+    <nav class="site-nav desktop-only" aria-label="Primary navigation">
       <ul>
-        <li><a href="{{P}}pages/services.html">Services</a></li>
-        <li><a href="{{P}}pages/stylists.html">Stylists</a></li>
-        <li><a href="{{P}}pages/contact.html">Contact</a></li>
-
-        <li class="mobile-only">
-          <a href="https://na2.meevo.com/CustomerPortal/egift/order/gift-type?tenantId=502125&locationId=502944">
-            Gift Card
-          </a>
-        </li>
+        <li><a href="{{P}}services.html">Services</a></li>
+        <li><a href="{{P}}work.html">Projects</a></li>
+        <li><a href="{{P}}about.html">About</a></li>
       </ul>
     </nav>
 
-    <a class="brand brand-center" href="{{P}}index.html">
-      <img src="{{P}}assets/images/industry_salon_logo.png"
-           alt="Industry Salon Logo"
-           class="brand-logo">
-    </a>
-
+    <!-- Right actions -->
     <div class="nav-right">
 
-      <div class="mobile-header-actions">
-        <a class="btn btn-primary mobile-book"
-           href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">
-          Book Now
-        </a>
-
-        <button class="menu-toggle"
-                aria-expanded="false"
-                aria-controls="mobile-menu"
-                aria-label="Toggle menu">
-          <svg class="menu-icon" viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
-            <path class="line line1" d="M4 7h16" />
-            <path class="line line2" d="M4 12h16" />
-            <path class="line line3" d="M4 17h16" />
-          </svg>
-        </button>
-      </div>
-
-      <a class="nav-utility desktop-only"
-         href="https://na2.meevo.com/CustomerPortal/egift/order/gift-type?tenantId=502125&locationId=502944">
-        Gift Card
+      <!-- Desktop CTA -->
+      <a class="btn btn-primary desktop-only" href="{{P}}contact.html">
+        Contact
       </a>
 
-      <a class="btn btn-primary cta-book desktop-only"
-         href="https://na2.meevo.com/CustomerPortal/login?tenantId=502125&locationId=502944">
-        Book Now
-      </a>
+      <!-- Mobile actions -->
+      <button class="menu-toggle mobile-only"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Open menu">
+        <svg class="menu-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+          <path class="line line1" d="M4 7h16" />
+          <path class="line line2" d="M4 12h16" />
+          <path class="line line3" d="M4 17h16" />
+        </svg>
+      </button>
     </div>
-
   </div>
+
+  <!-- Mobile menu panel -->
+  <nav id="mobile-menu" class="site-nav mobile-only" aria-label="Mobile navigation">
+    <ul>
+      <li><a href="{{P}}services.html">Services</a></li>
+      <li><a href="{{P}}work.html">Projects</a></li>
+      <li><a href="{{P}}about.html">About</a></li>
+      <li><a href="{{P}}contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
