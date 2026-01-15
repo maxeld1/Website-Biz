@@ -77,6 +77,10 @@ img{ max-width:100%; display:block; }
   border-radius: 12px;
 }
 
+body{
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
 /* -------------------- Layout -------------------- */
 .container{
   max-width: var(--maxw);
@@ -581,6 +585,106 @@ footer a:hover{ color: white; }
   padding: 14px 0;
   color: rgba(255,255,255,.65);
   font-size: .85rem;
+}
+
+/* -------------------- Footer layout helpers -------------------- */
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 26px;
+  padding: 44px 0 18px;
+}
+
+@media (max-width: 900px){
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px){
+  .footer-grid{ grid-template-columns: 1fr; }
+}
+
+.footer-brand .footer-logo-text{
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  color: white;
+  font-size: 1.15rem;
+}
+
+.footer-blurb{
+  margin: 10px 0 14px;
+  color: rgba(255,255,255,.72);
+  max-width: 44ch;
+}
+
+.footer-col h4{
+  margin: 0 0 10px;
+  color: rgba(255,255,255,.92);
+  font-size: .95rem;
+}
+
+.footer-col ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap: 10px;
+}
+
+.footer-col a{
+  color: rgba(255,255,255,.72);
+}
+.footer-col a:hover{
+  color: rgba(255,255,255,.96);
+}
+
+.footer-note{
+  color: rgba(255,255,255,.62);
+  font-size: .92rem;
+}
+
+.footer-social{
+  display:flex;
+  gap: 12px;
+  align-items:center;
+}
+
+.footer-social .icon{
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  color: rgba(255,255,255,.80);
+  opacity: .95;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.footer-social a:hover .icon{
+  transform: translateY(-1px);
+  opacity: 1;
+  color: white;
+}
+
+.footer-bottom{
+  margin-top: 22px;
+  padding: 16px 0 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+.footer-bottom-inner{
+  display:flex;
+  justify-content: space-between;
+  align-items:center;
+  gap: 12px;
+  color: rgba(255,255,255,.62);
+  font-size: .9rem;
+}
+
+@media (max-width: 620px){
+  .footer-bottom-inner{
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* Utility */
