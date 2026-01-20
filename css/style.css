@@ -681,6 +681,18 @@ footer a:hover{ color: white; }
   color: white;
 }
 
+.contact-icon{
+  width:30px;
+  height:30px;
+  min-width:30px;
+  fill:none;
+  stroke:var(--logo-brown);
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  margin-top:2px;
+}
+
 .footer-bottom{
   margin-top: 22px;
   padding: 16px 0 22px;
