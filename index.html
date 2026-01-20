@@ -5,17 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <title>[LLC_NAME] — Premium websites that load fast</title>
-  <meta name="description" content="[LLC_NAME] builds modern, fast, conversion-focused websites for small businesses and professionals. Design, development, SEO foundations, and launch support." />
+  <meta name="description" content="[LLC_NAME] builds modern, performance-first websites for small businesses and professionals. Design, development, and launch support." />
 
   <link rel="icon" href="assets/icons/favicon.ico" />
   <link rel="manifest" href="manifest.webmanifest" />
   <link rel="stylesheet" href="css/style.css" />
-
-  <meta property="og:title" content="[LLC_NAME] — Premium websites that load fast" />
-  <meta property="og:description" content="Modern websites for small businesses and professionals. Fast, mobile-first, and built to convert." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://[DOMAIN]" />
-  <meta property="og:image" content="assets/images/og-cover.jpg" />
 </head>
 
 <body>
@@ -23,25 +17,25 @@
 
 <main>
 
-  <!-- HERO (premium: left copy, right wide visual) -->
+  <!-- 1) HERO -->
   <section class="hero hero-premium">
-    <div class="container hero-grid">
-
-      <div class="hero-copy reveal">
-        <p class="kicker">Web design & development</p>
+    <div class="container hero-grid reveal">
+      <div class="hero-copy">
+        <p class="kicker">WEB DESIGN + DEVELOPMENT</p>
 
         <h1 class="hero-title">
-          Websites that look premium — and perform like it.
+          Websites that look premium —<br class="hide-mobile" />
+          and perform like it.
         </h1>
 
         <p class="hero-subtitle">
-          Clean design, fast load times, and an easy path for customers to contact you.
+          Clean design, fast load times, and a clear path to contact you.
           Built for small businesses and professionals who want to look credible online.
         </p>
 
-        <div class="hero-ctas">
-          <a class="cta-primary" href="contact.html">Request a quote</a>
-          <a class="cta-link" href="work.html">View selected work</a>
+        <div class="hero-cta">
+          <a class="cta-primary" href="{{P}}/contact.html">Get started</a>
+          <a class="cta-link" href="{{P}}/team.html">Learn more</a>
         </div>
 
         <div class="hero-proof">
@@ -60,247 +54,263 @@
         </div>
       </div>
 
-      <!-- Hero visual: use a wide screenshot, collage, or “device mock” later -->
       <div class="hero-media reveal">
         <div class="media-frame">
-          <img
-                  src="assets/images/work-2.png"
-                  alt="Preview of recent website work"
-                  loading="eager"
-          />
+          <!-- Replace with a wide screenshot collage or a featured project -->
+          <img src="assets/images/hero-wide-placeholder.jpg" alt="Preview of recent website work" loading="lazy" />
         </div>
-        <div class="media-caption">
-          Recent build • mobile-first • conversion-focused
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LOGO / TRUST STRIP (optional) -->
-  <section class="section section-tight">
-    <div class="container reveal">
-      <div class="trust-strip">
-        <p class="trust-label">Built for teams who value quality</p>
-        <div class="trust-logos">
-          <span class="trust-pill">Small Business</span>
-          <span class="trust-pill">Local Services</span>
-          <span class="trust-pill">Clinics</span>
-          <span class="trust-pill">Real Estate</span>
-          <span class="trust-pill">Creators</span>
-        </div>
+        <p class="media-caption">Recent build • mobile-first • conversion-focused</p>
       </div>
     </div>
   </section>
 
-  <!-- SERVICES (premium list style, not “template cards”) -->
-  <section class="section">
+  <!-- 2) BRANDS / LOGO MARQUEE -->
+  <section class="section section-tight reveal">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Services</p>
-        <h2 class="h2">Everything you need for a sharp online presence.</h2>
-        <p class="muted maxw">
-          Choose a simple package, or tell me your goal — I’ll recommend the smallest build that gets results.
+      <div class="trust-head">
+        <p class="trust-label">TRUSTED BY</p>
+      </div>
+
+      <div class="logo-marquee" aria-label="Trusted brands">
+        <div class="logo-track">
+          <!-- Set A -->
+          <img src="assets/images/logos/logo-1.svg" alt="Brand 1" />
+          <img src="assets/images/logos/logo-2.svg" alt="Brand 2" />
+          <img src="assets/images/logos/logo-3.svg" alt="Brand 3" />
+          <img src="assets/images/logos/logo-4.svg" alt="Brand 4" />
+          <img src="assets/images/logos/logo-5.svg" alt="Brand 5" />
+          <img src="assets/images/logos/logo-6.svg" alt="Brand 6" />
+
+          <!-- Set B (duplicate for seamless loop) -->
+          <img src="assets/images/logos/logo-1.svg" alt="Brand 1" />
+          <img src="assets/images/logos/logo-2.svg" alt="Brand 2" />
+          <img src="assets/images/logos/logo-3.svg" alt="Brand 3" />
+          <img src="assets/images/logos/logo-4.svg" alt="Brand 4" />
+          <img src="assets/images/logos/logo-5.svg" alt="Brand 5" />
+          <img src="assets/images/logos/logo-6.svg" alt="Brand 6" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) WORK PREVIEWS -->
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">SELECTED WORK</p>
+        <h2 class="section-title-2">From concept to launch</h2>
+        <p class="section-subtitle">
+          A few recent builds. Each case study includes goals, approach, and outcomes.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <a class="work-card" href="{{P}}pages/work/industry-salon.html">
+          <div class="work-thumb">
+            <img src="assets/images/work/industry-thumb.jpg" alt="Industry Salon website preview" loading="lazy">
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Industry Salon</div>
+            <div class="work-desc">Modern brand refresh • booking-first UX</div>
+            <div class="work-tags">
+              <span>Design</span><span>Build</span><span>SEO basics</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="work-card" href="{{P}}pages/work/portfolio.html">
+          <div class="work-thumb">
+            <img src="assets/images/work/portfolio-thumb.jpg" alt="Portfolio site preview" loading="lazy">
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Personal Portfolio</div>
+            <div class="work-desc">Clean layout • fast load • content-first</div>
+            <div class="work-tags">
+              <span>Responsive</span><span>Accessibility</span><span>Performance</span>
+            </div>
+          </div>
+        </a>
+
+        <a class="work-card" href="{{P}}pages/work/landing.html">
+          <div class="work-thumb">
+            <img src="assets/images/work/landing-thumb.jpg" alt="Landing page preview" loading="lazy">
+          </div>
+          <div class="work-meta">
+            <div class="work-title">Conversion Landing</div>
+            <div class="work-desc">CTA-focused • lightweight • analytics-ready</div>
+            <div class="work-tags">
+              <span>Copy</span><span>Analytics</span><span>Speed</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="center">
+        <a class="cta-secondary" href="{{P}}pages/projects.html">View all projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) TESTIMONIALS -->
+  <section class="section section-soft reveal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">TESTIMONIALS</p>
+        <h2 class="section-title-2">What people say</h2>
+      </div>
+
+      <div class="quote-shell" aria-label="Testimonials">
+        <button class="quote-nav" type="button" data-quote-dir="-1" aria-label="Previous testimonial">‹</button>
+
+        <article class="quote-card" data-quote>
+          <div class="quote-text">
+            “Super fast turnaround and the site looks incredibly professional. Exactly what we needed.”
+          </div>
+          <div class="quote-meta">
+            <span class="quote-name">Client Name</span>
+            <span class="quote-role">Owner • Small Business</span>
+          </div>
+        </article>
+
+        <article class="quote-card" data-quote hidden>
+          <div class="quote-text">
+            “Everything feels cleaner, faster, and easier for customers to navigate. Great communication throughout.”
+          </div>
+          <div class="quote-meta">
+            <span class="quote-name">Client Name</span>
+            <span class="quote-role">Founder</span>
+          </div>
+        </article>
+
+        <article class="quote-card" data-quote hidden>
+          <div class="quote-text">
+            “The new site finally matches our brand. We’re getting more inquiries and better quality leads.”
+          </div>
+          <div class="quote-meta">
+            <span class="quote-name">Client Name</span>
+            <span class="quote-role">Manager</span>
+          </div>
+        </article>
+
+        <button class="quote-nav" type="button" data-quote-dir="1" aria-label="Next testimonial">›</button>
+      </div>
+
+      <div class="center">
+        <a class="cta-secondary" href="{{P}}pages/contact.html">Request a quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) ABOUT US -->
+  <section class="section reveal">
+    <div class="container split">
+      <div class="split-copy">
+        <p class="section-kicker">ABOUT</p>
+        <h2 class="section-title-2">Built by people who care about craft</h2>
+        <p class="section-subtitle">
+          I’m Max Eldabbas. I build sites that feel calm, premium, and intentional — and I obsess over the details that
+          make them fast and easy to use.
+        </p>
+
+        <ul class="bullets">
+          <li>Design that matches your brand and audience</li>
+          <li>Mobile-first layout that feels effortless</li>
+          <li>Performance + accessibility baked in</li>
+        </ul>
+
+        <a class="cta-secondary" href="{{P}}pages/team.html">Meet our team</a>
+      </div>
+
+      <div class="split-media">
+        <div class="media-frame wide">
+          <img src="assets/images/about-wide-placeholder.jpg" alt="Behind the scenes" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6) WHAT WE DO -->
+  <section class="section section-soft reveal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">WHAT WE DO</p>
+        <h2 class="section-title-2">Simple, high-impact services</h2>
+        <p class="section-subtitle">
+          You don’t need a complicated build. You need the right pages, the right message, and a site that loads fast.
         </p>
       </div>
 
       <div class="services-list">
-        <div class="service-row reveal">
-          <div class="service-name">Design & Build</div>
-          <div class="service-desc muted">
-            Mobile-first layouts, clean typography, and a premium look that fits your brand.
-          </div>
-          <div class="service-meta">1–7 pages</div>
+        <div class="service-row">
+          <div class="service-name">Web Design & Development</div>
+          <div class="service-desc">Premium layouts built mobile-first, then expanded for desktop.</div>
+          <div class="service-meta">HTML/CSS/JS • React (optional)</div>
         </div>
-
-        <div class="service-row reveal">
+        <div class="service-row">
           <div class="service-name">SEO Foundations</div>
-          <div class="service-desc muted">
-            Metadata, schema basics, sitemap/robots, and structured content that search engines understand.
-          </div>
-          <div class="service-meta">Optional</div>
+          <div class="service-desc">Technical SEO, metadata, structured data, sitemap, robots.</div>
+          <div class="service-meta">Indexing-ready</div>
         </div>
-
-        <div class="service-row reveal">
+        <div class="service-row">
           <div class="service-name">Performance & Accessibility</div>
-          <div class="service-desc muted">
-            Fast load times, responsive behavior, and an accessibility-minded build.
-          </div>
-          <div class="service-meta">Standard</div>
+          <div class="service-desc">Fast load, clean interactions, and accessible defaults.</div>
+          <div class="service-meta">Core Web Vitals friendly</div>
         </div>
-
-        <div class="service-row reveal">
+        <div class="service-row">
           <div class="service-name">Launch & Support</div>
-          <div class="service-desc muted">
-            Domain/hosting setup, clean handoff, and ongoing updates if you want them.
-          </div>
-          <div class="service-meta">Flexible</div>
+          <div class="service-desc">Domain + hosting hookup, analytics, and ongoing updates.</div>
+          <div class="service-meta">Monthly options</div>
         </div>
       </div>
 
-      <div class="section-foot reveal">
-        <a class="cta-link" href="services.html">See full service details</a>
+      <div class="center">
+        <a class="cta-secondary" href="{{P}}pages/services.html">View services</a>
       </div>
     </div>
   </section>
 
-  <!-- WIDE IMAGE BAND (premium visual break) -->
-  <section class="wide-band reveal">
-    <img
-            src="assets/images/wide-preview-work-1.png"
-            alt="Wide preview of a website project"
-            loading="lazy"
-    />
-  </section>
-
-  <!-- CASE STUDY FEATURE (premium layout) -->
-  <section class="section">
-    <div class="container">
-      <div class="case-feature reveal">
-        <div class="case-copy">
-          <p class="kicker">Selected work</p>
-          <h2 class="h2">A clean rebuild that increased inquiries.</h2>
-          <p class="muted">
-            Clear sections, stronger messaging, and a simplified path to contact.
-            Built with speed and mobile experience as first-class requirements.
-          </p>
-
-          <ul class="case-points">
-            <li><span>•</span> Better hierarchy + less clutter</li>
-            <li><span>•</span> Faster load + improved mobile layout</li>
-            <li><span>•</span> Stronger CTA placement without being pushy</li>
-          </ul>
-
-          <div class="case-actions">
-            <a class="cta-primary" href="work.html">View work</a>
-            <a class="cta-link" href="contact.html">Start a project</a>
-          </div>
-        </div>
-
-        <div class="case-media">
-          <div class="media-frame">
-            <img
-                    src="assets/images/work-2.png"
-                    alt="Case study preview"
-                    loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS (tight, premium) -->
-  <section class="section section-soft">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Process</p>
-        <h2 class="h2">Simple, fast, and transparent.</h2>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-step reveal">
-          <div class="step-num">01</div>
-          <div class="step-title">Align</div>
-          <p class="muted">Clarify goals, pages, content, and timeline. You get a clear scope.</p>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-num">02</div>
-          <div class="step-title">Design + Build</div>
-          <p class="muted">Mobile-first design, clean implementation, fast performance.</p>
-        </div>
-
-        <div class="process-step reveal">
-          <div class="step-num">03</div>
-          <div class="step-title">Launch</div>
-          <p class="muted">Domain + hosting, SEO basics, and a polished handoff.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS (premium, centered single card, not “carousel-y” feel) -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">Testimonials</p>
-        <h2 class="h2">What clients notice first.</h2>
-      </div>
-
-      <div class="quote-grid">
-        <figure class="quote-card reveal">
-          <blockquote>
-            “Super fast turnaround and the site looks incredibly professional. Exactly what we needed.”
-          </blockquote>
-          <figcaption>
-            <span class="quote-name">Client Name</span>
-            <span class="quote-role muted">Small business owner</span>
-          </figcaption>
-        </figure>
-
-        <figure class="quote-card reveal">
-          <blockquote>
-            “Everything feels cleaner, faster, and easier to navigate. Great communication throughout.”
-          </blockquote>
-          <figcaption>
-            <span class="quote-name">Client Name</span>
-            <span class="quote-role muted">Service provider</span>
-          </figcaption>
-        </figure>
-      </div>
-
-      <div class="section-foot reveal">
-        <a class="cta-link" href="contact.html">Request a quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (premium: details/summary) -->
-  <section class="section">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="kicker">FAQ</p>
-        <h2 class="h2">Straight answers.</h2>
-      </div>
-
-      <div class="faq-grid">
-        <details class="faq-item reveal">
-          <summary>How much does a website cost?</summary>
-          <p class="muted">It depends on pages and features — I’ll give a clear scope and fixed price before we start.</p>
-        </details>
-
-        <details class="faq-item reveal">
-          <summary>How long does it take?</summary>
-          <p class="muted">Most small sites launch in 1–2 weeks once content is ready. Larger builds take longer.</p>
-        </details>
-
-        <details class="faq-item reveal">
-          <summary>Can I update it myself?</summary>
-          <p class="muted">Yes. I can set it up for easy edits, or handle updates on an ongoing plan.</p>
-        </details>
-
-        <details class="faq-item reveal">
-          <summary>Do you do hosting + domains?</summary>
-          <p class="muted">Yes — I can set up hosting, connect your domain, and make sure everything stays secure and fast.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA (premium: minimal) -->
-  <section class="section section-tight">
-    <div class="container">
-      <div class="final-cta reveal">
-        <h2 class="h2">Ready when you are.</h2>
-        <p class="muted maxw">
-          Share what you do, what you need, and your timeline. I’ll respond with next steps and a clear estimate.
+  <!-- 7) CONTACT FORM -->
+  <section class="section reveal">
+    <div class="container contact-split">
+      <div class="contact-copy">
+        <p class="section-kicker">CONTACT</p>
+        <h2 class="section-title-2">Tell me what you’re building</h2>
+        <p class="section-subtitle">
+          Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
         </p>
-        <div class="hero-ctas">
-          <a class="cta-primary" href="contact.html">Request a quote</a>
-          <a class="cta-link" href="services.html">Explore services</a>
+
+        <div class="contact-mini">
+          <div><span>Email</span> <a href="mailto:maxeldabbas86@gmail.com">maxeldabbas86@gmail.com</a></div>
+          <div><span>Location</span> Remote-first • US</div>
         </div>
       </div>
+
+      <form class="contact-form" action="#" method="post">
+        <div class="form-row">
+          <label>
+            First name
+            <input type="text" name="firstName" autocomplete="given-name" required>
+          </label>
+          <label>
+            Last name
+            <input type="text" name="lastName" autocomplete="family-name" required>
+          </label>
+        </div>
+
+        <label>
+          Email
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+
+        <label>
+          How can we help?
+          <textarea name="message" rows="6" required placeholder="Tell me what you do, what you need, and your timeline."></textarea>
+        </label>
+
+        <button class="cta-primary form-submit" type="submit">Send</button>
+
+        <p class="form-note">By submitting, you agree to be contacted about your request. No spam.</p>
+      </form>
     </div>
   </section>
 
@@ -310,30 +320,5 @@
 
 <script src="js/partials.js"></script>
 <script src="js/main.js"></script>
-
-<!-- Scroll reveal -->
-<script>
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    if (!('IntersectionObserver' in window) || els.length === 0) return;
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
-
-    els.forEach(el => io.observe(el));
-  })();
-
-  // footer year
-  document.addEventListener('DOMContentLoaded', () => {
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
-  });
-</script>
 </body>
 </html>
