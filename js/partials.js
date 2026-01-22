@@ -1,10 +1,16 @@
 // /js/partials.js
 (function () {
+  // If we're on GitHub Pages project site, base is "/<repo>"
+  const BASE =
+      location.hostname.endsWith("github.io")
+          ? `/${location.pathname.split("/")[1]}`
+          : "";
+
   async function inject(targetSelector, file) {
     const mount = document.querySelector(targetSelector);
     if (!mount) return;
 
-    const url = `/partials/${file}`; // root-relative always works
+    const url = `${BASE}/partials/${file}`; // ✅ works on GH Pages + local
     try {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
@@ -17,14 +23,13 @@
   }
 
   async function run() {
-    await inject('[data-include="header"]', 'header.html');
-    await inject('[data-include="footer"]', 'footer.html');
+    await inject('[data-include="header"]', "header.html");
+    await inject('[data-include="footer"]', "footer.html");
 
-    // If #year is inside the footer partial, set it after injection
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
-  if (document.readyState !== 'loading') run();
-  else document.addEventListener('DOMContentLoaded', run);
+  if (document.readyState !== "loading") run();
+  else document.addEventListener("DOMContentLoaded", run);
 })();
