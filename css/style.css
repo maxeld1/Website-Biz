@@ -103,11 +103,58 @@ p{ margin:0 0 1rem; color: var(--muted); }
 }
 
 .section{
+  position: relative;
   padding: clamp(56px, 7vw, 96px) 0;
+  isolation: isolate;
 }
 
+/* Full-bleed soft panel behind section content */
+.section::before{
+  content:"";
+  position:absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events:none;
+}
+
+.section-soft::before{
+  background: rgba(241,245,249,.72);
+  border-top: 1px solid rgba(15,23,42,.06);
+  border-bottom: 1px solid rgba(15,23,42,.06);
+}
+
+.section > .container{
+  position: relative;
+  z-index: 1;
+}
+
+/* A clean panel section (used for logo band etc.) */
+/*.section-panel::before{*/
+/*  background: rgba(255,255,255,.55);*/
+/*  border-top: 1px solid rgba(15,23,42,.06);*/
+/*  border-bottom: 1px solid rgba(15,23,42,.06);*/
+/*}*/
+
+.section-panel::before{
+  background: #F6F7FB; /* pick one “base” and stick to it */
+  border-top: 1px solid rgba(15,23,42,.06);
+  border-bottom: 1px solid rgba(15,23,42,.06);
+}
+
+/*.section-panel::before{*/
+/*  background: linear-gradient(*/
+/*          180deg,*/
+/*          rgba(255,255,255,.45),*/
+/*          rgba(255,255,255,.60)*/
+/*  );*/
+/*}*/
+
 .section-tight{
-  padding: 54px 0;
+  padding: 56px 0;
+}
+
+.section-tight.section-panel{
+  padding-bottom: 72px;
 }
 
 .center{ text-align:center; }
