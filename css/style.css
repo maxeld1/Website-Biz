@@ -994,22 +994,28 @@ footer a:hover{ color: #fff; }
 /* ==========================================================
    14) REVEAL (fade in on scroll)
 ========================================================== */
+
+/* Fade-in on scroll (works with either .in or .is-visible) */
 .reveal{
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(18px);
   transition: opacity .7s ease, transform .7s ease;
   will-change: opacity, transform;
 }
+
+/* Support BOTH class names */
 .reveal.in,
 .reveal.is-visible{
   opacity: 1;
   transform: translateY(0);
 }
 
+/* If JS is disabled or fails, don’t hide the page */
+.no-js .reveal{
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce){
-  .reveal{
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+  .reveal{ opacity: 1; transform: none; transition: none; }
 }
