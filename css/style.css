@@ -654,6 +654,38 @@ header .btn:hover{
   .logo-track{ animation:none; }
 }
 
+/* --- Stop horizontal overflow (mobile marquee fix) --- */
+html, body{
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.logo-marquee{
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;          /* clip the moving track */
+  border-radius: 18px;
+}
+
+/* Track can be wider than viewport, but it must not affect layout width */
+.logo-track{
+  display: inline-flex;
+  width: max-content;        /* keep the marquee working */
+  max-width: none;
+  will-change: transform;
+}
+
+/* Helpful if any child images accidentally create extra width */
+.logo-track img{
+  display: block;
+  max-width: none;
+}
+
+/* Optional: add a little side padding so logos don't touch edges */
+.logo-marquee{
+  padding: 0 6px;
+}
+
 /* ================================
    10) WORK / PROJECT CARDS
 ================================ */
