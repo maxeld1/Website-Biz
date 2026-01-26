@@ -1,12 +1,10 @@
-# Industry Salon Website
-
-Clean site scaffold for Industry Salon in Newtown Square. 
+# Max Eldabbas's Portfolio Website
 
 ## Structure
 - `index.html` — Home
-- `pages/services.html`, `pages/stylists.html`, `pages/contact.html`
+- `pages/services.html`, `pages/portfolio.html`, `pages/contact.html`
 - `css/style.css`, `js/main.js`
-- `assets/images` (all salon photo assets), `assets/icons` (favicons/PWA)
+- `assets/images` (all photo assets), `assets/icons` (favicons/PWA)
 - `manifest.webmanifest`, `sitemap.xml`, `robots.txt`, `.nojekyll`
 
 ## Deployed via GitHub Pages
