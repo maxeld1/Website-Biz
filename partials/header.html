@@ -36,33 +36,22 @@
   <div class="container nav">
 
     <!-- Brand -->
-    <a class="brand" href="index.html" aria-label="Home">
-      <!-- Replace with your LLC logo or text -->
-      <!-- Option A: logo image -->
-      <!-- <img src="{{P}}assets/images/logo.svg" alt="Your Company Name" class="brand-logo"> -->
-
-      <!-- Option B: text logo -->
+    <a class="brand" href="{{P}}index.html" aria-label="Home">
       <span class="brand-name">Your Company</span>
     </a>
 
     <!-- Desktop navigation -->
     <nav class="site-nav desktop-only" aria-label="Primary navigation">
       <ul>
-        <li><a href="/services/">Services</a></li>
-        <li><a href="/work/">Projects</a></li>
-        <li><a href="/about/">About</a></li>
+        <li><a href="{{P}}pages/services.html">Services</a></li>
+        <li><a href="{{P}}pages/portfolio.html">Projects</a></li>
+        <li><a href="{{P}}pages/about.html">About</a></li>
       </ul>
     </nav>
 
-    <!-- Right actions -->
     <div class="nav-right">
+      <a class="btn desktop-only" href="{{P}}pages/contact.html">Contact</a>
 
-      <!-- Desktop CTA -->
-      <a class="btn desktop-only" href="/contact/index.html">
-        Contact
-      </a>
-
-      <!-- Mobile actions -->
       <button class="menu-toggle mobile-only"
               aria-expanded="false"
               aria-controls="mobile-menu"
@@ -79,10 +68,10 @@
   <!-- Mobile menu panel -->
   <nav id="mobile-menu" class="site-nav mobile-only" aria-label="Mobile navigation">
     <ul>
-      <li><a href="/services/">Services</a></li>
-      <li><a href="/work/">Projects</a></li>
-      <li><a href="/about/">About</a></li>
-      <li><a href="/contact/">Contact</a></li>
+      <li><a href="{{P}}pages/services.html">Services</a></li>
+      <li><a href="{{P}}pages/portfolio.html">Projects</a></li>
+      <li><a href="{{P}}pages/about.html">About</a></li>
+      <li><a href="{{P}}pages/contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>

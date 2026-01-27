@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Privacy Policy | Your Company</title>
+    <meta name="description" content="Privacy policy for Your Company." />
+    <link rel="icon" href="{{P}}assets/icons/favicon.ico" />
+    <link rel="manifest" href="{{P}}manifest.webmanifest" />
+    <link rel="stylesheet" href="{{P}}css/style.css" />
+</head>
+<body>
+
+<div data-include="header"></div>
+
+<main>
+    <section class="section section-panel">
+        <div class="container center">
+            <p class="kicker">Privacy</p>
+            <h1>Privacy Policy</h1>
+            <p class="maxw" style="margin-inline:auto;">
+                This is a simple, general template. Replace details to match your actual data collection and tools.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-soft">
+        <div class="container">
+            <div class="card">
+                <h2 style="margin-bottom:10px;">What we collect</h2>
+                <p>We may collect information you submit via forms (name, email, phone, message) and basic analytics (page views, device type).</p>
+
+                <h2 style="margin-top:22px; margin-bottom:10px;">How we use it</h2>
+                <p>To respond to inquiries, provide services, and improve the website experience.</p>
+
+                <h2 style="margin-top:22px; margin-bottom:10px;">Sharing</h2>
+                <p>We don’t sell personal information. We may use service providers (hosting, analytics, form processing) to operate the site.</p>
+
+                <h2 style="margin-top:22px; margin-bottom:10px;">Contact</h2>
+                <p>If you have privacy questions, contact us at <a href="mailto:maxeldabbas86@gmail.com" style="text-decoration:underline;">maxeldabbas86@gmail.com</a>.</p>
+
+                <p style="margin-top:18px; color: var(--muted);">Last updated: <span id="privacyDate"></span></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="{{P}}js/main.js"></script>
+<script src="{{P}}js/partials.js"></script>
+<script>
+    document.getElementById("privacyDate").textContent = new Date().toLocaleDateString();
+</script>
+</body>
+</html>
