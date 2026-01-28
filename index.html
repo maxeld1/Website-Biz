@@ -9,11 +9,15 @@
 
   <link rel="icon" href="assets/icons/favicon.ico" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css"
+  />
   <link rel="stylesheet" href="css/style.css" />
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
 
-<body>
+<body class="home">
 <div data-include="header"></div>
 
 <main>
@@ -77,13 +81,13 @@
           <!-- Set A -->
           <img src="assets/images/logos/industry_salon_logo.png" alt="Brand 1" />
           <img src="assets/images/logos/richie_izzo_logo.png" alt="Brand 2" />
-          <img src="assets/images/logos/concord_limo_logo.png" alt="Brand 3" />
+          <img src="assets/images/logos/concord_limo_logo.png" class="logo-marquee-img is-small" alt="Brand 3" />
           <img src="assets/images/logos/riley_lab_portal_logo.png" alt="Brand 4" />
 
           <!-- Set B (duplicate for seamless loop) -->
           <img src="assets/images/logos/industry_salon_logo.png" alt="Brand 1" />
           <img src="assets/images/logos/richie_izzo_logo.png" alt="Brand 2" />
-          <img src="assets/images/logos/concord_limo_logo.png" alt="Brand 3" />
+          <img src="assets/images/logos/concord_limo_logo.png" class="logo-marquee-img is-small" alt="Brand 3" />
           <img src="assets/images/logos/riley_lab_portal_logo.png" alt="Brand 4" />
 
         </div>
@@ -300,112 +304,174 @@
   </section>
 
 
-  <!-- 6) WHAT WE DO -->
-  <section class="section section-soft reveal section-white">
+  <!-- 6) WHAT WE DO (REDESIGN) -->
+  <section class="section section-soft reveal section-white services-v3">
     <div class="container">
+
       <div class="section-head">
         <p class="section-kicker">WHAT WE DO</p>
-        <h2 class="section-title-2">Simple services. Real outcomes.</h2>
-        <p class="section-subtitle">
-          You don’t need a complicated build — you need the right pages, the right message, and a site that loads fast.
+        <h2 class="section-title-2">Services designed to convert.</h2>
+        <p class="section-subtitle maxw">
+          A small set of focused deliverables that make your site feel credible, load fast, and drive action.
         </p>
       </div>
 
-      <div class="services-grid" aria-label="Services">
-        <article class="svc-card">
-          <div class="svc-top">
-            <h3 class="svc-title">Web Design + Development</h3>
-            <p class="svc-desc">Clean, premium layouts built mobile-first and polished for desktop.</p>
+      <!-- Outcomes strip -->
+      <div class="svc-outcomes" role="list" aria-label="Service outcomes">
+        <div class="svc-outcome" role="listitem">
+          <div class="svc-outcome-title">Clarity</div>
+          <div class="svc-outcome-sub">Better structure + messaging</div>
+        </div>
+        <div class="svc-outcome" role="listitem">
+          <div class="svc-outcome-title">Speed</div>
+          <div class="svc-outcome-sub">Performance-first builds</div>
+        </div>
+        <div class="svc-outcome" role="listitem">
+          <div class="svc-outcome-title">Trust</div>
+          <div class="svc-outcome-sub">Polished, accessible UI</div>
+        </div>
+        <div class="svc-outcome" role="listitem">
+          <div class="svc-outcome-title">Action</div>
+          <div class="svc-outcome-sub">Clear paths to contact</div>
+        </div>
+      </div>
+
+      <!-- Main grid -->
+      <div class="svc-grid-v3" aria-label="Services">
+        <article class="svc-panel is-primary">
+          <div class="svc-panel-top">
+            <div class="svc-badge">Core package</div>
+            <h3 class="svc-h">Web Design + Development</h3>
+            <p class="svc-p">A calm, premium build with the pages you actually need — built for mobile first, polished for desktop.</p>
           </div>
-          <div class="svc-meta">
-            <span class="svc-pill">HTML/CSS/JS</span>
-            <span class="svc-pill">React (optional)</span>
+
+          <ul class="svc-bullets">
+            <li>Brand-aligned layout + typography</li>
+            <li>Responsive sections + components</li>
+            <li>Conversion-focused CTAs</li>
+          </ul>
+
+          <div class="svc-foot">
+            <div class="svc-tags">
+              <span>HTML/CSS</span><span>Clean JS</span><span>Optional React</span>
+            </div>
           </div>
         </article>
 
-        <article class="svc-card">
-          <div class="svc-top">
-            <h3 class="svc-title">SEO Foundations</h3>
-            <p class="svc-desc">Metadata, structured data, sitemap, robots — set up to be found.</p>
+        <article class="svc-panel">
+          <div class="svc-panel-top">
+            <div class="svc-badge">Findable</div>
+            <h3 class="svc-h">SEO Foundations</h3>
+            <p class="svc-p">Indexing-ready setup so you’re visible and shareable without paying for fluff.</p>
           </div>
-          <div class="svc-meta">
-            <span class="svc-pill">Indexing-ready</span>
-            <span class="svc-pill">Technical SEO</span>
+
+          <ul class="svc-bullets">
+            <li>Metadata + OG tags</li>
+            <li>Sitemap + robots</li>
+            <li>Structured data basics</li>
+          </ul>
+
+          <div class="svc-foot">
+            <div class="svc-tags">
+              <span>Technical SEO</span><span>Schema</span>
+            </div>
           </div>
         </article>
 
-        <article class="svc-card">
-          <div class="svc-top">
-            <h3 class="svc-title">Performance + Accessibility</h3>
-            <p class="svc-desc">Fast load, clean interactions, and accessible defaults from day one.</p>
+        <article class="svc-panel">
+          <div class="svc-panel-top">
+            <div class="svc-badge">Quality</div>
+            <h3 class="svc-h">Performance + Accessibility</h3>
+            <p class="svc-p">Fast load times and accessible defaults so the experience feels effortless.</p>
           </div>
-          <div class="svc-meta">
-            <span class="svc-pill">Core Web Vitals</span>
-            <span class="svc-pill">A11y-first</span>
+
+          <ul class="svc-bullets">
+            <li>Core Web Vitals oriented</li>
+            <li>Keyboard + contrast checks</li>
+            <li>Reduced cognitive load UI</li>
+          </ul>
+
+          <div class="svc-foot">
+            <div class="svc-tags">
+              <span>Core Web Vitals</span><span>A11y-first</span>
+            </div>
           </div>
         </article>
 
-        <article class="svc-card">
-          <div class="svc-top">
-            <h3 class="svc-title">Launch + Support</h3>
-            <p class="svc-desc">Domain + hosting hookup, analytics, and ongoing updates if you want them.</p>
+        <article class="svc-panel">
+          <div class="svc-panel-top">
+            <div class="svc-badge">Launch-ready</div>
+            <h3 class="svc-h">Launch + Support</h3>
+            <p class="svc-p">Shipping help + optional monthly updates so you’re not stuck after the handoff.</p>
           </div>
-          <div class="svc-meta">
-            <span class="svc-pill">Deploy + QA</span>
-            <span class="svc-pill">Monthly options</span>
+
+          <ul class="svc-bullets">
+            <li>Domain + hosting hookup</li>
+            <li>Analytics setup</li>
+            <li>Update/support options</li>
+          </ul>
+
+          <div class="svc-foot">
+            <div class="svc-tags">
+              <span>Deploy + QA</span><span>Monthly options</span>
+            </div>
           </div>
         </article>
       </div>
 
-      <div class="center-btn">
+      <div class="svc-cta-row">
         <a class="cta-primary" href="pages/services.html">View services</a>
+        <a class="cta-link" href="pages/contact.html">Or request a quote</a>
       </div>
     </div>
   </section>
 
 
   <!-- 7) CONTACT FORM -->
-  <section class="section reveal section-soft">
-    <div class="container contact-split">
-      <div class="contact-copy">
-        <p class="section-kicker">CONTACT</p>
-        <h2 class="section-title-2">Tell Me What You’re Building</h2>
-        <p class="section-subtitle">
-          Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
-        </p>
+  <section class="section contact-v2 reveal section-soft" id="contact">
+    <div class="container">
+      <p class="section-kicker">CONTACT</p>
+      <h2 class="section-title-2">Tell Me What You’re Building</h2>
+      <p class="section-subtitle maxw">
+        Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
+      </p>
 
-<!--        <div class="contact-mini">-->
-<!--          <div><span>Email</span> <a href="mailto:maxeldabbas86@gmail.com">maxeldabbas86@gmail.com</a></div>-->
-<!--          <div><span>Location</span> Remote-first • US</div>-->
-<!--        </div>-->
-      </div>
+      <aside class="contact-v2-card" id="contact-form" aria-label="Contact form">
+        <form class="contact-v2-form" action="#" method="post">
+          <div class="contact-v2-form-head">
+            <h2 class="contact-v2-form-title">Project Details</h2>
+            <p class="contact-v2-form-sub">The more context you share, the faster I can respond.</p>
+          </div>
 
-      <form class="contact-form" action="#" method="post">
-        <div class="form-row">
-          <label>
-            First name
-            <input type="text" name="firstName" autocomplete="given-name" required>
+          <div class="form-grid">
+            <label class="field">
+              <span class="label">Name *</span>
+              <input class="input" type="text" name="name" autocomplete="name" required />
+            </label>
+
+            <label class="field">
+              <span class="label">Email *</span>
+              <input class="input" type="email" name="email" autocomplete="email" required />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label">Phone</span>
+            <input class="input" id="phone" type="tel" name="phone" autocomplete="tel" />
           </label>
-          <label>
-            Last name
-            <input type="text" name="lastName" autocomplete="family-name" required>
+
+          <input type="hidden" name="phone_e164" id="phone_e164">
+
+          <label class="field">
+            <span class="label">What are we building? *</span>
+            <textarea class="textarea" name="message" rows="7" required
+                      placeholder="Example: 5-page site, booking link, basic SEO, launch in ~2 weeks."></textarea>
           </label>
-        </div>
 
-        <label>
-          Email
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
-
-        <label>
-          How can we help?
-          <textarea name="message" rows="6" required placeholder="Tell me what you do, what you need, and your timeline."></textarea>
-        </label>
-
-        <button class="cta-primary form-submit" type="submit">Send</button>
-
-        <p class="form-note">By submitting, you agree to be contacted about your request. No spam.</p>
-      </form>
+          <button class="btn btn-primary contact-v2-submit" type="submit">Send message</button>
+          <p class="contact-v2-note">Typical reply: within 1–2 business days.</p>
+        </form>
+      </aside>
     </div>
   </section>
 
@@ -416,5 +482,30 @@
 <script src="js/partials.js"></script>
 <script src="js/main.js"></script>
 <script src="js/reviews.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const phoneInput = document.querySelector("#phone");
+    if (!phoneInput) return;
+
+    const iti = window.intlTelInput(phoneInput, {
+      separateDialCode: true,
+      initialCountry: "us",
+      allowDropdown: true,
+      nationalMode: true,
+      formatOnDisplay: true,
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
+    });
+
+    const form = phoneInput.closest("form");
+    const hidden = document.querySelector("#phone_e164");
+    if (form && hidden) {
+      form.addEventListener("submit", () => {
+        hidden.value = iti.getNumber();
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
