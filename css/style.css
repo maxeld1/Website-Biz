@@ -2044,3 +2044,36 @@ footer.site-footer .footer-bottom-inner{
   stroke-width: 2.25;
   stroke-linecap: round;
 }
+
+/* ===== Mobile menu: hamburger → X ===== */
+
+/* make the icon inherit the button text color */
+.menu-toggle .menu-icon{
+  display: block;
+}
+
+/* ensure the lines are visible (some resets accidentally remove stroke) */
+.menu-toggle .menu-icon .line{
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+
+  transform-box: fill-box;
+  transform-origin: center;
+
+  transition: transform .22s ease, opacity .18s ease;
+}
+
+/* open state */
+.menu-toggle.is-open .menu-icon .line1{
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle.is-open .menu-icon .line2{
+  opacity: 0;
+}
+
+.menu-toggle.is-open .menu-icon .line3{
+  transform: translateY(-5px) rotate(-45deg);
+}
