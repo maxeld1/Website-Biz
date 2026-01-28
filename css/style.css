@@ -538,8 +538,9 @@ header .btn:hover{
 /* Icon sizing in buttons */
 .btn svg,
 .menu-toggle svg{
-  width: 1em;
-  height: 1em;
+  width: 22px;
+  height: 22px;
+  display: block;
 }
 
 /* ================================
