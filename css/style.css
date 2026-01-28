@@ -2016,3 +2016,31 @@ footer.site-footer .footer-bottom-inner{
   .svc-bullets li::before{ margin-top: .55rem; }
   .svc-tags{ justify-content: center; }
 }
+
+/* ===== Mobile menu icon (hamburger) ===== */
+.menu-toggle{
+  display: none; /* your existing default is fine */
+}
+
+@media (max-width: 768px){
+  .menu-toggle{
+    display: inline-flex;          /* ensure it shows */
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Make sure the SVG actually renders and has dimensions */
+.menu-toggle .menu-icon{
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* IMPORTANT: paths need a stroke or they can render invisible */
+.menu-toggle .menu-icon .line{
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+}
