@@ -692,35 +692,49 @@ html, body{
 
 /* ================================
    10) WORK / PROJECT CARDS
+   - Keeps legacy .work-card support
+   - Clean single-source-of-truth for .work-tile
 ================================ */
+
+/* ---- Grid (single definition) ---- */
 .work-grid{
   display:grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 18px;
+  gap: 22px;
   margin-top: 22px;
 }
 @media (max-width: 950px){
   .work-grid{ grid-template-columns: 1fr; }
 }
 
-.work-card {
+/* ==========================================================
+   A) Legacy work-card system (kept, non-conflicting)
+========================================================== */
+.work-card{
   position: relative;
   border-radius: 20px;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 .work-card:hover{
   transform: translateY(-3px);
   box-shadow: 0 26px 70px rgba(17,16,15,.12);
 }
 
-.work-thumb{ aspect-ratio: 16 / 10; overflow:hidden; width: 100%; height: 100%; }
-.work-thumb img {
+.work-thumb{
+  aspect-ratio: 16 / 10;
+  overflow:hidden;
+  width: 100%;
+  height: 100%;
+}
+.work-thumb img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
+  display:block;
   filter: brightness(0.82);
-  transition: filter 0.25s ease;
+  transition: filter .25s ease;
 }
 
 .work-meta{ padding: 16px 16px 18px; }
@@ -742,144 +756,115 @@ html, body{
   color: rgba(17,16,15,.70);
 }
 
-/* ================================
-   WORK TILES (full image + hover overlay)
-================================ */
-.work-grid{
-  display:grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-@media (max-width: 950px){
-  .work-grid{ grid-template-columns: 1fr; }
-}
+
+/* ==========================================================
+   B) Work tiles (the ones you’re using now)
+   Goals:
+   - background image covers tile
+   - logo stays proportional (no crop/stretch)
+   - default darker image + readable logo
+   - on hover: image brightens, halo fades out
+========================================================== */
 
 .work-tile{
   position: relative;
-  display: block;
+  display:block;
   border-radius: 22px;
-  overflow: hidden;
-  background: #000;                 /* safety */
+  overflow:hidden;
+  background:#000;                 /* safety if image fails */
   box-shadow: var(--shadow-sm);
   aspect-ratio: 4 / 3;
+  isolation: isolate;              /* keep overlays contained */
+  transition: box-shadow .18s ease;
 }
 
-.work-tile img{
+/* ✅ BACKGROUND IMAGE ONLY (never target all imgs) */
+.work-tile-img{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform .25s ease;
+  display:block;
+
+  /* darker BEFORE hover */
+  filter: brightness(0.90);
+  transform: scale(1.0001);        /* avoids tiny seams on some GPUs */
+  transition: filter .25s ease, transform .25s ease;
 }
 
-/* overlay sits on top of image */
+/* Overlay layer that centers content */
 .work-tile-overlay{
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding: clamp(18px, 3vw, 34px);
+  z-index: 2;
+  pointer-events:none;             /* click goes to the link */
+}
 
-  /*background: rgba(17,16,15,0.35);   !* matte dark *!*/
-  background:
-          radial-gradient(
-                  circle at center,
-                  rgba(17,16,15,0.15) 0%,
-                  rgba(17,16,15,0.45) 100%
-          );
+/* Optional: a subtle veil (kept very light so you don’t see a “box”) */
+.work-tile-overlay{
+  background: rgba(0,0,0,0.00);
   transition: background .25s ease;
 }
 
-.work-overlay {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  pointer-events: none;
+/* Logo frame (responsible for sizing + halo) */
+.work-logo-frame{
+  position: relative;
+  display:grid;
+  place-items:center;
+
+  /* ensures consistent bounding box across logos */
+  width: min(78%, 420px);
+  height: min(36%, 140px);
 }
 
-.work-logo {
-  max-width: 68%;
-  max-height: 48%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-.work-logo--wide {
-  max-width: 78%;
-  max-height: 36%;
-}
-
-/* text fades/slides in */
-.work-tile-text{
-  max-width: 80%;
-  text-align: center;
-  color: #fff;
-
-  opacity: 1;                       /* visible initially */
-  transform: translateY(0);
-  transition: opacity .22s ease, transform .22s ease;
-}
-
-.work-tile-title{
-  font-weight: 750;
-  letter-spacing: -0.01em;
-  font-size: 1.15rem;
-}
-
-.work-tile-subtitle{
-  margin-top: 6px;
-  font-size: .95rem;
-  opacity: .85;
-}
-
-/* Logo */
-.work-tile-logo{
-  max-width: 180px;
-  max-height: 64px;
-  width: auto;
-  height: auto;
-
+/* Halo behind logo: improves readability but is NOT a box */
+.work-logo-frame::before{
+  content:"";
+  position:absolute;
+  inset: -20px -34px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(0,0,0,.48), rgba(0,0,0,0) 72%);
   opacity: 1;
-  transition: opacity .15s ease, transform .15s ease;
+  transition: opacity .25s ease;
+  pointer-events:none;
 }
 
-/* hover state */
+/* ✅ LOGO ONLY — never gets forced to 100% height/width */
+.work-tile-logo{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;    /* key: contain prevents cropping */
+  display:block;
+
+  /* make white logos pop without “ugly overlay box” */
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,.22));
+}
+
+/* Hover behavior */
+.work-tile:hover .work-tile-img{
+  filter: brightness(0.92);
+  transform: scale(1.02);
+}
+
+/* veil can come in a touch if you want (very subtle) */
 .work-tile:hover .work-tile-overlay{
   background: rgba(217,119,69,.06);
 }
 
-.work-tile:hover .work-tile-logo{
-  opacity: 0;                        /* fade logo away */
-  transform: scale(.96);
+/* halo disappears on hover (your request) */
+.work-tile:hover .work-logo-frame::before{
+  opacity: 0;
 }
 
-.work-tile:hover img{
-  transform: scale(1.02);
-}
-
-.work-tile:hover .work-tile-text{
-  opacity: 0;                       /* hide text */
-  transform: translateY(-6px);
-}
-
-/* keyboard accessibility */
+/* Keyboard accessibility */
 .work-tile:focus-visible{
   outline: 3px solid rgba(217,119,69,.35);
   outline-offset: 4px;
   border-radius: 22px;
 }
 
-.work-tile:focus-visible .work-tile-overlay{
-  background: rgba(17,16,15,0);
-}
-.work-tile:focus-visible .work-tile-logo{
-  opacity: 0;
-}
 
 /* ================================
    11) QUOTES
@@ -1696,4 +1681,78 @@ footer.site-footer .footer-bottom-inner{
 /* Make sure the flag sits above the input text */
 .contact-v2 .iti__flag-container {
   z-index: 5 !important;
+}
+
+
+/* ===== WORK TILE: FINAL OVERRIDES ===== */
+
+.work-tile{
+  position: relative;
+  overflow: hidden;
+}
+
+/* dark by default; brighten on hover */
+.work-tile-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.60);
+  transition: filter .25s ease, transform .25s ease;
+}
+
+.work-tile:hover .work-tile-img{
+  transform: scale(1.02);
+}
+
+/* overlay veil + centered logo */
+.work-tile-overlay{
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding: 0;
+}
+
+.work-tile:hover .work-tile-overlay{
+  background: rgba(17,16,15,0.10);
+}
+
+/* halo behind logo (no ugly box) */
+.work-logo-frame{
+  display: grid;
+  place-items:center;
+  margin: 0;
+}
+
+.work-logo-frame::before{
+  content: "";
+  position: absolute;
+  inset: -18px -28px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(0,0,0,.50), rgba(0,0,0,0) 70%);
+  opacity: 1;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+
+.work-tile:hover .work-logo-frame::before{
+  opacity: 0; /* halo disappears on hover */
+}
+
+/* ✅ Make ALL logos the same “presence” using WIDTH as the driver */
+.work-tile-logo{
+  width: min(74%, 380px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+
+  /* defensive: in case older rules linger */
+  max-width: none;
+  max-height: none;
+}
+
+.work-tile--concord .work-tile-logo{
+  transform: translateX(-2%) translateY(-15%);
 }
