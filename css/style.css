@@ -845,7 +845,7 @@ html, body{
   height: auto;
 
   opacity: 1;
-  transition: opacity .25s ease, transform .25s ease;
+  transition: opacity .15s ease, transform .15s ease;
 }
 
 /* hover state */
