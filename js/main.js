@@ -133,9 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("partials:ready", markReady, { once: true });
   }
 
-
-  requestAnimationFrame(() => document.body.classList.add("is-ready"));
-
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a");
     if (!a) return;
@@ -167,3 +164,134 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.remove("is-leaving");
   });
 });
+
+
+
+(() => {
+  function initProcess() {
+    const rail = document.querySelector(".process-tabs");
+    const dataEl = document.getElementById("process-data");
+    const panel = document.getElementById("process-panel");
+    const processWrap = document.querySelector(".process-panel-wrap");
+    if (!rail || !dataEl || !panel || !processWrap) return;
+
+    let data;
+    try {
+      data = JSON.parse(dataEl.textContent);
+    } catch {
+      return;
+    }
+
+    let activeStep = 1;
+    let timer = null;
+    const steps = Object.keys(data).map(Number).sort((a, b) => a - b);
+
+    const badge = document.getElementById("process-badge");
+    const title = document.getElementById("process-title");
+    const desc  = document.getElementById("process-desc");
+    const p1    = document.getElementById("process-p1");
+    const p2    = document.getElementById("process-p2");
+    const img   = document.getElementById("process-img");
+    const cta1  = document.getElementById("process-cta-primary");
+    const cta2  = document.getElementById("process-cta-secondary");
+
+    const setActive = (step) => {
+      const d = data[String(step)];
+      activeStep = Number(step);
+      if (!d) return;
+
+      // highlight active tab
+      rail.querySelectorAll(".process-tab").forEach(btn => {
+        btn.classList.toggle("is-active", btn.dataset.step === String(step));
+      });
+
+      // Start fade
+      processWrap.classList.add("is-swapping");
+
+      // Preload next image first (prevents flicker)
+      const pre = new Image();
+      pre.src = d.img;
+
+      const apply = () => {
+        if (badge) badge.textContent = d.badge || "";
+        if (title) title.textContent = d.title || "";
+        if (desc)  desc.textContent  = d.desc  || "";
+
+        if (p1) p1.textContent = d.p?.[0] || "";
+        if (p2) p2.textContent = d.p?.[1] || "";
+
+        if (img) {
+          img.src = d.img || "";
+          img.alt = d.alt || "";
+        }
+
+        if (cta1) {
+          cta1.textContent = d.ctaPrimary?.label || "Get started";
+          cta1.href = d.ctaPrimary?.href || "#";
+        }
+        if (cta2) {
+          cta2.textContent = d.ctaSecondary?.label || "See work";
+          cta2.href = d.ctaSecondary?.href || "#";
+        }
+      };
+
+      pre.onload = () => {
+        requestAnimationFrame(() => {
+          apply();
+          setTimeout(() => processWrap.classList.remove("is-swapping"), 180);
+        });
+      };
+
+      pre.onerror = () => {
+        requestAnimationFrame(() => {
+          apply();
+          setTimeout(() => processWrap.classList.remove("is-swapping"), 180);
+        });
+      };
+    };
+
+    const startAuto = () => {
+      stopAuto();
+      timer = setInterval(() => {
+        const i = steps.indexOf(activeStep);
+        const next = steps[(i + 1) % steps.length];
+        setActive(next);
+      }, 5200); // change timing here
+    };
+
+    const stopAuto = () => {
+      if (timer) clearInterval(timer);
+      timer = null;
+    };
+
+    rail.addEventListener("click", (e) => {
+      const btn = e.target.closest(".process-tab");
+      if (!btn) return;
+      setActive(btn.dataset.step);
+    });
+
+    // Initial
+    const initial = rail.querySelector(".process-tab.is-active")?.dataset.step || "1";
+    setActive(initial);
+
+    startAuto();
+
+// Pause when user interacts with the section
+    const section = document.getElementById("process") || panel.closest(".process");
+    if (section){
+      section.addEventListener("mouseenter", stopAuto);
+      section.addEventListener("mouseleave", startAuto);
+      section.addEventListener("focusin", stopAuto);
+      section.addEventListener("focusout", startAuto);
+    }
+
+// Also pause briefly after click, then resume
+    rail.addEventListener("click", () => {
+      stopAuto();
+      setTimeout(startAuto, 8000);
+    });
+  }
+
+  document.addEventListener("partials:ready", initProcess);
+  document.addEventListener("DOMContentLoaded", initProcess);
+})();
