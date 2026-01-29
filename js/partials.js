@@ -52,6 +52,9 @@
 
     const yearEl = document.getElementById("year");
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // ✅ tell main.js the header/footer are now in the DOM
+    document.dispatchEvent(new Event("partials:ready"));
   }
 
   if (document.readyState !== "loading") run();

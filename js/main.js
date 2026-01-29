@@ -118,3 +118,52 @@
 
   els.forEach(el => io.observe(el));
 })();
+
+// Page fade transition (multi-page) — robust for relative/absolute URLs
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.remove("is-leaving");
+
+  // ✅ Fade IN only after header/footer are injected (prevents header "pop")
+  const markReady = () =>
+      requestAnimationFrame(() => document.body.classList.add("is-ready"));
+
+  if (document.querySelector("header")) {
+    markReady(); // already present (or injected super fast)
+  } else {
+    document.addEventListener("partials:ready", markReady, { once: true });
+  }
+
+
+  requestAnimationFrame(() => document.body.classList.add("is-ready"));
+
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const href = a.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+
+    // Don’t affect modified clicks or explicit new tabs
+    const isModified = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+    const isNewTab = a.target === "_blank";
+    const isDownload = a.hasAttribute("download");
+    const isSpecial = href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:");
+    if (isModified || isNewTab || isDownload || isSpecial) return;
+
+    const url = new URL(a.href, location.href);
+    const isExternal = url.origin !== location.origin;
+    if (isExternal) return;
+
+    e.preventDefault();
+    document.body.classList.add("is-leaving");
+
+    setTimeout(() => {
+      location.href = url.href;
+    }, 180);
+  });
+
+  // Back/forward cache restore
+  window.addEventListener("pageshow", () => {
+    document.body.classList.remove("is-leaving");
+  });
+});
