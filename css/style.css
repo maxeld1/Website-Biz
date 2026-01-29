@@ -2450,6 +2450,34 @@ footer.site-footer .footer-bottom-inner{
   /*transition: opacity 180ms ease, transform 180ms ease;*/
 }
 
+}
+
+/* MOBILE: make it clean + tappable */
+@media (max-width: 720px){
+  .process-cta-row{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .process-cta-row .cta-primary{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .process-cta-row .cta-link{
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+    background: rgba(210,108,54,.08);
+    box-shadow: inset 0 0 0 1px rgba(210,108,54,.16);
+  }
+
+  /* remove underline on mobile pill */
+  .process-cta-row .cta-link::after{ display:none; }
+}
+
 /* Responsive */
 @media (max-width: 980px){
   .process-grid{ grid-template-columns: 1fr; }
