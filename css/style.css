@@ -953,6 +953,16 @@ html, body{
 .quote-name{ font-weight: var(--w-bold); }
 .quote-role{ color: rgba(17,16,15,.55); }
 
+.quote-shell{
+  touch-action: pan-y; /* allow vertical scroll, we handle horizontal */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.quote-card{
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* ================================
    12) CONTACT / FORMS (Unified)
 ================================ */
