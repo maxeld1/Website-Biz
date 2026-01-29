@@ -2633,3 +2633,48 @@ footer.site-footer .footer-bottom-inner{
   }
 }
 
+/* --------------------------------
+   Process icon tabs: kill white halo
+--------------------------------- */
+
+/* Make the button itself never draw a “ring” */
+.process-tab{
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: transparent;
+  outline: none;
+}
+
+/* If you have any global button focus shadows, override them here */
+.process-tab:focus,
+.process-tab:focus-visible,
+.process-tab:active{
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* The icon "pill" is the only visual element */
+.process-tab-icon{
+  display: grid;
+  place-items: center;
+  border-radius: 18px;              /* or 999px if you want fully round */
+  background: rgba(217,119,69,.10); /* your soft orange */
+  border: 1px solid rgba(217,119,69,.22);
+  box-shadow: none;                 /* <-- this prevents a white halo */
+}
+
+/* Active state: your orange ring/shadow (not white) */
+.process-tab.is-active .process-tab-icon{
+  background: rgba(217,119,69,.14);
+  border-color: rgba(217,119,69,.35);
+  box-shadow: 0 10px 30px rgba(217,119,69,.18); /* orange glow */
+}
+
+/* Keyboard accessibility: show a deliberate orange focus ring */
+.process-tab:focus-visible .process-tab-icon{
+  box-shadow:
+    0 0 0 3px rgba(217,119,69,.22),
+    0 10px 30px rgba(217,119,69,.18);
+}
+
