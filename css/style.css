@@ -855,7 +855,11 @@ html, body{
   transform: scale(1.02);
 }
 
-/* veil can come in a touch if you want (very subtle) */
+.work-tile:hover .work-tile-logo{
+  opacity: 0;
+  transform: scale(.96);
+}
+
 .work-tile:hover .work-tile-overlay{
   background: rgba(217,119,69,.06);
 }
@@ -2084,44 +2088,44 @@ footer.site-footer .footer-bottom-inner{
 
 
 
-.menu-toggle.is-open{
-  outline: 2px solid red;
-}
+/*.menu-toggle.is-open{*/
+/*  outline: 2px solid red;*/
+/*}*/
 
-/* ===== Mobile menu: hamburger → X (robust) ===== */
+/*!* ===== Mobile menu: hamburger → X (robust) ===== *!*/
 
-.menu-toggle .menu-icon{
-  width: 24px;
-  height: 24px;
-  display: block;
-}
+/*.menu-toggle .menu-icon{*/
+/*  width: 24px;*/
+/*  height: 24px;*/
+/*  display: block;*/
+/*}*/
 
-/* Force SVG lines to be stroked (prevents other rules from breaking it) */
-.menu-toggle .menu-icon .line{
-  fill: none !important;
-  stroke: currentColor !important;
-  stroke-width: 2 !important;
-  stroke-linecap: round !important;
+/*!* Force SVG lines to be stroked (prevents other rules from breaking it) *!*/
+/*.menu-toggle .menu-icon .line{*/
+/*  fill: none !important;*/
+/*  stroke: currentColor !important;*/
+/*  stroke-width: 2 !important;*/
+/*  stroke-linecap: round !important;*/
 
-  /* Make transforms reliable */
-  transform-box: view-box;
-  transform-origin: 12px 12px;
+/*  !* Make transforms reliable *!*/
+/*  transform-box: view-box;*/
+/*  transform-origin: 12px 12px;*/
 
-  transition: transform .22s ease, opacity .18s ease;
-}
+/*  transition: transform .22s ease, opacity .18s ease;*/
+/*}*/
 
-/* Closed state (optional, but keeps it predictable) */
-.menu-toggle .menu-icon .line1{ transform: translateY(0); }
-.menu-toggle .menu-icon .line2{ opacity: 1; }
-.menu-toggle .menu-icon .line3{ transform: translateY(0); }
+/*!* Closed state (optional, but keeps it predictable) *!*/
+/*.menu-toggle .menu-icon .line1{ transform: translateY(0); }*/
+/*.menu-toggle .menu-icon .line2{ opacity: 1; }*/
+/*.menu-toggle .menu-icon .line3{ transform: translateY(0); }*/
 
-/* Open state */
-.menu-toggle.is-open .menu-icon .line1{
-  transform: translateY(5px) rotate(45deg);
-}
-.menu-toggle.is-open .menu-icon .line2{
-  opacity: 0;
-}
-.menu-toggle.is-open .menu-icon .line3{
-  transform: translateY(-5px) rotate(-45deg);
-}
+/*!* Open state *!*/
+/*.menu-toggle.is-open .menu-icon .line1{*/
+/*  transform: translateY(5px) rotate(45deg);*/
+/*}*/
+/*.menu-toggle.is-open .menu-icon .line2{*/
+/*  opacity: 0;*/
+/*}*/
+/*.menu-toggle.is-open .menu-icon .line3{*/
+/*  transform: translateY(-5px) rotate(-45deg);*/
+/*}*/
