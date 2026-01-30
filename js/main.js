@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const i = steps.indexOf(activeStep);
         const next = steps[(i + 1) % steps.length];
         setActive(next);
-      }, 5200); // change timing here
+      }, 7000); // change timing here
     };
 
     const stopAuto = () => {
