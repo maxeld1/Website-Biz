@@ -2394,6 +2394,33 @@ footer.site-footer .footer-bottom-inner{
   max-width: 46ch;
 }
 
+@media (max-width: 720px){
+  .process-body{
+    display: none;
+  }
+  .process-cta-row{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .process-cta-row .cta-link{
+    display: none;
+  }
+
+  .process{
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .process-panel-wrap{
+    padding: 14px;
+  }
+
+  .process-lead{
+    padding: 16px;
+  }
+}
+
 /* CTA row */
 .process-cta-row{
   margin-top: 16px;
@@ -2448,8 +2475,6 @@ footer.site-footer .footer-bottom-inner{
   opacity: .96;
   transform: translateY(-4px);
   /*transition: opacity 180ms ease, transform 180ms ease;*/
-}
-
 }
 
 /* MOBILE: make it clean + tappable */
@@ -2715,4 +2740,33 @@ footer.site-footer .footer-bottom-inner{
     0 0 0 3px rgba(217,119,69,.22),
     0 10px 30px rgba(217,119,69,.18);
 }
+
+/* intl-tel-input: keep the country dropdown from taking over the page */
+.iti {
+  width: 100%;
+}
+
+.iti__country-list {
+  padding-top: 8px; /* keep breathing room */
+}
+
+.iti__search-input {
+  box-sizing: border-box;
+  width: calc(100% - 24px);
+  margin: 0 12px 8px 12px; /* centers it perfectly */
+  padding: 10px 12px;
+  border-radius: 999px; /* matches your soft UI */
+}
+
+/* optional: slightly tighter rows so you see more countries at once */
+.iti__country{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* optional: ensure the dropdown sits above other UI without weird clipping */
+.iti__country-list{
+  z-index: 9999;
+}
+
 
