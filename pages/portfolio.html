@@ -13,88 +13,134 @@
 
 <div data-include="header"></div>
 
-<main>
-  <section class="section section-panel">
-    <div class="container center">
-      <p class="kicker">Portfolio</p>
+<main class="portfolio-page">
+
+  <!-- HERO (left aligned) -->
+  <section class="section section-panel portfolio-hero section-warm">
+    <div class="container">
+      <p class="kicker">Projects</p>
       <h1>Recent builds</h1>
-      <p class="maxw" style="margin-inline:auto;">
+      <p class="maxw">
         A few examples of design-forward sites and pages.
       </p>
-    </div>
-  </section>
 
-  <section class="section section-soft">
-    <div class="container center">
-
-      <!-- Uses your existing .work-grid/.work-card styles -->
-      <div class="work-grid">
-        <a class="work-card" href="#" aria-label="Project 1">
-          <div class="work-thumb">
-            <img src="/assets/images/previews/industry_salon_preview.png"
-                 alt="Project 1"
-                 alt="Project preview" />
-          </div>
-          <div class="work-meta">
-            <div class="work-title">Project Name</div>
-            <div class="work-desc">Short one-liner about what you built.</div>
-            <div class="work-tags">
-              <span>Website</span><span>UI</span><span>Responsive</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="work-card" href="#" aria-label="Project 2">
-          <div class="work-thumb">
-            <img src="/assets/images/previews/richie_izzo_preview.png" alt="Project preview" />
-          </div>
-          <div class="work-meta">
-            <div class="work-title">Project Name</div>
-            <div class="work-desc">Short one-liner about what you built.</div>
-            <div class="work-tags">
-              <span>Brand</span><span>Landing</span><span>SEO</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="work-card" href="#" aria-label="Project 3">
-          <div class="work-thumb">
-            <img src="/assets/images/previews/riley_portal_preview.png" alt="Project preview" />
-          </div>
-          <div class="work-meta">
-            <div class="work-title">Project Name</div>
-            <div class="work-desc">Short one-liner about what you built.</div>
-            <div class="work-tags">
-              <span>Performance</span><span>Accessibility</span>
-            </div>
-          </div>
-        </a>
-
-        <a class="work-card" href="#" aria-label="Project 3">
-          <div class="work-thumb">
-            <img src="/assets/images/previews/concord_limo_preview.png" alt="Project preview" />
-          </div>
-          <div class="work-meta">
-            <div class="work-title">Project Name</div>
-            <div class="work-desc">Short one-liner about what you built.</div>
-            <div class="work-tags">
-              <span>Performance</span><span>Accessibility</span>
-            </div>
-          </div>
-        </a>
-      </div>
-
-      <div style="margin-top:22px;">
+      <div class="portfolio-hero-ctas">
         <a class="btn btn-primary" href="{{P}}pages/contact.html">Start a project</a>
+        <a class="cta-link" href="{{P}}pages/services.html">See services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section section-white">
+    <div class="container projects">
+
+      <!-- FILTER TABS (centered like the reference) -->
+      <nav class="port-tabs" aria-label="Portfolio categories">
+        <button class="port-tab is-active" type="button" data-filter="all">All</button>
+        <button class="port-tab" type="button" data-filter="business">Business</button>
+        <button class="port-tab" type="button" data-filter="portfolio">Portfolio</button>
+        <button class="port-tab" type="button" data-filter="branding">Branding</button>
+        <button class="port-tab" type="button" data-filter="development">Development</button>
+        <button class="port-tab" type="button" data-filter="internal">Internal</button>
+      </nav>
+
+      <!-- GRID -->
+      <div class="port-grid">
+
+        <!-- Tile -->
+        <a class="port-tile" href="#" data-tags="business branding" aria-label="Industry Salon">
+          <img class="port-bg" src="/assets/images/previews/industry_salon_preview.png" alt="" loading="lazy">
+          <div class="port-overlay" aria-hidden="true">
+            <img class="port-logo" src="/assets/images/logos/industry_salon_logo_white_transparent.png" alt="">
+          </div>
+        </a>
+
+        <a class="port-tile" href="#" data-tags="portfolio design" aria-label="Richie Izzo - Portfolio">
+          <img class="port-bg" src="/assets/images/previews/richie_izzo_preview.png" alt="" loading="lazy">
+          <div class="port-overlay" aria-hidden="true">
+            <img class="port-logo" src="/assets/images/logos/richie_izzo_logo_white_transparent.png" alt="">
+          </div>
+        </a>
+
+        <a class="port-tile" href="#" data-tags="internal development" aria-label="Riley Lab Portal">
+          <img class="port-bg" src="/assets/images/previews/riley_portal_preview.png" alt="" loading="lazy">
+          <div class="port-overlay" aria-hidden="true">
+            <img class="port-logo" src="/assets/images/logos/riley_lab_logo_white_transparent.png" alt="">
+          </div>
+        </a>
+
+        <a class="port-tile" href="#" data-tags="business development branding" aria-label="Concord Limo LLC">
+          <img class="port-bg" src="/assets/images/previews/concord_limo_preview.png" alt="" loading="lazy">
+          <div class="port-overlay" aria-hidden="true">
+            <img class="port-logo" src="/assets/images/logos/concord_limo_logo_white_transparent.png" alt="">
+          </div>
+        </a>
+
       </div>
 
     </div>
   </section>
+
 </main>
 
 <div data-include="footer"></div>
 
 <script src="../js/partials.js"></script>
 <script src="../js/main.js"></script>
+
+<!-- Filter behavior (small + clean) -->
+<script>
+  (function () {
+    const tabs  = document.querySelectorAll('.port-tab');
+    const tiles = Array.from(document.querySelectorAll('.port-tile'));
+    const DURATION = 240; // should match CSS timing (~220ms)
+
+    const getTags = (tile) =>
+            (tile.getAttribute('data-tags') || '').toLowerCase();
+
+    const matches = (tile, filter) => {
+      if (filter === 'all') return true;
+      return getTags(tile).includes(filter);
+    };
+
+    const setActive = (tab) => {
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+    };
+
+    function showTile(tile){
+      tile.classList.remove('is-gone');     // ensure it can render
+      // next frame so display change applies before opacity anim
+      requestAnimationFrame(() => {
+        tile.classList.remove('is-hidden');
+      });
+    }
+
+    function hideTile(tile){
+      tile.classList.add('is-hidden');
+      // after fade completes, remove from layout
+      window.setTimeout(() => {
+        if (tile.classList.contains('is-hidden')) {
+          tile.classList.add('is-gone');
+        }
+      }, DURATION);
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const filter = tab.getAttribute('data-filter');
+        setActive(tab);
+
+        tiles.forEach(tile => {
+          if (matches(tile, filter)) showTile(tile);
+          else hideTile(tile);
+        });
+      });
+    });
+  })();
+</script>
+
+
 </body>
 </html>
