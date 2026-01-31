@@ -7,6 +7,10 @@
   <meta name="description" content="About the studio: design-forward builds with clean engineering." />
   <link rel="icon" href="../assets/icons/favicon.ico" />
   <link rel="manifest" href="../manifest.webmanifest" />
+  <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css"
+  />
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
@@ -209,7 +213,7 @@
       </p>
 
       <aside class="contact-v2-card" id="contact-form" aria-label="Contact form">
-        <form class="contact-v2-form" action="https://formspree.io/f/mrekgvao" method="POST">
+        <form class="contact-v2-form" action="https://formspree.io/f/xdazqwan" method="POST">
           <div class="contact-v2-form-head">
             <h2 class="contact-v2-form-title">Project Details</h2>
             <p class="contact-v2-form-sub">The more context you share, the faster I can respond.</p>
@@ -229,7 +233,7 @@
           </div>
 
           <label class="field">
-            <span class="label">Phone</span>
+            <span class="label">Phone *</span>
             <input class="input" id="phone" type="tel" name="phone" autocomplete="tel" />
           </label>
 
@@ -255,5 +259,30 @@
 
 <script src="../js/partials.js"></script>
 <script src="../js/main.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const phoneInput = document.querySelector("#phone");
+    if (!phoneInput) return;
+
+    const iti = window.intlTelInput(phoneInput, {
+      separateDialCode: true,
+      initialCountry: "us",
+      allowDropdown: true,
+      nationalMode: true,
+      formatOnDisplay: true,
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
+    });
+
+    const form = phoneInput.closest("form");
+    const hidden = document.querySelector("#phone_e164");
+    if (form && hidden) {
+      form.addEventListener("submit", () => {
+        hidden.value = iti.getNumber();
+      });
+    }
+  });
+</script>
 </body>
 </html>
