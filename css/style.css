@@ -390,6 +390,16 @@ header .nav{
   max-height: 100px;
 }
 
+.footer-brand-logo{
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-height: 100px;
+  width: auto;
+  margin-inline: auto;
+}
+
 .site-nav ul{
   list-style:none;
   margin:0;

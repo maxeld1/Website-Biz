@@ -200,6 +200,54 @@
     </div>
   </section>
 
+  <section class="section contact-v2 reveal section-white" id="contact">
+    <div class="container">
+      <p class="section-kicker">CONTACT</p>
+      <h2 class="section-title-2">Tell Me What You’re Building</h2>
+      <p class="section-subtitle maxw">
+        Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
+      </p>
+
+      <aside class="contact-v2-card" id="contact-form" aria-label="Contact form">
+        <form class="contact-v2-form" action="https://formspree.io/f/mrekgvao" method="POST">
+          <div class="contact-v2-form-head">
+            <h2 class="contact-v2-form-title">Project Details</h2>
+            <p class="contact-v2-form-sub">The more context you share, the faster I can respond.</p>
+          </div>
+
+          <div class="form-grid">
+            <label class="field">
+              <span class="label">Name *</span>
+              <input class="input" type="text" name="name" autocomplete="name" required />
+              <input type="text" name="_gotcha" style="display:none">
+            </label>
+
+            <label class="field">
+              <span class="label">Email *</span>
+              <input class="input" type="email" name="_replyto" autocomplete="email" required />
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="label">Phone</span>
+            <input class="input" id="phone" type="tel" name="phone" autocomplete="tel" />
+          </label>
+
+          <input type="hidden" name="phone_e164" id="phone_e164">
+
+          <label class="field">
+            <span class="label">What are we building? *</span>
+            <textarea class="textarea" name="message" rows="7" required
+                      placeholder="Example: 5-page site, booking link, basic SEO, launch in ~2 weeks."></textarea>
+          </label>
+
+          <button class="btn btn-primary contact-v2-submit" type="submit">Send message</button>
+          <p class="contact-v2-note">Typical reply: within 1–2 business days.</p>
+        </form>
+      </aside>
+    </div>
+  </section>
+
 </main>
 
 
