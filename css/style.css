@@ -1234,7 +1234,7 @@ html, body{
   border-radius: 18px;
   background: rgba(255,255,255,0.70);
   box-shadow: 0 18px 60px rgba(0,0,0,0.08);
-  overflow: hidden;
+  overflow: visible !important;
 }
 
 .contact-v2-form {
@@ -1366,33 +1366,33 @@ html, body{
   margin: 6px 0 0;
 }
 
-/* === intl-tel-input (v19+) positioning fix === */
-.contact-v2 .iti{
-  width: 100% !important;
-  position: relative !important;
-}
+/*!* === intl-tel-input (v19+) positioning fix === *!*/
+/*.contact-v2 .iti{*/
+/*  width: 100% !important;*/
+/*  position: relative !important;*/
+/*}*/
 
-/* The little flag/dial-code button wrapper */
-.contact-v2 .iti__flag-container{
-  position: absolute !important;
-  left: 12px !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  z-index: 2 !important;
-}
+/*!* The little flag/dial-code button wrapper *!*/
+/*.contact-v2 .iti__flag-container{*/
+/*  position: absolute !important;*/
+/*  left: 12px !important;*/
+/*  top: 50% !important;*/
+/*  transform: translateY(-50%) !important;*/
+/*  z-index: 2 !important;*/
+/*}*/
 
-/* Make the clickable flag area vertically centered */
-.contact-v2 .iti__selected-flag{
-  display: flex !important;
-  align-items: center !important;
-  padding: 0 10px !important;
-}
+/*!* Make the clickable flag area vertically centered *!*/
+/*.contact-v2 .iti__selected-flag{*/
+/*  display: flex !important;*/
+/*  align-items: center !important;*/
+/*  padding: 0 10px !important;*/
+/*}*/
 
-/* Give the input text room so it never overlaps */
-.contact-v2 .iti input{
-  padding-left: 104px !important;
-  box-sizing: border-box !important;
-}
+/*!* Give the input text room so it never overlaps *!*/
+/*.contact-v2 .iti input{*/
+/*  padding-left: 104px !important;*/
+/*  box-sizing: border-box !important;*/
+/*}*/
 
 /* CTA should not be comically tall if global styles do that */
 .contact-v2 .contact-v2-submit{
@@ -1807,27 +1807,29 @@ footer.site-footer .footer-bottom-inner{
 .contact-v2 .contact-v2-card,
 .contact-v2 .contact-v2-form,
 .contact-v2 .field{
+  position: relative !important;
   overflow: visible !important;
-}
-
-/* === intl-tel-input: prevent text under flag/dial code === */
-.contact-v2 .iti {
-  width: 100% !important;
-}
-
-.contact-v2 .iti input#phone {
-  padding-left: 75px !important; /* increase until it clears fully */
-}
-
-/* If your build uses separateDialCode, this selector is the most reliable */
-.contact-v2 .iti--separate-dial-code input#phone {
-  padding-left: 132px !important;
-}
-
-/* Make sure the flag sits above the input text */
-.contact-v2 .iti__flag-container {
   z-index: 5 !important;
 }
+
+/*!* === intl-tel-input: prevent text under flag/dial code === *!*/
+/*.contact-v2 .iti {*/
+/*  width: 100% !important;*/
+/*}*/
+
+/*.contact-v2 .iti input#phone {*/
+/*  padding-left: 75px !important; !* increase until it clears fully *!*/
+/*}*/
+
+/*!* If your build uses separateDialCode, this selector is the most reliable *!*/
+/*.contact-v2 .iti--separate-dial-code input#phone {*/
+/*  padding-left: 132px !important;*/
+/*}*/
+
+/*!* Make sure the flag sits above the input text *!*/
+/*.contact-v2 .iti__flag-container {*/
+/*  z-index: 5 !important;*/
+/*}*/
 
 
 /* ===== WORK TILE: FINAL OVERRIDES ===== */
@@ -2766,33 +2768,33 @@ footer.site-footer .footer-bottom-inner{
     0 10px 30px rgba(217,119,69,.18);
 }
 
-/* intl-tel-input: keep the country dropdown from taking over the page */
-.iti {
-  width: 100%;
-}
+/*!* intl-tel-input: keep the country dropdown from taking over the page *!*/
+/*.iti {*/
+/*  width: 100%;*/
+/*}*/
 
-.iti__country-list {
-  padding-top: 8px; /* keep breathing room */
-}
+/*.iti__country-list {*/
+/*  padding-top: 8px; !* keep breathing room *!*/
+/*}*/
 
-.iti__search-input {
-  box-sizing: border-box;
-  width: calc(100% - 24px);
-  margin: 0 12px 8px 12px; /* centers it perfectly */
-  padding: 10px 12px;
-  border-radius: 999px; /* matches your soft UI */
-}
+/*.iti__search-input {*/
+/*  box-sizing: border-box;*/
+/*  width: calc(100% - 24px);*/
+/*  margin: 0 12px 8px 12px; !* centers it perfectly *!*/
+/*  padding: 10px 12px;*/
+/*  border-radius: 999px; !* matches your soft UI *!*/
+/*}*/
 
-/* optional: slightly tighter rows so you see more countries at once */
-.iti__country{
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
+/*!* optional: slightly tighter rows so you see more countries at once *!*/
+/*.iti__country{*/
+/*  padding-top: 10px;*/
+/*  padding-bottom: 10px;*/
+/*}*/
 
-/* optional: ensure the dropdown sits above other UI without weird clipping */
-.iti__country-list{
-  z-index: 9999;
-}
+/*!* optional: ensure the dropdown sits above other UI without weird clipping *!*/
+/*.iti__country-list{*/
+/*  z-index: 9999;*/
+/*}*/
 
 /* ================================
    PORTFOLIO — Gallery-grade polish
@@ -3784,3 +3786,107 @@ footer.site-footer .footer-bottom-inner{
   color: rgba(71,85,105,.85);
   line-height: 1.6;
 }
+
+/* ==========================================================
+   19) intl-tel-input — FINAL (scoped, single block)
+   Keep this at the VERY END of your CSS.
+   IMPORTANT: do NOT define any other .iti / .iti__* rules elsewhere.
+========================================================== */
+.contact-v2 .iti{
+  width:100% !important;
+  display:block !important;
+  position:relative !important;
+}
+.contact-v2 .iti,
+.contact-v2 .iti *{
+  box-sizing:border-box !important;
+}
+
+/* Allow dropdown to escape ONLY from the phone field wrapper */
+.contact-v2 .field:has(.iti){
+  position:relative !important;
+  overflow:visible !important;
+  z-index:1 !important;
+}
+
+/* Reserve space for flag (and dial code if enabled) */
+.contact-v2 .iti input#phone{
+  width:100% !important;
+  box-sizing:border-box !important;
+  padding-left:86px !important;
+}
+.contact-v2 .iti--separate-dial-code input#phone{
+  padding-left:136px !important;
+}
+
+/* Flag area: vertically centered */
+.contact-v2 .iti__selected-flag{
+  display:flex !important;
+  align-items:center !important;
+  height:100% !important;
+  padding:0 10px !important;
+}
+
+/* Dropdown: anchored, capped, scrollable */
+.contact-v2 .iti__country-list{
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: calc(100% + 10px) !important; /* space under input */
+  margin: 0 !important;
+
+  max-height: min(260px, 45vh) !important; /* <-- prevents covering your whole form */
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+
+  background: rgba(255,255,255,.98) !important;
+  border: 1px solid rgba(17,16,15,.12) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 26px 70px rgba(2,6,23,.16) !important;
+
+  z-index: 99999 !important;
+}
+
+/* Search input inside dropdown */
+.contact-v2 .iti__search-input{
+  width:calc(100% - 24px) !important;
+  margin:10px 12px 8px !important;
+  box-sizing:border-box !important;
+}
+
+/* Row spacing */
+.contact-v2 .iti__country{
+  padding-top:10px !important;
+  padding-bottom:10px !important;
+}
+
+/* === Ensure intl-tel dropdown renders ABOVE the card === */
+
+/* 1) Put the whole contact section/card on a predictable stacking layer */
+.contact-v2{
+  position: relative;
+  z-index: 1;
+}
+
+/* 2) Make the card NOT create a weird stacking context */
+.contact-v2-card{
+  position: relative;
+  z-index: 1;
+  overflow: visible !important;
+  isolation: auto !important;   /* in case it was set somewhere */
+  transform: none !important;   /* remove if you intentionally transform the card */
+  filter: none !important;      /* remove if you intentionally filter the card */
+}
+
+/* 3) Put the phone field ABOVE everything inside the card */
+.contact-v2 .field:has(.iti){
+  position: relative !important;
+  z-index: 9999 !important;
+  overflow: visible !important;
+}
+
+/* 4) Put the dropdown above ALL */
+.contact-v2 .iti__country-list{
+  z-index: 100000 !important;
+}
+
