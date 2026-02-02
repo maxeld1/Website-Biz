@@ -249,6 +249,10 @@ svg{ max-width:100%; height:auto; }
   background: transparent;
 }
 
+.section-title-2 {
+  text-align: center;
+}
+
 /* SECTION SKINS (apply on the section element) */
 .section-warm{  background: var(--bg-2); }
 .section-soft{  background: var(--bg); }
@@ -1485,6 +1489,24 @@ html, body{
   color: rgba(17,16,15,.78);
 }
 
+.site-footer .social-btn {
+  background: rgba(255,255,255,0.92);
+  border-color: rgba(17,16,15,.12);
+  color: rgba(17,16,15,0.75);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+}
+
+.site-footer .social-btn svg {
+  stroke: currentColor;
+}
+
+.site-footer .social-btn:hover {
+  background: #fff;
+  color: rgba(17,16,15,0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.25);
+}
+
 .social-btn svg{
   width: 22px;
   height: 22px;
@@ -1698,6 +1720,8 @@ footer.site-footer .footer-bottom-inner{
   grid-template-columns: 1.05fr .95fr;
   gap: clamp(1.25rem, 3vw, 2.5rem);
   align-items:center;
+  justify-content: center;
+  text-align: center;
 }
 
 .about-media img{
@@ -1736,10 +1760,17 @@ footer.site-footer .footer-bottom-inner{
   align-items:center;
 }
 
+.about-copy {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+
 .about-copy .section-kicker{
   display: block;
   width: 100%;
   text-align: center;
+  margin-inline: auto;
 }
 
 /* Keep your “center sections below hero” preference */
@@ -1751,6 +1782,20 @@ footer.site-footer .footer-bottom-inner{
 }
 .section .about-list{
   justify-items:center;
+}
+
+.about-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.about-media img {
+  width: 180px;          /* control size here */
+  height: 180px;         /* must match width for perfect circle */
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
 /* But on desktop, re-left-align for a more premium look (optional) */
