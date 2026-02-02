@@ -3939,14 +3939,17 @@ footer.site-footer .footer-bottom-inner{
   background-image:
           linear-gradient(
                   90deg,
-                  #ffffff 0%,
-                  #ffffff 12%,
-                  rgba(255,255,255,0.95) 22%,
-                  rgba(255,255,255,0.80) 35%,
-                  rgba(255,255,255,0.55) 48%,
-                  rgba(255,255,255,0.30) 62%,
-                  rgba(255,255,255,0.12) 72%,
-                  rgba(255,255,255,0.00) 82%
+                  #f6f1ea 0%,
+                  #f6f1ea 14%,
+                  rgba(246,241,234,0.95) 30%,
+                  rgba(246,241,234,0.87) 40%,
+                  rgba(246,241,234,0.80) 46%,
+                  rgba(246,241,234,0.70) 50%,
+                  rgba(246,241,234,0.63) 54%,
+                  rgba(246,241,234,0.55) 57%,
+                  rgba(246,241,234,0.40) 64%,
+                  rgba(246,241,234,0.28) 72%,
+                  rgba(246,241,234,0.00) 82%
           ),
           url("../assets/images/hero/hero_background_path.png") !important;
 
