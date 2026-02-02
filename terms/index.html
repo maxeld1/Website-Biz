@@ -1,10 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Terms | MaxWayStudio</title>
+    <meta name="description" content="Terms of use." />
+    <link rel="icon" href="../assets/images/logos/maxwaystudio_logo.png" type="image/icon type" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <link rel="stylesheet" href="../css/style.css" />
 </head>
 <body>
 
+<div data-include="header"></div>
+
+<main>
+    <section class="section section-panel">
+        <div class="container center">
+            <p class="kicker">Terms</p>
+            <h1>Terms of Use</h1>
+            <p class="maxw" style="margin-inline:auto;">
+                General template language. Update for your real business practices.
+            </p>
+        </div>
+    </section>
+
+    <section class="section section-soft">
+        <div class="container">
+            <div class="card">
+                <h2 style="margin-bottom:10px;">Use of site</h2>
+                <p>This site is provided for informational purposes. You agree not to misuse the site or attempt unauthorized access.</p>
+
+                <h2 style="margin-top:22px; margin-bottom:10px;">No guarantees</h2>
+                <p>We strive for accuracy but don’t guarantee all content is complete or up-to-date.</p>
+
+                <h2 style="margin-top:22px; margin-bottom:10px;">Intellectual property</h2>
+                <p>Unless otherwise stated, content and design are owned by Your Company and may not be reused without permission.</p>
+
+                <h2 style="margin-top:22px; margin-bottom:10px;">Contact</h2>
+                <p>Questions? Email <a href="mailto:maxwaystudio@gmail.com" style="text-decoration:underline;">maxeldabbas86@gmail.com</a>.</p>
+
+                <p style="margin-top:18px; color: var(--muted);">Last updated: <span id="termsDate"></span></p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="../js/main.js"></script>
+<script src="../js/partials.js"></script>
+<script>
+    document.getElementById("termsDate").textContent = new Date().toLocaleDateString();
+</script>
 </body>
 </html>
