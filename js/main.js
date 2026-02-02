@@ -223,6 +223,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (img) {
           img.src = d.img || "";
           img.alt = d.alt || "";
+
+          // ✅ ONLY for this one image: show full image (contain)
+          const isStep4Img = (d.img || "").includes("industry_salon_preview.png");
+          img.classList.toggle("is-contain", isStep4Img);
         }
 
         if (cta1) {

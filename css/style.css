@@ -2571,6 +2571,7 @@ footer.site-footer .footer-bottom-inner{
   box-shadow:
           0 1px 0 rgba(255,255,255,.6) inset,
           0 20px 60px rgba(20,20,20,.14);
+  height: 360px;
 }
 
 /* Add a subtle gradient overlay so any photo looks “art directed” */
@@ -2590,6 +2591,18 @@ footer.site-footer .footer-bottom-inner{
   object-fit: cover;
   transform: scale(1.04);
   filter: saturate(1.02) contrast(1.02);
+}
+
+.process-panel-media img.is-contain{
+  object-fit: contain;
+  background: rgba(246,241,234,0.25);
+}
+
+.process-panel-media img.is-contain{
+  object-fit: contain;
+  background: rgba(246,241,234,0.25);
+  transform: none;
+  filter: none;
 }
 
 /* Smooth panel swap (JS adds .is-swapping briefly) */
