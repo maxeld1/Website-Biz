@@ -4040,3 +4040,211 @@ footer.site-footer .footer-bottom-inner{
   z-index: 2 !important;
 }
 
+/* ============ Project Page Layout ============ */
+.project-hero{
+  padding-top: clamp(40px, 7vw, 86px);
+  padding-bottom: clamp(28px, 5vw, 56px);
+}
+
+.project-hero-copy{
+  text-align: left;
+}
+
+.project-hero-grid{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: clamp(18px, 3vw, 44px);
+  align-items: center;
+}
+
+
+.project-hero-media{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-hero-media img{
+  width: min(560px, 100%);
+  height: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(20,20,20,.06);
+  box-shadow: 0 18px 60px rgba(20,20,20,.12);
+  background: #fff;
+}
+
+.project-hero-ctas{
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.project-tags{
+  list-style: none;
+  padding: 0;
+  margin: 18px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.project-tag{
+  font-size: 13px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(20,20,20,.10);
+  background: rgba(255,255,255,.6);
+}
+
+/* Metrics band */
+.project-metrics{
+  background: linear-gradient(90deg, rgba(217,119,69,.92), rgba(200,92,38,.92));
+  color: #fff;
+}
+.project-metrics .container{
+  padding: 0;
+}
+.project-metrics-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.metric{
+  padding: 26px 18px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.18);
+}
+.metric:last-child{ border-right: 0; }
+.metric-value{
+  font-weight: 800;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.1;
+}
+.metric-label{
+  margin-top: 6px;
+  font-size: 13px;
+  opacity: .95;
+}
+
+/* Split sections */
+.project-split{
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: clamp(18px, 3vw, 44px);
+  align-items: center;
+}
+.project-split--flip{
+  grid-template-columns: 1.15fr 1fr;
+}
+.project-split--flip .project-copy{ order: 2; }
+.project-split--flip .project-media{ order: 1; }
+
+.project-media img{
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(20,20,20,.06);
+  box-shadow: 0 18px 60px rgba(20,20,20,.10);
+}
+
+/* Results block with scrollthrough */
+.project-results{
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(18px, 3vw, 44px);
+  align-items: start;
+}
+
+.project-scroll{
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  border: 1px solid rgba(20,20,20,.06);
+  box-shadow: 0 18px 60px rgba(20,20,20,.12);
+  background: #fff;
+}
+
+/* Quote */
+.quote-card{
+  margin: 0;
+  padding: clamp(18px, 2.4vw, 30px);
+  border-radius: 22px;
+  border: 1px solid rgba(20,20,20,.06);
+  background: rgba(255,255,255,.75);
+  box-shadow: 0 18px 60px rgba(20,20,20,.08);
+}
+.quote-meta{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.quote-meta span{
+  font-size: 13px;
+  opacity: .75;
+}
+.quote-text{
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: .92;
+}
+
+/* Related */
+.related-grid{
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.related-tile{
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(20,20,20,.06);
+  background: #fff;
+  display: block;
+}
+.related-tile img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.related-title{
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 0 8px 30px rgba(0,0,0,.35);
+}
+
+/* Responsive */
+@media (max-width: 920px){
+  .project-hero-grid{
+    grid-template-columns: 1fr;
+  }
+  .project-hero-media{
+    justify-content: flex-start;
+  }
+  .project-split,
+  .project-results{
+    grid-template-columns: 1fr;
+  }
+  .project-split--flip .project-copy,
+  .project-split--flip .project-media{
+    order: initial;
+  }
+  .project-metrics-grid{
+    grid-template-columns: 1fr;
+  }
+  .metric{
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .metric:last-child{ border-bottom: 0; }
+  .related-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
