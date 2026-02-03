@@ -350,6 +350,7 @@ h3{
   font-size: .72rem;
   color: rgba(217,119,69,.78);
   margin: 0 0 10px;
+  align-content: center;
 }
 
 .muted{ color: var(--muted-2); }
@@ -4247,4 +4248,166 @@ footer.site-footer .footer-bottom-inner{
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* FORCE: project hero is always 2 columns on desktop */
+.project-hero .project-hero-grid{
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(18px, 3vw, 44px);
+  align-items: center;
+}
+
+/* prevent weird overflow pushing things down */
+.project-hero .project-hero-copy,
+.project-hero .project-hero-media{
+  min-width: 0;
+}
+
+.project-hero .project-hero-media{
+  justify-self: end;
+}
+
+.project-hero .project-hero-media img{
+  width: min(560px, 100%);
+  height: auto;
+  display: block;
+}
+
+.project-title{
+  font-size: 2.5rem;
+}
+
+.industry-salon-page .project-title{
+  font-size: 2.5rem;
+  color: #594E45;
+}
+
+.industry-salon-page .project-metric{
+  color: #594E45;
+}
+
+/* =========================================================
+   INDUSTRY SALON PROJECT PAGE — Metrics (scoped, page-specific)
+   ========================================================= */
+
+.industry-salon-page .project-metrics{
+  padding: 0;
+  margin: 0;
+}
+
+.industry-salon-page .project-metrics .container{
+  padding: 0;
+}
+
+.industry-salon-page .project-metrics-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* equal width */
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+/* individual metric blocks */
+.industry-salon-page .metric{
+  min-height: 110px;
+  padding: 26px 18px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* typography */
+.industry-salon-page .metric-value{
+  font-weight: 800;
+  font-size: clamp(22px, 2.6vw, 36px);
+  line-height: 1.1;
+  color: #2b2b2b;
+}
+
+.industry-salon-page .metric-label{
+  margin-top: 6px;
+  font-size: 13px;
+  letter-spacing: .02em;
+  opacity: .75;
+  color: #2b2b2b;
+}
+
+/* tan banding — subtle, editorial */
+.industry-salon-page .project-metrics-grid .metric:nth-child(1){
+  background: #EFE6DA;
+}
+
+.industry-salon-page .project-metrics-grid .metric:nth-child(2){
+  background: #E6D7C5;
+}
+
+.industry-salon-page .project-metrics-grid .metric:nth-child(3){
+  background: #DBC7AE;
+}
+
+/* responsive: stack but keep style */
+@media (max-width: 900px){
+  .industry-salon-page .project-metrics-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section background can be whatever you want */
+.industry-salon-page .metrics-band{
+  background: transparent;
+  padding: 0;
+}
+
+/* Full width, no gutters */
+.industry-salon-page .metrics-row{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: none;          /* ❌ remove beige here */
+}
+
+/* Base metric styles */
+.industry-salon-page .metric{
+  padding: 22px 18px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 44px;
+}
+
+/* Individual tan shades */
+.industry-salon-page .metric:nth-child(1){
+  background: #f3eadf;   /* light tan */
+}
+
+.industry-salon-page .metric:nth-child(2){
+  background: #e7dac7;   /* mid tan */
+}
+
+.industry-salon-page .metric:nth-child(3){
+  background: #dccbb1;   /* deeper tan */
+}
+
+.industry-salon-page .metric span{
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: .75;
+}
+
+/*!* Dividers *!*/
+/*.industry-salon-page .metric + .metric{*/
+/*  border-left: 1px solid rgba(0,0,0,.08);*/
+/*}*/
+
 
