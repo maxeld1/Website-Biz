@@ -96,28 +96,44 @@
   })();
 })();
 
-// Scroll reveal (IntersectionObserver)
-(() => {
-  const els = document.querySelectorAll('.reveal');
+// Scroll reveal (IntersectionObserver) — re-runnable + safe
+let __revealIO = null;
+
+function initReveal() {
+  const els = document.querySelectorAll(".reveal");
   if (!els.length) return;
 
-  // If IO isn't supported, just show everything
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(el => el.classList.add('is-visible'));
+  // No IO support? show everything
+  if (!("IntersectionObserver" in window)) {
+    els.forEach(el => el.classList.add("is-visible"));
     return;
   }
 
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add('is-visible');
-        io.unobserve(e.target);
+  // Create the observer once
+  if (!__revealIO) {
+    __revealIO = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          __revealIO.unobserve(e.target);
+        }
       }
-    }
-  }, { threshold: 0.12, rootMargin: '0px 0px -10% 0px' });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+  }
 
-  els.forEach(el => io.observe(el));
-})();
+  // Observe any reveal nodes we haven’t already bound
+  els.forEach(el => {
+    if (el.dataset.revealBound) return;
+    el.dataset.revealBound = "1";
+    __revealIO.observe(el);
+  });
+}
+
+// Run at the right times
+document.addEventListener("DOMContentLoaded", initReveal);
+document.addEventListener("partials:ready", initReveal);
+window.addEventListener("load", initReveal);      // catches late media/layout
+window.addEventListener("pageshow", initReveal);  // Safari bfcache restores
 
 // Page fade transition (multi-page) — robust for relative/absolute URLs
 document.addEventListener("DOMContentLoaded", () => {
