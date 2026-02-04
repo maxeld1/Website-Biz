@@ -84,7 +84,7 @@
 
     <!-- CHALLENGE -->
     <section class="section section-soft">
-        <div class="container project-split reveal">
+        <div class="container project-split project-two-col reveal">
             <div class="project-copy">
                 <h2 class="project-metric">The Vision</h2>
                 <p>
@@ -107,7 +107,7 @@
 
     <!-- STRATEGY -->
     <section class="section section-white">
-        <div class="container project-split project-split--flip reveal">
+        <div class="container project-split project-split--flip project-two-col reveal">
             <div class="project-copy">
                 <h2 class="project-metric">Crafting the Experience</h2>
                 <p>
@@ -131,7 +131,7 @@
 
     <!-- RESULTS + SCROLLTHROUGH -->
     <section class="section section-soft">
-        <div class="container project-results reveal">
+        <div class="container project-results project-two-col reveal">
             <div class="project-copy">
                 <h2 class="project-metric">The Reveal</h2>
                 <p>
@@ -149,21 +149,13 @@
                     View Website
                 </a>
             </div>
-            
+
             <div class="project-media project-media--video">
-                <!-- Best: provide WEBM + MP4 fallback -->
-                <video
-                        class="project-scroll"
-                        autoplay
-                        muted
-                        loop
-                        playsinline
-                        preload="metadata"
-                        poster="./poster.jpg"
-                >
-                    <source src="" type="video/webm" />
-                    <source src="" type="video/mp4" />
-                </video>
+                <div class="video-mask">
+                    <video class="project-scroll" autoplay muted loop playsinline preload="metadata">
+                        <source src="/assets/videos/industry-salon-scroll.mp4" type="video/mp4" />
+                    </video>
+                </div>
             </div>
             
         </div>
