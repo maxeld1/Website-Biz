@@ -4233,11 +4233,11 @@ footer.site-footer .footer-bottom-inner{
     grid-template-columns: 1fr;
   }
 
-  /* Stack order: keep whatever you wrote in HTML */
-  .project-two-col .project-media,
-  .project-two-col .project-copy{
-    grid-column: auto;
-  }
+  /*!* Stack order: keep whatever you wrote in HTML *!*/
+  /*.project-two-col .project-media,*/
+  /*.project-two-col .project-copy{*/
+  /*  grid-column: auto;*/
+  /*}*/
 
   /* Slightly shorter video on mobile */
   .project-media--video .video-mask{
@@ -4532,5 +4532,200 @@ footer.site-footer .footer-bottom-inner{
     grid-column:auto !important;
   }
 }
+
+/* ================================
+   Project pages — Mobile overrides
+   Put this at the END of style.css
+================================ */
+
+/* HERO: use grid areas so we can reorder cleanly */
+.project-hero-grid{
+  grid-template-areas: "copy media"; /* desktop default */
+}
+.project-hero-copy{ grid-area: copy; }
+.project-hero-media{ grid-area: media; }
+
+/* TWO-COL: use areas so flip works on desktop */
+.project-two-col{
+  grid-template-areas: "media copy"; /* desktop default */
+}
+.project-two-col .project-media{ grid-area: media; }
+.project-two-col .project-copy{ grid-area: copy; }
+
+.project-two-col.project-split--flip{
+  grid-template-areas: "copy media"; /* desktop flipped */
+}
+
+/* ✅ Mobile stack + typography fixes */
+@media (max-width: 860px){
+
+  /* Prevent “one-word-per-line” + hyphenation */
+  .industry-salon-page,
+  .industry-salon-page p,
+  .industry-salon-page li{
+    hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word; /* safe wrapping without weird hyphenation */
+  }
+
+  /* HERO stacks: media first, then copy */
+  .project-hero-grid{
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "media"
+      "copy";
+    gap: 18px;
+    align-items: start;
+  }
+
+  .project-hero-media{
+    width: 100%;
+    justify-self: stretch;
+  }
+  .project-hero-media img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /*!* TWO-COL stacks: always media then copy (even for flip) *!*/
+  /*.project-two-col,*/
+  /*.project-two-col.project-split--flip{*/
+  /*  grid-template-columns: 1fr !important;*/
+  /*  grid-template-areas:*/
+  /*    "media"*/
+  /*    "copy";*/
+  /*  gap: 18px;*/
+  /*  align-items: start;*/
+  /*}*/
+
+  /* Make sure copy spans full width */
+  .project-copy,
+  .project-hero-copy{
+    width: 100%;
+    max-width: none;
+  }
+
+  /* Undo any “wide media” tricks on mobile */
+  .project-media--video{
+    width: 100%;
+    margin-left: 0;
+  }
+  .project-media--video .video-mask{
+    min-height: 0;
+    aspect-ratio: 16 / 10; /* keep your nice frame */
+  }
+}
+
+/* Fix: project-metric is used for BOTH tiles and headings.
+   Force headings to behave like headings. */
+@media (max-width: 860px){
+  .project-copy > h2.project-metric{
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    /* prevent letter-by-letter wrapping */
+    white-space: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+
+    /* just in case any vertical-writing styles exist */
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 860px){
+
+  /* Force the layout to single column */
+  .project-two-col,
+  .project-hero-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  /* HARD RESET the copy column (this fixes "min-content" / tiny inline-size issues) */
+  .project-copy,
+  .project-hero-copy{
+    display: block !important;
+    width: 100% !important;
+    inline-size: 100% !important;
+    max-width: 100% !important;
+    max-inline-size: 100% !important;
+    min-width: 0 !important;
+    justify-self: stretch !important;
+    align-self: start !important;
+  }
+
+  /* HARD RESET text flow */
+  .project-copy p,
+  .project-hero-copy p{
+    width: 100% !important;
+    inline-size: 100% !important;
+    max-width: none !important;
+    max-inline-size: none !important;
+
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    white-space: normal !important;
+    hyphens: none !important;
+
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+  }
+
+  /* Media should also be normal width on mobile */
+  .project-media,
+  .project-media img{
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* =========================================================
+   MOBILE: ALWAYS text first, media second (kills flipping)
+   Targets your actual markup: .container.project-two-col
+========================================================= */
+@media (max-width: 860px){
+
+  /* TWO-COL SECTIONS (Vision / Strategy / Reveal / Results) */
+  .industry-salon-page .container.project-two-col{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "copy"
+      "media" !important;
+    gap: 18px !important;
+    align-items: start !important;
+  }
+
+  .industry-salon-page .container.project-two-col > .project-copy{
+    grid-area: copy !important;
+  }
+  .industry-salon-page .container.project-two-col > .project-media{
+    grid-area: media !important;
+  }
+
+  /* HERO */
+  .industry-salon-page .container.project-hero-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "copy"
+      "media" !important;
+    gap: 18px !important;
+  }
+  .industry-salon-page .container.project-hero-grid > .project-hero-copy{
+    grid-area: copy !important;
+  }
+  .industry-salon-page .container.project-hero-grid > .project-hero-media{
+    grid-area: media !important;
+  }
+}
+
 
 
