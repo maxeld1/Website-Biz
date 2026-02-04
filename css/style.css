@@ -2927,7 +2927,7 @@ footer.site-footer .footer-bottom-inner{
 .portfolio-hero .maxw{
   text-align: center;
   margin: 12px auto 0;
-  max-width: 42ch; /* keeps the line elegant */
+  max-width: 30ch;
 }
 
 @media (max-width: 900px){
