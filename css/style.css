@@ -2924,6 +2924,12 @@ footer.site-footer .footer-bottom-inner{
   align-items: center;
 }
 
+.portfolio-hero .maxw{
+  text-align: center;
+  margin: 12px auto 0;
+  max-width: 42ch; /* keeps the line elegant */
+}
+
 @media (max-width: 900px){
   .portfolio-hero-inner{ grid-template-columns: 1fr; }
 }
