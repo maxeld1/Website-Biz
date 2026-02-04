@@ -3278,6 +3278,13 @@ footer.site-footer .footer-bottom-inner{
   position: relative;
 }
 
+@media (max-width: 768px){
+  .port-tabs .port-tab{
+    font-size: 1rem;    /* bump for readability */
+    padding: 5px 10px;   /* better touch comfort */
+  }
+}
+
 .port-tab:hover{ color: rgba(15,23,42,.92); }
 
 .port-tab::after{
