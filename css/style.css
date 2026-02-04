@@ -4042,15 +4042,15 @@ footer.site-footer .footer-bottom-inner{
   z-index: 2 !important;
 }
 
-/* ============ Project Page Layout ============ */
+/* ============ Project Page Layout (Unified) ============ */
+
+/* HERO */
 .project-hero{
   padding-top: clamp(40px, 7vw, 86px);
   padding-bottom: clamp(28px, 5vw, 56px);
 }
 
-.project-hero-copy{
-  text-align: left;
-}
+.project-hero-copy{ text-align: left; }
 
 .project-hero-grid{
   display: grid;
@@ -4059,19 +4059,20 @@ footer.site-footer .footer-bottom-inner{
   align-items: center;
 }
 
-
 .project-hero-media{
   display: flex;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .project-hero-media img{
   width: min(560px, 100%);
   height: auto;
+  display: block;
   border-radius: 22px;
   border: 1px solid rgba(20,20,20,.06);
   box-shadow: 0 18px 60px rgba(20,20,20,.12);
-  background: #fff;
+  background: var(--paper-tan, #f7f4ee);
 }
 
 .project-hero-ctas{
@@ -4082,6 +4083,7 @@ footer.site-footer .footer-bottom-inner{
   flex-wrap: wrap;
 }
 
+/* TAGS (optional) */
 .project-tags{
   list-style: none;
   padding: 0;
@@ -4090,6 +4092,7 @@ footer.site-footer .footer-bottom-inner{
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .project-tag{
   font-size: 13px;
   padding: 8px 12px;
@@ -4098,24 +4101,25 @@ footer.site-footer .footer-bottom-inner{
   background: rgba(255,255,255,.6);
 }
 
-/* Metrics band */
+/* ===== Metrics band (yours) ===== */
 .project-metrics{
   background: linear-gradient(90deg, rgba(217,119,69,.92), rgba(200,92,38,.92));
   color: #fff;
 }
-.project-metrics .container{
-  padding: 0;
-}
+.project-metrics .container{ padding: 0; }
+
 .project-metrics-grid{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
 .metric{
   padding: 26px 18px;
   text-align: center;
   border-right: 1px solid rgba(255,255,255,.18);
 }
 .metric:last-child{ border-right: 0; }
+
 .metric-value{
   font-weight: 800;
   font-size: clamp(22px, 2.4vw, 34px);
@@ -4127,95 +4131,131 @@ footer.site-footer .footer-bottom-inner{
   opacity: .95;
 }
 
-/* Split sections */
-.project-split{
+
+/* ================================
+   Unified 2-column sections
+   (Use for: Vision, Strategy, Reveal)
+================================ */
+
+/* Apply to your containers: .project-two-col */
+.project-two-col{
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 1.1fr 1fr; /* media slightly bigger by default */
   gap: clamp(18px, 3vw, 44px);
   align-items: center;
 }
-.project-split--flip{
-  grid-template-columns: 1.15fr 1fr;
-}
-.project-split--flip .project-copy{ order: 2; }
-.project-split--flip .project-media{ order: 1; }
 
+/* Make sure grid children can shrink (prevents overflow weirdness) */
+.project-two-col > *{ min-width: 0; }
+
+/* Default placement: media left, copy right */
+.project-two-col .project-media{ grid-column: 1; }
+.project-two-col .project-copy { grid-column: 2; }
+
+/* Flip modifier: put copy left, media right */
+.project-two-col.project-split--flip{
+  grid-template-columns: 1fr 1.1fr; /* keep media big on right */
+}
+.project-two-col.project-split--flip .project-copy { grid-column: 1; }
+.project-two-col.project-split--flip .project-media{ grid-column: 2; }
+
+
+/* ================================
+   Media styling (images + video)
+================================ */
+
+/* Images in section media */
 .project-media img{
   width: 100%;
   height: auto;
+  display: block;
   border-radius: 22px;
   border: 1px solid rgba(20,20,20,.06);
   box-shadow: 0 18px 60px rgba(20,20,20,.10);
+  background: var(--paper-tan, #f7f4ee);
 }
 
-/* Results block with scrollthrough */
-.project-results{
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: clamp(18px, 3vw, 44px);
-  align-items: start;
-}
-
+/* Video block: make it bigger + consistent */
 .project-media--video{
-  aspect-ratio: 16 / 9;   /* or whatever matches your capture */
-  height: auto;
-  background: var(--paper, #f7f4ee);
+  width: 110%;
+  margin-left: -5%;
 }
 
+/* The mask controls size. Make it larger here. */
 .project-media--video .video-mask{
-  overflow:hidden;
-  border-radius:18px;
-  background: var(--paper-tan);
-  transform: translateZ(0);           /* isolate layer */
-  -webkit-mask-image: -webkit-radial-gradient(white, black); /* iOS smoothing */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--paper-tan, #f7f4ee);
+  transform: translateZ(0);
+
+  /* ✅ Bigger video frame */
+  aspect-ratio: 16 / 10;                 /* taller than 16/9 */
+  min-height: clamp(260px, 32vw, 420px); /* ensures presence on desktop */
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
+/* Video fill */
 .project-scroll{
-  display:block;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-
-  transform: translate3d(0,0.75px,0) scale(1.02); /* tiny overfill */
-  backface-visibility:hidden;
-  will-change:transform;
-}
-
-/* ================================
-   Project: two-column section grid
-================================ */
-.project-two-col{
-  display: grid !important;
-  grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  gap: clamp(18px, 4vw, 46px);
-  align-items: center;
-}
-
-/* Media column sizing */
-.project-two-col .project-media,
-.project-two-col .project-hero-media{
-  min-width: 0;
-}
-
-/* Make images behave */
-.project-two-col img{
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+
+  /* tiny overfill to hide 1px artifacts */
+  transform: translate3d(0,0.75px,0) scale(1.02);
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
-/* Responsive: stack on mobile */
-@media (max-width: 860px){
-  .project-two-col{
+/* If you ever want the video to show more instead of crop:
+.project-scroll{ object-fit: contain; background: var(--paper-tan,#f7f4ee); }
+*/
+
+
+/* ================================
+   Mobile responsiveness
+================================ */
+@media (max-width: 900px){
+
+  .project-hero-grid{
     grid-template-columns: 1fr;
-    gap: 18px;
   }
-  /* optional: keep media first on mobile for some sections */
-  .project-two-col.is-media-first .project-media,
-  .project-two-col.is-media-first .project-hero-media{
-    order: -1;
+  .project-hero-media{
+    justify-content: flex-start;
   }
+  .project-hero-media img{
+    width: 100%;
+  }
+
+  .project-two-col,
+  .project-two-col.project-split--flip{
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack order: keep whatever you wrote in HTML */
+  .project-two-col .project-media,
+  .project-two-col .project-copy{
+    grid-column: auto;
+  }
+
+  /* Slightly shorter video on mobile */
+  .project-media--video .video-mask{
+    min-height: 220px;
+    aspect-ratio: 16 / 11;
+  }
+
+  /* metrics */
+  .project-metrics-grid{
+    grid-template-columns: 1fr;
+  }
+  .metric{
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.18);
+  }
+  .metric:last-child{ border-bottom: 0; }
 }
+
 
 /* Quote */
 .quote-card{
@@ -4462,5 +4502,35 @@ footer.site-footer .footer-bottom-inner{
 /*.industry-salon-page .metric + .metric{*/
 /*  border-left: 1px solid rgba(0,0,0,.08);*/
 /*}*/
+
+/* FORCE: project-two-col always wins even if project-split/results still exist */
+.container.project-two-col{
+  display: grid !important;
+  grid-template-columns: 1.1fr 1fr !important;
+  gap: clamp(18px, 3vw, 44px) !important;
+  align-items: center !important;
+}
+
+.container.project-two-col > *{ min-width:0; }
+
+.container.project-two-col .project-media{ grid-column:1 !important; }
+.container.project-two-col .project-copy { grid-column:2 !important; }
+
+.container.project-two-col.project-split--flip{
+  grid-template-columns: 1fr 1.1fr !important;
+}
+.container.project-two-col.project-split--flip .project-copy { grid-column:1 !important; }
+.container.project-two-col.project-split--flip .project-media{ grid-column:2 !important; }
+
+@media (max-width: 900px){
+  .container.project-two-col,
+  .container.project-two-col.project-split--flip{
+    grid-template-columns: 1fr !important;
+  }
+  .container.project-two-col .project-media,
+  .container.project-two-col .project-copy{
+    grid-column:auto !important;
+  }
+}
 
 
