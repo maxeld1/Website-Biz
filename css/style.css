@@ -4925,7 +4925,7 @@ footer.site-footer .footer-bottom-inner{
 /* Desktop default: tabs visible, dropdown hidden */
 /* Mobile dropdown container */
 .port-tabs{ display: flex !important; }
-.port-filter{ display: none !important; }
+.port-filter{ display: none !important; align-items: center;}
 
 @media (max-width: 860px){
   .port-tabs{ display: none !important; }
