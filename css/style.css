@@ -5080,4 +5080,40 @@ footer.site-footer .footer-bottom-inner{
   .hero.hero-premium .hero-subtitle{ color: rgba(20,20,20,1); }
 }
 
+/* ================================
+   intl-tel-input: prevent mega dropdown
+================================ */
+
+/* Keep the dropdown constrained and floating */
+.iti { width: 100%; } /* your input can still be full width */
+
+.iti__country-list{
+  background: #ffffff;
+  backdrop-filter: none !important;
+  width: min(320px, calc(100vw - 32px)) !important; /* small dropdown */
+  max-width: 320px !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: auto !important;
+
+  max-height: 260px !important;
+  overflow-y: auto !important;
+
+  box-sizing: border-box !important;
+  z-index: 9999 !important;
+}
+
+/* In case you have global UL rules forcing full width */
+.iti__country-list,
+.iti__country-list li{
+  width: auto !important;
+}
+
+/* Keep flags sane if you have global img rules */
+.iti__flag,
+.iti__flag-box,
+.iti__country-list img{
+  max-width: none !important;
+}
+
 
