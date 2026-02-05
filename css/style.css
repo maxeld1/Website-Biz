@@ -4989,6 +4989,7 @@ footer.site-footer .footer-bottom-inner{
     .port-filter{
       margin-top: 18px !important;
       margin-bottom: 24px !important;
+      text-align-last: center;
     }
     .port-grid{ margin-top: 10px; }
   }
