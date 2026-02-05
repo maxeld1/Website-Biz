@@ -512,6 +512,35 @@
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
     });
 
+    // ✅ iOS-only: force dropdown position/size to match input
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    function positionDropdown(){
+      const list = document.querySelector(".iti__country-list");
+      if (!list) return;
+
+      const r = phoneInput.getBoundingClientRect();
+      const pad = 12;
+      const w = Math.min(320, window.innerWidth - pad * 2);
+
+      list.style.left = Math.max(pad, r.left) + "px";
+      list.style.top  = (r.bottom + 10) + "px";
+      list.style.width = w + "px";
+    }
+
+    if (isIOS){
+      phoneInput.addEventListener("open:countrydropdown", () => {
+        positionDropdown();
+        // keep it stable if Safari shifts viewport during keyboard/scroll
+        requestAnimationFrame(positionDropdown);
+        setTimeout(positionDropdown, 50);
+      });
+
+      window.addEventListener("scroll", positionDropdown, { passive: true });
+      window.addEventListener("resize", positionDropdown, { passive: true });
+    }
+
     const form = phoneInput.closest("form");
     const hidden = document.querySelector("#phone_e164");
     if (form && hidden) {
