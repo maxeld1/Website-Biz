@@ -3494,6 +3494,44 @@ footer.site-footer .footer-bottom-inner{
   display: grid;
   place-items: center;
 }
+
+/* ABOUT: WHO I AM + WHAT I DO (uses your existing project-two-col pattern) */
+.about-page .project-two-col{
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: clamp(18px, 3vw, 44px);
+  align-items: center;          /* ✅ vertical centering on desktop */
+}
+
+/* Make sure the right column (card) centers nicely */
+.about-page .project-media{
+  display: flex;
+  align-items: center;          /* ✅ centers the card within the column */
+  justify-content: center;
+}
+
+/* Optional: keep the card a consistent max width so it "lines up" visually */
+.about-page .project-media .card{
+  width: min(520px, 100%);
+}
+
+/* Mobile: stack and ensure media is NOT hidden */
+@media (max-width: 860px){
+  .about-page .project-two-col{
+    grid-template-columns: 1fr;
+  }
+
+  /* ✅ this is the “it’s missing” fix if any other CSS hides it */
+  .about-page .project-media{
+    display: flex !important;
+    margin-top: 14px;
+  }
+
+  /* Optional: if you want the text first, card second (current order already does that) */
+  .about-page .project-copy{ order: 1; }
+  .about-page .project-media{ order: 2; }
+}
+
 .ah-orb{
   position:absolute;
   border-radius: 999px;
@@ -5107,5 +5145,12 @@ footer.site-footer .footer-bottom-inner{
 
   .iti__search-input{
     background: #fff !important;
+  }
+}
+
+/* ABOUT page: hide "What I'm best at" card on mobile */
+@media (max-width: 860px){
+  .about-page .project-media{
+    display: none !important;
   }
 }
