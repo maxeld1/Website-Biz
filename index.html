@@ -492,44 +492,27 @@
     const phoneInput = document.querySelector("#phone");
     if (!phoneInput) return;
 
-    const iti = window.intlTelInput(phoneInput, {
+    const isIOS =
+            /iP(ad|hone|od)/.test(navigator.userAgent) ||
+            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
+
+    const opts = {
       separateDialCode: true,
       initialCountry: "us",
       allowDropdown: true,
       nationalMode: true,
       formatOnDisplay: true,
-      dropdownContainer: document.body,   // ✅ key fix
+      useFullscreenPopup: false, // ✅ KEY: disables iOS fullscreen dropdown
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
-    });
+    };
 
-    // ✅ iOS-only: force dropdown position/size to match input
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-
-    function positionDropdown(){
-      const list = document.querySelector(".iti__country-list");
-      if (!list) return;
-
-      const r = phoneInput.getBoundingClientRect();
-      const pad = 12;
-      const w = Math.min(320, window.innerWidth - pad * 2);
-
-      list.style.left = Math.max(pad, r.left) + "px";
-      list.style.top  = (r.bottom + 10) + "px";
-      list.style.width = w + "px";
+    // ✅ Keep your "append to body" behavior for desktop / non-iOS
+    // iOS + body container is what tends to get weird with scrolling/keyboard.
+    if (!isIOS) {
+      opts.dropdownContainer = document.body;
     }
 
-    if (isIOS){
-      phoneInput.addEventListener("open:countrydropdown", () => {
-        positionDropdown();
-        // keep it stable if Safari shifts viewport during keyboard/scroll
-        requestAnimationFrame(positionDropdown);
-        setTimeout(positionDropdown, 50);
-      });
-
-      window.addEventListener("scroll", positionDropdown, { passive: true });
-      window.addEventListener("resize", positionDropdown, { passive: true });
-    }
+    const iti = window.intlTelInput(phoneInput, opts);
 
     const form = phoneInput.closest("form");
     const hidden = document.querySelector("#phone_e164");
