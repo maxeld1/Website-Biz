@@ -4952,6 +4952,8 @@ footer.site-footer .footer-bottom-inner{
     font: inherit;
     font-weight: 600;
     letter-spacing: .2px;
+    text-align: center;
+    text-align-last: center;
 
     box-shadow:
             0 1px 0 rgba(255,255,255,.65) inset,
