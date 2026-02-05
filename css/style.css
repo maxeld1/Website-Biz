@@ -1443,34 +1443,6 @@ html, body{
   margin: 6px 0 0;
 }
 
-/*!* === intl-tel-input (v19+) positioning fix === *!*/
-/*.contact-v2 .iti{*/
-/*  width: 100% !important;*/
-/*  position: relative !important;*/
-/*}*/
-
-/*!* The little flag/dial-code button wrapper *!*/
-/*.contact-v2 .iti__flag-container{*/
-/*  position: absolute !important;*/
-/*  left: 12px !important;*/
-/*  top: 50% !important;*/
-/*  transform: translateY(-50%) !important;*/
-/*  z-index: 2 !important;*/
-/*}*/
-
-/*!* Make the clickable flag area vertically centered *!*/
-/*.contact-v2 .iti__selected-flag{*/
-/*  display: flex !important;*/
-/*  align-items: center !important;*/
-/*  padding: 0 10px !important;*/
-/*}*/
-
-/*!* Give the input text room so it never overlaps *!*/
-/*.contact-v2 .iti input{*/
-/*  padding-left: 104px !important;*/
-/*  box-sizing: border-box !important;*/
-/*}*/
-
 /* CTA should not be comically tall if global styles do that */
 .contact-v2 .contact-v2-submit{
   width: 100% !important;
@@ -1929,25 +1901,6 @@ footer.site-footer .footer-bottom-inner{
   overflow: visible !important;
   z-index: 5 !important;
 }
-
-/*!* === intl-tel-input: prevent text under flag/dial code === *!*/
-/*.contact-v2 .iti {*/
-/*  width: 100% !important;*/
-/*}*/
-
-/*.contact-v2 .iti input#phone {*/
-/*  padding-left: 75px !important; !* increase until it clears fully *!*/
-/*}*/
-
-/*!* If your build uses separateDialCode, this selector is the most reliable *!*/
-/*.contact-v2 .iti--separate-dial-code input#phone {*/
-/*  padding-left: 132px !important;*/
-/*}*/
-
-/*!* Make sure the flag sits above the input text *!*/
-/*.contact-v2 .iti__flag-container {*/
-/*  z-index: 5 !important;*/
-/*}*/
 
 
 /* ===== WORK TILE: FINAL OVERRIDES ===== */
@@ -2898,34 +2851,6 @@ footer.site-footer .footer-bottom-inner{
     0 0 0 3px rgba(217,119,69,.22),
     0 10px 30px rgba(217,119,69,.18);
 }
-
-/*!* intl-tel-input: keep the country dropdown from taking over the page *!*/
-/*.iti {*/
-/*  width: 100%;*/
-/*}*/
-
-/*.iti__country-list {*/
-/*  padding-top: 8px; !* keep breathing room *!*/
-/*}*/
-
-/*.iti__search-input {*/
-/*  box-sizing: border-box;*/
-/*  width: calc(100% - 24px);*/
-/*  margin: 0 12px 8px 12px; !* centers it perfectly *!*/
-/*  padding: 10px 12px;*/
-/*  border-radius: 999px; !* matches your soft UI *!*/
-/*}*/
-
-/*!* optional: slightly tighter rows so you see more countries at once *!*/
-/*.iti__country{*/
-/*  padding-top: 10px;*/
-/*  padding-bottom: 10px;*/
-/*}*/
-
-/*!* optional: ensure the dropdown sits above other UI without weird clipping *!*/
-/*.iti__country-list{*/
-/*  z-index: 9999;*/
-/*}*/
 
 /* ================================
    PORTFOLIO — Gallery-grade polish
@@ -4035,6 +3960,58 @@ footer.site-footer .footer-bottom-inner{
   z-index: 100000 !important;
 }
 
+/* ================================
+   intl-tel-input: prevent mega dropdown
+================================ */
+
+/* Keep the dropdown constrained and floating */
+.iti { width: 100%; } /* your input can still be full width */
+
+.iti__country-list{
+  background: #ffffff;
+  backdrop-filter: none !important;
+  width: min(320px, calc(100vw - 32px)) !important; /* small dropdown */
+  max-width: 320px !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: auto !important;
+
+  max-height: 260px !important;
+  overflow-y: auto !important;
+
+  box-sizing: border-box !important;
+  z-index: 9999 !important;
+}
+
+/* In case you have global UL rules forcing full width */
+.iti__country-list,
+.iti__country-list li{
+  width: auto !important;
+}
+
+/* Keep flags sane if you have global img rules */
+.iti__flag,
+.iti__flag-box,
+.iti__country-list img{
+  max-width: none !important;
+}
+
+/* intl-tel-input dropdown: make it opaque + above everything */
+.iti__country-list{
+  background: #fff !important;
+  opacity: 1 !important;
+  z-index: 99999 !important;
+  box-shadow: 0 18px 60px rgba(20,20,20,.18) !important;
+  border: 1px solid rgba(20,20,20,.12) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.iti__search-input{
+  background: #fff !important;
+  border-bottom: 1px solid rgba(20,20,20,.10) !important;
+}
+
 .hero.hero-premium {
   background-image:
           linear-gradient(
@@ -5080,72 +5057,4 @@ footer.site-footer .footer-bottom-inner{
   /* slightly stronger text contrast */
   .hero.hero-premium .hero-title{ color:#111; }
   .hero.hero-premium .hero-subtitle{ color: rgba(20,20,20,1); }
-}
-
-/* ================================
-   intl-tel-input: prevent mega dropdown
-================================ */
-
-/* Keep the dropdown constrained and floating */
-.iti { width: 100%; } /* your input can still be full width */
-
-.iti__country-list{
-  background: #ffffff;
-  backdrop-filter: none !important;
-  width: min(320px, calc(100vw - 32px)) !important; /* small dropdown */
-  max-width: 320px !important;
-  position: absolute !important;
-  left: 0 !important;
-  right: auto !important;
-
-  max-height: 260px !important;
-  overflow-y: auto !important;
-
-  box-sizing: border-box !important;
-  z-index: 9999 !important;
-}
-
-/* In case you have global UL rules forcing full width */
-.iti__country-list,
-.iti__country-list li{
-  width: auto !important;
-}
-
-/* Keep flags sane if you have global img rules */
-.iti__flag,
-.iti__flag-box,
-.iti__country-list img{
-  max-width: none !important;
-}
-
-/*!* === intl-tel-input dropdown: opaque + on top === *!*/
-/*.iti { width: 100%; }*/
-/*.iti__country-list{*/
-/*  background: #fff !important;*/
-/*  opacity: 1 !important;*/
-/*  border: 1px solid rgba(20,20,20,.14) !important;*/
-/*  box-shadow: 0 18px 50px rgba(20,20,20,.18) !important;*/
-/*  border-radius: 12px !important;*/
-/*  overflow: auto !important;*/
-/*  max-height: 260px !important;*/
-/*  z-index: 99999 !important;*/
-/*}*/
-/*.iti__country, .iti__divider, .iti__search-input{*/
-/*  background: #fff !important;*/
-/*}*/
-
-/* intl-tel-input dropdown: make it opaque + above everything */
-.iti__country-list{
-  background: #fff !important;
-  opacity: 1 !important;
-  z-index: 99999 !important;
-  box-shadow: 0 18px 60px rgba(20,20,20,.18) !important;
-  border: 1px solid rgba(20,20,20,.12) !important;
-  border-radius: 14px !important;
-  overflow: hidden !important;
-}
-
-.iti__search-input{
-  background: #fff !important;
-  border-bottom: 1px solid rgba(20,20,20,.10) !important;
 }
