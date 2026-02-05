@@ -4933,9 +4933,13 @@ footer.site-footer .footer-bottom-inner{
 
 @media (max-width: 860px){
   .port-tabs{ display: none !important; }
-  .port-filter{ display: block !important; }
+  .port-filter{ display: block !important; margin-top: 18px !important; margin-bottom: 22px !important;}
   .port-select{
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .port-grid{
+    margin-top: 8px !important;
   }
 
   /* The select itself */
