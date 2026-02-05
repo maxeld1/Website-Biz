@@ -3488,7 +3488,12 @@ footer.site-footer .footer-bottom-inner{
 }
 
 /* Hero art panel */
-.about-hero-art{ position: relative; min-height: 270px; }
+.about-hero-art{
+  position: relative;
+  min-height: 270px;
+  display: grid;
+  place-items: center;
+}
 .ah-orb{
   position:absolute;
   border-radius: 999px;
@@ -3507,13 +3512,25 @@ footer.site-footer .footer-bottom-inner{
 }
 
 .ah-frame{
-  position:absolute;
-  inset: 24px 14px 24px 14px;
+  position: absolute;
+  inset: 24px 14px;
   border-radius: 26px;
-  background: rgba(255,255,255,.55);
+  background: rgba(255,255,255,.01);
   border: 1px solid rgba(15,23,42,.08);
   box-shadow: 0 30px 90px rgba(2,6,23,.10);
   overflow: hidden;
+
+  display: grid;
+  place-items: center;
+}
+
+.ah-frame img{
+  max-width: 72%;
+  max-height: 72%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .ah-frame-inner{
