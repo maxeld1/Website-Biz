@@ -5118,4 +5118,34 @@ footer.site-footer .footer-bottom-inner{
   max-width: none !important;
 }
 
+/*!* === intl-tel-input dropdown: opaque + on top === *!*/
+/*.iti { width: 100%; }*/
+/*.iti__country-list{*/
+/*  background: #fff !important;*/
+/*  opacity: 1 !important;*/
+/*  border: 1px solid rgba(20,20,20,.14) !important;*/
+/*  box-shadow: 0 18px 50px rgba(20,20,20,.18) !important;*/
+/*  border-radius: 12px !important;*/
+/*  overflow: auto !important;*/
+/*  max-height: 260px !important;*/
+/*  z-index: 99999 !important;*/
+/*}*/
+/*.iti__country, .iti__divider, .iti__search-input{*/
+/*  background: #fff !important;*/
+/*}*/
 
+/* intl-tel-input dropdown: make it opaque + above everything */
+.iti__country-list{
+  background: #fff !important;
+  opacity: 1 !important;
+  z-index: 99999 !important;
+  box-shadow: 0 18px 60px rgba(20,20,20,.18) !important;
+  border: 1px solid rgba(20,20,20,.12) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.iti__search-input{
+  background: #fff !important;
+  border-bottom: 1px solid rgba(20,20,20,.10) !important;
+}
