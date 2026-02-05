@@ -4942,9 +4942,17 @@ footer.site-footer .footer-bottom-inner{
   .port-select{
     -webkit-appearance: none;
     appearance: none;
-    height: 46px;
-    padding: 12px 44px 12px 16px;
+
     width: 220px;
+    height: 46px;
+
+    /* ✅ Use symmetric padding so centered text isn't fighting iOS */
+    padding: 0 18px;
+
+    /* ✅ True vertical centering */
+    line-height: 46px;
+
+    /* keep yours */
     border-radius: 14px;
     border: 1px solid rgba(20,20,20,.10);
     background: rgba(255,255,255,.75);
@@ -4952,15 +4960,19 @@ footer.site-footer .footer-bottom-inner{
     font: inherit;
     font-weight: 600;
     letter-spacing: .2px;
+
     text-align: center;
     text-align-last: center;
 
     box-shadow:
-            0 1px 0 rgba(255,255,255,.65) inset,
-            0 10px 30px rgba(20,20,20,.08);
+      0 1px 0 rgba(255,255,255,.65) inset,
+      0 10px 30px rgba(20,20,20,.08);
 
     outline: none;
     cursor: pointer;
+
+    /* ✅ prevents tiny text clipping on iOS */
+    -webkit-font-smoothing: antialiased;
   }
 
   /* Focus state (subtle + premium) */
