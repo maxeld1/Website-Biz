@@ -4928,16 +4928,12 @@ footer.site-footer .footer-bottom-inner{
 
 /* Desktop default: tabs visible, dropdown hidden */
 /* Mobile dropdown container */
-.port-filter{
-  position: relative;
-  display: none;              /* show only on mobile below */
-  width: min(320px, 92vw);
-  margin: 16px auto 8px;
-}
+.port-tabs{ display: flex !important; }
+.port-filter{ display: none !important; }
 
 @media (max-width: 860px){
   .port-tabs{ display: none !important; }
-  .port-filter{ display: block; margin: 10px 0 18px; }
+  .port-filter{ display: block !important; }
   .port-select{
     -webkit-tap-highlight-color: transparent;
   }
