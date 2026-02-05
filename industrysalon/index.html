@@ -17,8 +17,8 @@
 <main class="industry-salon-page">
 
     <!-- HERO -->
-    <section class="section section-white project-hero">
-        <div class="container project-hero-grid reveal">
+    <section class="section section-white project-hero reveal">
+        <div class="container project-hero-grid">
 
             <!-- LEFT: copy -->
             <div class="project-hero-copy">
@@ -74,8 +74,8 @@
 <!--            </div>-->
 <!--        </div>-->
 <!--    </section>-->
-    <section class="metrics-band">
-        <div class="metrics-row reveal">
+    <section class="metrics-band reveal">
+        <div class="metrics-row">
             <div class="metric project-metric">Fast<br><span>Load time improvements</span></div>
             <div class="metric project-metric">A11y<br><span>Accessibility-focused UI</span></div>
             <div class="metric project-metric">Clean<br><span>Responsive layout system</span></div>
@@ -83,8 +83,8 @@
     </section>
 
     <!-- CHALLENGE -->
-    <section class="section section-soft">
-        <div class="container project-two-col reveal">
+    <section class="section section-soft reveal">
+        <div class="container project-two-col">
             <div class="project-media">
                 <img src="/assets/images/project-images/scissors.jpg" alt="" loading="lazy">
             </div>
@@ -105,8 +105,8 @@
     </section>
 
     <!-- STRATEGY -->
-    <section class="section section-white">
-        <div class="container project-two-col project-split--flip reveal">
+    <section class="section section-white reveal">
+        <div class="container project-two-col project-split--flip">
             <div class="project-copy">
                 <h2 class="project-metric">Crafting the Experience</h2>
                 <p>
@@ -129,8 +129,8 @@
     </section>
 
     <!-- RESULTS + SCROLLTHROUGH -->
-    <section class="section section-soft">
-        <div class="container project-results project-two-col reveal">
+    <section class="section section-soft reveal">
+        <div class="container project-results project-two-col">
             <div class="project-media project-media--video">
                 <div class="video-mask">
                     <video class="project-scroll" autoplay muted loop playsinline preload="metadata">
@@ -160,8 +160,10 @@
     </section>
 
     <!-- TESTIMONIAL (optional) -->
-    <section class="section section-white">
-        <div class="container reveal">
+    <section class="section section-white reveal">
+
+        <p class="kicker">From the Client</p>
+        <div class="container">
             <figure class="quote-card">
                 <figcaption class="quote-meta">
                     <strong>Mary Beth Small</strong>
@@ -174,27 +176,79 @@
         </div>
     </section>
 
-    <!-- RELATED PROJECTS -->
-    <section class="section section-soft">
-        <div class="container reveal">
-            <p class="section-kicker">Success Stories</p>
-            <h2 class="section-title-2">Related Projects</h2>
+    <!-- PROJECTS -->
+    <section class="section section-soft reveal">
+        <div class="container projects">
 
-            <div class="related-grid">
-                <a class="related-tile" href="/projects/concord-limo/">
-                    <img src="/assets/images/previews/concord_limo_preview.png" alt="" loading="lazy">
-<!--                    <span class="related-title">Concord Limo</span>-->
-                </a>
-
-                <a class="related-tile" href="/projects/riley-lab-portal/">
-                    <img src="/assets/images/previews/riley_portal_preview.png" alt="" loading="lazy">
-<!--                    <span class="related-title">Riley Lab Portal</span>-->
-                </a>
+            <div class="container">
+                <p class="kicker">Projects</p>
+                <h1>Recent builds</h1>
+                <p class="maxw">
+                    A few examples of design-forward sites and pages.
+                </p>
             </div>
 
-            <div class="center">
-                <a class="btn btn-primary center-btn" href="/contact/">Let’s Chat</a>
+            <div class="port-filter" aria-label="Portfolio filter">
+                <label class="sr-only" for="portFilter">Filter projects</label>
+                <select id="portFilter" class="port-select">
+                    <option value="all">All</option>
+                    <option value="business">Business</option>
+                    <option value="portfolio">Portfolio</option>
+                    <option value="branding">Branding</option>
+                    <option value="development">Development</option>
+                    <option value="internal">Internal</option>
+                </select>
+
+                <!-- custom chevron -->
+                <svg class="port-select-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
             </div>
+
+            <!-- FILTER TABS (centered like the reference) -->
+            <nav class="port-tabs" aria-label="Portfolio categories">
+                <button class="port-tab is-active" type="button" data-filter="all">All</button>
+                <button class="port-tab" type="button" data-filter="business">Business</button>
+                <button class="port-tab" type="button" data-filter="portfolio">Portfolio</button>
+                <button class="port-tab" type="button" data-filter="branding">Branding</button>
+                <button class="port-tab" type="button" data-filter="development">Development</button>
+                <button class="port-tab" type="button" data-filter="internal">Internal</button>
+            </nav>
+
+            <!-- GRID -->
+            <div class="port-grid">
+
+                <!-- Tile -->
+                <a class="port-tile" href="/projects/industrysalon/" data-tags="business branding" aria-label="Industry Salon">
+                    <img class="port-bg" src="../assets/images/previews/industry_salon_preview.png" alt="" loading="lazy">
+                    <div class="port-overlay" aria-hidden="true">
+                        <img class="port-logo" src="../assets/images/logos/industry_salon_logo_white_transparent.png" alt="">
+                    </div>
+                </a>
+
+                <a class="port-tile" href="#" data-tags="portfolio design" aria-label="Richie Izzo - Portfolio">
+                    <img class="port-bg" src="../assets/images/previews/richie_izzo_preview.png" alt="" loading="lazy">
+                    <div class="port-overlay" aria-hidden="true">
+                        <img class="port-logo" src="../assets/images/logos/richie_izzo_logo_white_transparent.png" alt="">
+                    </div>
+                </a>
+
+                <a class="port-tile" href="#" data-tags="internal development" aria-label="Riley Lab Portal">
+                    <img class="port-bg" src="../assets/images/previews/riley_portal_preview.png" alt="" loading="lazy">
+                    <div class="port-overlay" aria-hidden="true">
+                        <img class="port-logo" src="../assets/images/logos/riley_lab_logo_white_transparent.png" alt="">
+                    </div>
+                </a>
+
+                <a class="port-tile" href="#" data-tags="business development branding" aria-label="Concord Limo LLC">
+                    <img class="port-bg" src="../assets/images/previews/concord_limo_preview.png" alt="" loading="lazy">
+                    <div class="port-overlay" aria-hidden="true">
+                        <img class="port-logo" src="../assets/images/logos/concord_limo_logo_white_transparent.png" alt="">
+                    </div>
+                </a>
+
+            </div>
+
         </div>
     </section>
 
@@ -204,5 +258,66 @@
 
 <script src="/js/partials.js"></script>
 <script src="/js/main.js"></script>
+
+<script>
+    (function () {
+        const tabs   = Array.from(document.querySelectorAll('.port-tab'));
+        const tiles  = Array.from(document.querySelectorAll('.port-tile'));
+        const select = document.querySelector('#portFilter');
+        const DURATION = 240; // should match CSS timing (~220ms)
+
+        const getTags = (tile) =>
+            (tile.getAttribute('data-tags') || '').toLowerCase();
+
+        const matches = (tile, filter) => {
+            if (filter === 'all') return true;
+            return getTags(tile).includes(filter);
+        };
+
+        function showTile(tile){
+            tile.classList.remove('is-gone');
+            requestAnimationFrame(() => tile.classList.remove('is-hidden'));
+        }
+
+        function hideTile(tile){
+            tile.classList.add('is-hidden');
+            window.setTimeout(() => {
+                if (tile.classList.contains('is-hidden')) tile.classList.add('is-gone');
+            }, DURATION);
+        }
+
+        function applyFilter(filter){
+            // update active tab UI (desktop)
+            tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('data-filter') === filter));
+
+            // update select UI (mobile)
+            if (select && select.value !== filter) select.value = filter;
+
+            // apply to tiles
+            tiles.forEach(tile => {
+                if (matches(tile, filter)) showTile(tile);
+                else hideTile(tile);
+            });
+        }
+
+        // Desktop tabs
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                applyFilter(tab.getAttribute('data-filter'));
+            });
+        });
+
+        // Mobile dropdown
+        if (select){
+            select.addEventListener('change', () => {
+                applyFilter(select.value);
+            });
+        }
+
+        // Initialize to "all" (or keep whatever is-active says)
+        const activeTab = tabs.find(t => t.classList.contains('is-active'));
+        applyFilter(activeTab ? activeTab.getAttribute('data-filter') : 'all');
+    })();
+</script>
 </body>
 </html>

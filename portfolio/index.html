@@ -39,6 +39,23 @@
   <section class="section section-white">
     <div class="container projects">
 
+      <div class="port-filter" aria-label="Portfolio filter">
+        <label class="sr-only" for="portFilter">Filter projects</label>
+        <select id="portFilter" class="port-select">
+          <option value="all">All</option>
+          <option value="business">Business</option>
+          <option value="portfolio">Portfolio</option>
+          <option value="branding">Branding</option>
+          <option value="development">Development</option>
+          <option value="internal">Internal</option>
+        </select>
+
+        <!-- custom chevron -->
+        <svg class="port-select-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 10l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
       <!-- FILTER TABS (centered like the reference) -->
       <nav class="port-tabs" aria-label="Portfolio categories">
         <button class="port-tab is-active" type="button" data-filter="all">All</button>
@@ -53,7 +70,7 @@
       <div class="port-grid">
 
         <!-- Tile -->
-        <a class="port-tile" href="/projects/industrysalon/" data-tags="business branding" aria-label="Industry Salon">
+        <a class="port-tile" href="/industrysalon/" data-tags="business branding" aria-label="Industry Salon">
           <img class="port-bg" src="../assets/images/previews/industry_salon_preview.png" alt="" loading="lazy">
           <div class="port-overlay" aria-hidden="true">
             <img class="port-logo" src="../assets/images/logos/industry_salon_logo_white_transparent.png" alt="">
@@ -165,11 +182,11 @@
   });
 </script>
 
-<!-- Filter behavior (small + clean) -->
 <script>
   (function () {
-    const tabs  = document.querySelectorAll('.port-tab');
-    const tiles = Array.from(document.querySelectorAll('.port-tile'));
+    const tabs   = Array.from(document.querySelectorAll('.port-tab'));
+    const tiles  = Array.from(document.querySelectorAll('.port-tile'));
+    const select = document.querySelector('#portFilter');
     const DURATION = 240; // should match CSS timing (~220ms)
 
     const getTags = (tile) =>
@@ -180,42 +197,52 @@
       return getTags(tile).includes(filter);
     };
 
-    const setActive = (tab) => {
-      tabs.forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
-    };
-
     function showTile(tile){
-      tile.classList.remove('is-gone');     // ensure it can render
-      // next frame so display change applies before opacity anim
-      requestAnimationFrame(() => {
-        tile.classList.remove('is-hidden');
-      });
+      tile.classList.remove('is-gone');
+      requestAnimationFrame(() => tile.classList.remove('is-hidden'));
     }
 
     function hideTile(tile){
       tile.classList.add('is-hidden');
-      // after fade completes, remove from layout
       window.setTimeout(() => {
-        if (tile.classList.contains('is-hidden')) {
-          tile.classList.add('is-gone');
-        }
+        if (tile.classList.contains('is-hidden')) tile.classList.add('is-gone');
       }, DURATION);
     }
 
+    function applyFilter(filter){
+      // update active tab UI (desktop)
+      tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('data-filter') === filter));
+
+      // update select UI (mobile)
+      if (select && select.value !== filter) select.value = filter;
+
+      // apply to tiles
+      tiles.forEach(tile => {
+        if (matches(tile, filter)) showTile(tile);
+        else hideTile(tile);
+      });
+    }
+
+    // Desktop tabs
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        const filter = tab.getAttribute('data-filter');
-        setActive(tab);
-
-        tiles.forEach(tile => {
-          if (matches(tile, filter)) showTile(tile);
-          else hideTile(tile);
-        });
+        applyFilter(tab.getAttribute('data-filter'));
       });
     });
+
+    // Mobile dropdown
+    if (select){
+      select.addEventListener('change', () => {
+        applyFilter(select.value);
+      });
+    }
+
+    // Initialize to "all" (or keep whatever is-active says)
+    const activeTab = tabs.find(t => t.classList.contains('is-active'));
+    applyFilter(activeTab ? activeTab.getAttribute('data-filter') : 'all');
   })();
 </script>
+
 
 
 </body>

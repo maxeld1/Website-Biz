@@ -31,7 +31,20 @@
       root.style.setProperty('--header-h-mobile', h); // mobile should match actual header height
     };
 
-    setH(); addEventListener('resize', setH, {passive:true}); addEventListener('orientationchange', setH);
+    setH();
+
+    // iOS Safari fires "resize" during scroll (URL bar collapsing/expanding).
+    // Can cause a feedback loop if CSS uses --header-h in the header itself.
+    // do NOT bind resize on mobile.
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+        if (!isIOS) {
+          addEventListener('resize', () => requestAnimationFrame(setH), { passive: true });
+        }
+
+    // Orientation changes are real layout changes — keep this
+        addEventListener('orientationchange', () => setTimeout(setH, 50));
+
 
     const lock = ()=>document.body.classList.add('no-scroll');
     const unlock = ()=>document.body.classList.remove('no-scroll');
