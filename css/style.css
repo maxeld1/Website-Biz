@@ -753,7 +753,7 @@ header .btn:hover{
 }
 .logo-track{
   display:block;
-  gap: 150px;
+  gap: 120px;
   height: 96px;
   width: auto;
   max-width: 160px;
@@ -808,6 +808,23 @@ html, body{
 .logo-marquee{
   padding: 0 6px;
 }
+
+@media (max-width: 860px){
+  .logo-track{
+    gap: 55px;
+    height: 72px;
+  }
+
+  .logo-track img{
+    height: 36px;
+    opacity: .85;
+  }
+
+  .logo-marquee{
+    padding: 0 4px;   /* prevent edge crowding */
+  }
+}
+
 
 /* ================================
    10) WORK / PROJECT CARDS
