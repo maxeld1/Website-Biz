@@ -1780,7 +1780,7 @@ footer.site-footer .footer-bottom-inner{
 .about-media {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .about-media img {
@@ -3488,7 +3488,7 @@ footer.site-footer .footer-bottom-inner{
 }
 
 /* Hero art panel */
-.about-hero-art{ position: relative; min-height: 340px; }
+.about-hero-art{ position: relative; min-height: 270px; }
 .ah-orb{
   position:absolute;
   border-radius: 999px;
