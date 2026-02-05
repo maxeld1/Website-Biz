@@ -4973,7 +4973,7 @@ footer.site-footer .footer-bottom-inner{
   }
 
   /* Custom chevron */
-  .port-select-icon{
+/*  .port-select-icon{
     position: absolute;
     right: 14px;
     top: 50%;
@@ -4982,7 +4982,7 @@ footer.site-footer .footer-bottom-inner{
     height: 18px;
     pointer-events: none;
     opacity: .7;
-  }
+  }*/
 
 }
 
