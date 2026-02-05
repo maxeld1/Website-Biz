@@ -5027,3 +5027,57 @@ footer.site-footer .footer-bottom-inner{
   white-space: nowrap;
   border: 0;
 }
+
+/* ================================
+   HERO — mobile readability fix
+   (veil over background image)
+================================ */
+
+/* Make hero a stacking context */
+.hero.hero-premium{
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ensure content is above the overlay */
+.hero.hero-premium .hero-grid{
+  position: relative;
+  z-index: 1;
+}
+
+/* HERO — mobile: glass panel behind text (instead of washing whole image) */
+@media (max-width: 860px){
+
+  /* turn OFF the section-wide veil you added */
+  .hero.hero-premium::before,
+  .hero.hero-premium::after{
+    content: none !important;
+  }
+
+  /* background image stays visible */
+  .hero.hero-premium{
+    background-position: 70% center; /* tweak: 60–85% until it looks perfect */
+    background-size: cover;
+  }
+
+  /* “glass card” behind the copy */
+  .hero.hero-premium .hero-copy{
+    display: inline-block;
+    max-width: 44ch;
+    padding: 18px 18px 16px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,.60);
+    border: 1px solid rgba(20,20,20,.08);
+    box-shadow: 0 16px 40px rgba(20,20,20,.10);
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  /* slightly stronger text contrast */
+  .hero.hero-premium .hero-title{ color:#111; }
+  .hero.hero-premium .hero-subtitle{ color: rgba(20,20,20,1); }
+}
+
+
