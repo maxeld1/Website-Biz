@@ -4944,7 +4944,7 @@ footer.site-footer .footer-bottom-inner{
     appearance: none;
 
     width: 220px;
-    height: 46px;
+    height: auto;
 
     /* ✅ Use symmetric padding so centered text isn't fighting iOS */
     padding: 0 18px;
