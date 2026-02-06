@@ -131,13 +131,46 @@
     <!-- RESULTS + SCROLLTHROUGH -->
     <section class="section section-soft reveal">
         <div class="container project-results project-two-col">
-            <div class="project-media project-media--video">
-                <div class="video-mask">
-                    <video class="project-scroll" autoplay muted loop playsinline preload="metadata">
-                        <source src="/assets/videos/industry-scroll-through.mp4" type="video/mp4" />
-                    </video>
+<!--            <div class="project-media project-media&#45;&#45;video">-->
+<!--                <div class="video-mask">-->
+<!--                    <video class="project-scroll" autoplay muted loop playsinline preload="metadata">-->
+<!--                        <source src="/assets/videos/industry-scroll-through.mp4" type="video/mp4" />-->
+<!--                    </video>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <div class="site-preview" data-preview>
+                <div class="preview-toggle" role="tablist" aria-label="Preview mode">
+                    <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" data-mode="desktop">
+                        Desktop
+                    </button>
+                    <button class="preview-tab" type="button" role="tab" aria-selected="false" data-mode="mobile">
+                        Mobile
+                    </button>
+                </div>
+
+                <div class="preview-stage">
+                    <!-- DESKTOP -->
+                    <div class="preview-pane is-active" data-pane="desktop" role="tabpanel">
+                        <div class="device device-desktop">
+                            <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                                <source src="../assets/videos/industry-scroll-through.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+
+                    <!-- MOBILE -->
+                    <div class="preview-pane" data-pane="mobile" role="tabpanel" hidden>
+                        <div class="device device-mobile">
+                            <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                                <source src="../assets/videos/industry-salon-scrollthrough-mobile.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
             <div class="project-copy">
                 <h2 class="project-metric">The Reveal</h2>
                 <p>
@@ -318,5 +351,49 @@
         applyFilter(activeTab ? activeTab.getAttribute('data-filter') : 'all');
     })();
 </script>
+<script>
+    (function(){
+        const root = document.querySelector('[data-preview]');
+        if (!root) return;
+
+        const tabs = Array.from(root.querySelectorAll('.preview-tab'));
+        const panes = Array.from(root.querySelectorAll('.preview-pane'));
+
+        function setMode(mode){
+            // tabs UI
+            tabs.forEach(btn => {
+                const active = btn.dataset.mode === mode;
+                btn.classList.toggle('is-active', active);
+                btn.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+
+            // panes
+            panes.forEach(pane => {
+                const active = pane.dataset.pane === mode;
+                pane.classList.toggle('is-active', active);
+                pane.toggleAttribute('hidden', !active);
+
+                // pause hidden videos to avoid background playback on iOS
+                const v = pane.querySelector('video');
+                if (!v) return;
+                if (active) {
+                    // try to play, ignore if browser blocks
+                    v.play().catch(() => {});
+                } else {
+                    v.pause();
+                    v.currentTime = 0;
+                }
+            });
+        }
+
+        tabs.forEach(btn => {
+            btn.addEventListener('click', () => setMode(btn.dataset.mode));
+        });
+
+        // default
+        setMode('desktop');
+    })();
+</script>
+
 </body>
 </html>

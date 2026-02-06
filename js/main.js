@@ -328,3 +328,5 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("partials:ready", initProcess);
   document.addEventListener("DOMContentLoaded", initProcess);
 })();
+
+
