@@ -4355,12 +4355,12 @@ footer.site-footer .footer-bottom-inner{
   border-radius: 30px;
 }
 
-.preview-video {
+.preview-video{
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.001);
+  transform: scale(1.008);
   backface-visibility: hidden;
 }
 
