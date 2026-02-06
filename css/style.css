@@ -250,6 +250,10 @@ svg{ max-width:100%; height:auto; }
   background: transparent;
 }
 
+body.terms-privacy .section + .section{
+  padding-top: 0;
+}
+
 .under-construction .section{
   padding-top: 200px;
   padding-bottom: 200px;
@@ -626,6 +630,7 @@ header .btn:hover{
   box-shadow: var(--shadow-sm);
   transition: transform .18s ease, box-shadow .18s ease;
 }
+
 .card:hover{ transform: translateY(-2px); box-shadow: var(--shadow); }
 .card p{ margin-bottom: 0; }
 
