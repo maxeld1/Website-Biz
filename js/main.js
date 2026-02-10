@@ -5,14 +5,19 @@
   // Normalize path to highlight active link
   function norm(p){ return ("/"+p).replace(/\/+/g,"/").replace(/\/$/,""); }
 
-  document.addEventListener('DOMContentLoaded', ()=>{
+  function setActiveNav(){
     const here = norm(location.pathname);
-    document.querySelectorAll('header nav a').forEach(a=>{
+    const links = document.querySelectorAll('header nav a');
+    if (!links.length) return;
+    links.forEach(a=>{
       const href = a.getAttribute('href'); if(!href) return;
       const target = norm(new URL(href, location.href).pathname);
       if (here === target) a.classList.add('is-active');
     });
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', setActiveNav);
+  document.addEventListener('partials:ready', setActiveNav);
 
   let bound = false;
 
@@ -92,21 +97,7 @@
     mo.observe(document.documentElement, { childList:true, subtree:true });
   }
 
-  (function () {
-    const track = document.querySelector(".reviews-track");
-    if (!track) return;
-
-    const btns = document.querySelectorAll(".reviews-btn");
-    btns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const dir = Number(btn.dataset.dir || 1);
-        const card = track.querySelector(".review-card");
-        const step = card ? card.getBoundingClientRect().width + 18 : 320;
-
-        track.scrollBy({ left: dir * step, behavior: "smooth" });
-      });
-    });
-  })();
+  document.addEventListener("partials:ready", tryBind);
 })();
 
 // Scroll reveal (IntersectionObserver) — re-runnable + safe
@@ -328,5 +319,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("partials:ready", initProcess);
   document.addEventListener("DOMContentLoaded", initProcess);
 })();
-
 
