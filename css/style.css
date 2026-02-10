@@ -679,6 +679,12 @@ header .btn:hover{
   display: block;
 }
 
+.value-prop-item:first-child .value-prop-icon svg{
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: translateY(1px);
+}
+
 .value-prop-label{
   font-size: 0.98rem;
 }
