@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.com/</loc></url>
-  <url><loc>https://example.com/pages/services.html</loc></url>
-  <url><loc>https://example.com/pages/stylists.html</loc></url>
-  <url><loc>https://example.com/pages/contact.html</loc></url>
+  <url><loc>https://maxwaystudio.com/</loc></url>
+  <url><loc>https://maxwaystudio.com/services/</loc></url>
+  <url><loc>https://maxwaystudio.com/portfolio/</loc></url>
+  <url><loc>https://maxwaystudio.com/about/</loc></url>
+  <url><loc>https://maxwaystudio.com/contact/</loc></url>
+  <url><loc>https://maxwaystudio.com/team/</loc></url>
+  <url><loc>https://maxwaystudio.com/privacy/</loc></url>
+  <url><loc>https://maxwaystudio.com/terms/</loc></url>
+  <url><loc>https://maxwaystudio.com/industrysalon/</loc></url>
 </urlset>
