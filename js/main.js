@@ -220,6 +220,8 @@ document.addEventListener("DOMContentLoaded", () => {
       activeStep = Number(step);
       if (!d) return;
 
+      rail.dataset.activeStep = String(step);
+
       // highlight active tab
       rail.querySelectorAll(".process-tab").forEach(btn => {
         btn.classList.toggle("is-active", btn.dataset.step === String(step));
@@ -227,10 +229,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Start fade
       processWrap.classList.add("is-swapping");
-
-      // Preload next image first (prevents flicker)
-      const pre = new Image();
-      pre.src = d.img;
 
       const apply = () => {
         if (badge) badge.textContent = d.badge || "";
@@ -259,19 +257,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
-      pre.onload = () => {
+      const finishSwap = () => {
         requestAnimationFrame(() => {
           apply();
           setTimeout(() => processWrap.classList.remove("is-swapping"), 180);
         });
       };
 
-      pre.onerror = () => {
-        requestAnimationFrame(() => {
-          apply();
-          setTimeout(() => processWrap.classList.remove("is-swapping"), 180);
-        });
-      };
+      // Preload next image first (prevents flicker)
+      if (d.img) {
+        const pre = new Image();
+        pre.onload = finishSwap;
+        pre.onerror = finishSwap;
+        pre.src = d.img;
+      } else {
+        finishSwap();
+      }
     };
 
     const startAuto = () => {
@@ -298,25 +299,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const initial = rail.querySelector(".process-tab.is-active")?.dataset.step || "1";
     setActive(initial);
 
-    startAuto();
-
-// Pause when user interacts with the section
     const section = document.getElementById("process") || panel.closest(".process");
-    if (section){
-      section.addEventListener("mouseenter", stopAuto);
-      section.addEventListener("mouseleave", startAuto);
-      section.addEventListener("focusin", stopAuto);
-      section.addEventListener("focusout", startAuto);
-    }
+    let autoStarted = false;
 
-// Also pause briefly after click, then resume
-    rail.addEventListener("click", () => {
-      stopAuto();
-      setTimeout(startAuto, 8000);
-    });
+    const startOnce = () => {
+      if (autoStarted) return;
+      autoStarted = true;
+      startAuto();
+    };
+
+    if (section && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            startOnce();
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.25 });
+      io.observe(section);
+    } else {
+      startOnce();
+    }
   }
 
   document.addEventListener("partials:ready", initProcess);
   document.addEventListener("DOMContentLoaded", initProcess);
 })();
-
