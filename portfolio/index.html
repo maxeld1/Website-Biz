@@ -207,7 +207,9 @@
     const tabs   = Array.from(document.querySelectorAll('.port-tab'));
     const tiles  = Array.from(document.querySelectorAll('.port-tile'));
     const select = document.querySelector('#portFilter');
-    const DURATION = 240; // should match CSS timing (~220ms)
+    const DURATION = 420; // should match CSS timing
+    let pendingHides = 0;
+    let firstRects = new Map();
 
     const getTags = (tile) =>
             (tile.getAttribute('data-tags') || '').toLowerCase();
@@ -223,13 +225,60 @@
     }
 
     function hideTile(tile){
+      if (tile.classList.contains('is-hidden')) return;
       tile.classList.add('is-hidden');
-      window.setTimeout(() => {
+      pendingHides += 1;
+
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
         if (tile.classList.contains('is-hidden')) tile.classList.add('is-gone');
-      }, DURATION);
+        pendingHides -= 1;
+        if (pendingHides <= 0) runFlip();
+        tile.removeEventListener('transitionend', onEnd);
+      };
+
+      const onEnd = (e) => {
+        if (e.propertyName !== 'opacity') return;
+        finish();
+      };
+
+      tile.addEventListener('transitionend', onEnd);
+      window.setTimeout(finish, DURATION + 60);
+    }
+
+    function runFlip(){
+      requestAnimationFrame(() => {
+        tiles.forEach(tile => {
+          if (tile.classList.contains('is-gone')) return;
+          const first = firstRects.get(tile);
+          if (!first) return;
+          const last = tile.getBoundingClientRect();
+          const dx = first.left - last.left;
+          const dy = first.top - last.top;
+          if (!dx && !dy) return;
+
+          tile.animate(
+            [
+              { transform: `translate(${dx}px, ${dy}px)` },
+              { transform: 'translate(0, 0)' }
+            ],
+            { duration: DURATION, easing: 'cubic-bezier(0.22,0.61,0.36,1)' }
+          );
+        });
+      });
     }
 
     function applyFilter(filter){
+      firstRects = new Map();
+      pendingHides = 0;
+      tiles.forEach(tile => {
+        if (!tile.classList.contains('is-gone')) {
+          firstRects.set(tile, tile.getBoundingClientRect());
+        }
+      });
+
       // update active tab UI (desktop)
       tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('data-filter') === filter));
 
@@ -241,6 +290,7 @@
         if (matches(tile, filter)) showTile(tile);
         else hideTile(tile);
       });
+      if (pendingHides === 0) runFlip();
     }
 
     // Desktop tabs

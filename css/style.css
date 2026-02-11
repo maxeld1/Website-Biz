@@ -3402,7 +3402,7 @@ footer.site-footer .footer-bottom-inner{
 .port-tile{
   opacity: 1;
   transform: translateY(0) scale(1);
-  transition: opacity 220ms ease, transform 220ms ease;
+  transition: opacity 420ms ease, transform 420ms ease;
   will-change: opacity, transform;}
 
 .port-tile.is-hidden{
