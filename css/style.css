@@ -1353,11 +1353,46 @@ html, body{  width: 100%;
   padding-top: clamp(48px, 6vw, 84px);
   padding-bottom: clamp(56px, 7vw, 96px);}
 
+.contact-page .contact-v2{
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (max-height: 820px){
+  .contact-page .contact-v2{
+    min-height: auto;
+    padding-top: clamp(32px, 5vh, 64px);
+    padding-bottom: clamp(32px, 5vh, 64px);
+  }
+}
+
+.contact-page .contact-v2 .container{
+  width: 100%;
+}
+
 .contact-v2-grid{
   display: grid;
   align-items: start;
   grid-template-columns: 1fr 1fr;
   gap: clamp(20px, 4vw, 48px);}
+
+.contact-page .contact-v2-grid{
+  align-items: center;
+}
+
+.contact-page .contact-v2-left{
+  justify-self: center;
+  text-align: center;
+  align-self: center;
+}
+
+.contact-page .contact-v2-card{
+  justify-self: center;
+  align-self: center;
+}
 
 .contact-v2-left{ max-width: 62ch; }
 
