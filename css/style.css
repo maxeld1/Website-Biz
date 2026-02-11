@@ -958,7 +958,9 @@ html, body{  width: 100%;
   display:grid;
   grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 22px;
-  margin-top: 22px;}
+  margin-top: 22px;
+  max-width: 980px;
+  margin-inline: auto;}
 @media (max-width: 950px){
   .work-grid{ grid-template-columns: 1fr; }
 }
@@ -1026,7 +1028,7 @@ html, body{  width: 100%;
   box-shadow: var(--shadow-sm);
   isolation: isolate;              /* keep overlays contained */
   transition: box-shadow .18s ease;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   overflow:hidden;}
 
 /* ✅ BACKGROUND IMAGE ONLY (never target all imgs) */
