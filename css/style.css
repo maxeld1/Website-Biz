@@ -1124,8 +1124,28 @@ html, body{  width: 100%;
   gap: 12px;
   margin-top: 26px;}
 @media (max-width: 700px){
-  .quote-shell{ grid-template-columns: 1fr; }
-  .quote-nav{ display:none; }
+  .quote-shell{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card card"
+      "prev next";
+    row-gap: 16px;
+    column-gap: 8px;
+  }
+  .quote-card{ grid-area: card; }
+  .quote-nav[data-quote-dir="-1"]{
+    grid-area: prev;
+    justify-self: end;
+  }
+  .quote-nav[data-quote-dir="1"]{
+    grid-area: next;
+    justify-self: start;
+  }
+  .quote-nav svg{
+    width: 22px;
+    height: 22px;
+    stroke-width: 2;
+  }
 }
 .quote-nav{
   width: 40px;
