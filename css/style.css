@@ -4702,32 +4702,32 @@ footer.site-footer .footer-bottom-inner{
 .project-title{
   font-size: 2.5rem;}
 
-.industry-salon-page .project-title{  color: #594E45;
+:is(.industry-salon-page, .riley-lab-page) .project-title{  color: #594E45;
 
   font-size: 2.5rem;}
 
-.industry-salon-page .project-metric{
+:is(.industry-salon-page, .riley-lab-page) .project-metric{
   color: #594E45;}
 
 /* =========================================================
    INDUSTRY SALON PROJECT PAGE — Metrics (scoped, page-specific)
    ========================================================= */
 
-.industry-salon-page .project-metrics{  margin: 0;
+:is(.industry-salon-page, .riley-lab-page) .project-metrics{  margin: 0;
 
   padding: 0;}
 
-.industry-salon-page .project-metrics .container{
+:is(.industry-salon-page, .riley-lab-page) .project-metrics .container{
   padding: 0;}
 
-.industry-salon-page .project-metrics-grid{
+:is(.industry-salon-page, .riley-lab-page) .project-metrics-grid{
   display: grid;
   border-radius: 18px;
   grid-template-columns: repeat(3, 1fr); /* equal width */
   overflow: hidden;}
 
 /* individual metric blocks */
-.industry-salon-page .metric{
+:is(.industry-salon-page, .riley-lab-page) .metric{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -4739,13 +4739,13 @@ footer.site-footer .footer-bottom-inner{
   text-align: center;}
 
 /* typography */
-.industry-salon-page .metric-value{  color: #2b2b2b;
+:is(.industry-salon-page, .riley-lab-page) .metric-value{  color: #2b2b2b;
   font-size: clamp(22px, 2.6vw, 36px);
 
   font-weight: 800;
   line-height: 1.1;}
 
-.industry-salon-page .metric-label{
+:is(.industry-salon-page, .riley-lab-page) .metric-label{
   margin-top: 6px;
   color: #2b2b2b;
   font-size: 13px;
@@ -4753,28 +4753,28 @@ footer.site-footer .footer-bottom-inner{
   opacity: .75;}
 
 /* tan banding — subtle, editorial */
-.industry-salon-page .project-metrics-grid .metric:nth-child(1){
+:is(.industry-salon-page, .riley-lab-page) .project-metrics-grid .metric:nth-child(1){
   background: #EFE6DA;}
 
-.industry-salon-page .project-metrics-grid .metric:nth-child(2){
+:is(.industry-salon-page, .riley-lab-page) .project-metrics-grid .metric:nth-child(2){
   background: #E6D7C5;}
 
-.industry-salon-page .project-metrics-grid .metric:nth-child(3){
+:is(.industry-salon-page, .riley-lab-page) .project-metrics-grid .metric:nth-child(3){
   background: #DBC7AE;}
 
 /* responsive: stack but keep style */
 @media (max-width: 900px){
-  .industry-salon-page .project-metrics-grid{
+  :is(.industry-salon-page, .riley-lab-page) .project-metrics-grid{
     grid-template-columns: 1fr;}
 }
 
 /* Section background can be whatever you want */
-.industry-salon-page .metrics-band{  padding: 0;
+:is(.industry-salon-page, .riley-lab-page) .metrics-band{  padding: 0;
 
   background: transparent;}
 
 /* Full width, no gutters */
-.industry-salon-page .metrics-row{
+:is(.industry-salon-page, .riley-lab-page) .metrics-row{
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
@@ -4789,34 +4789,141 @@ footer.site-footer .footer-bottom-inner{
 }
 
 /* Base metric styles */
-.industry-salon-page .metric{
+:is(.industry-salon-page, .riley-lab-page) .metric{
   padding: 22px 18px;
   font-size: 44px;
   font-weight: 800;
   text-align: center;}
 
 /* Individual tan shades */
-.industry-salon-page .metric:nth-child(1){
+:is(.industry-salon-page, .riley-lab-page) .metric:nth-child(1){
   background: #f3eadf;   /* light tan */
 }
 
-.industry-salon-page .metric:nth-child(2){
+:is(.industry-salon-page, .riley-lab-page) .metric:nth-child(2){
   background: #e7dac7;   /* mid tan */
 }
 
-.industry-salon-page .metric:nth-child(3){
+:is(.industry-salon-page, .riley-lab-page) .metric:nth-child(3){
   background: #dccbb1;   /* deeper tan */
 }
 
-.industry-salon-page .metric span{
+:is(.industry-salon-page, .riley-lab-page) .metric span{
   display: block;
   margin-top: 6px;
   font-size: 14px;
   font-weight: 500;
   opacity: .75;}
 
+/* =========================================================
+   RILEY LAB PORTAL — Page Theme Overrides
+   ========================================================= */
+.riley-lab-page{
+  --rl-blue-900: #24324f;
+  --rl-blue-700: #2d57c8;
+  --rl-blue-600: #3b6fe0;
+  --rl-blue-200: #cfe1ff;
+  --rl-blue-100: #eef4ff;
+  --rl-ice: #f6f9ff;
+  --rl-gold: #f6c84f;
+  --rl-green: #6fc06f;
+  --rl-coral: #e97a6a;
+  color: var(--rl-blue-900);
+}
+
+/* Soft science-style background + faint node pattern */
+.riley-lab-page .section{
+  background:
+    radial-gradient(1200px 700px at 10% -10%, rgba(59,111,224,.18), transparent 60%),
+    radial-gradient(900px 600px at 90% -20%, rgba(111,192,111,.16), transparent 55%),
+    radial-gradient(800px 500px at 100% 30%, rgba(246,200,79,.12), transparent 60%),
+    var(--rl-ice);
+}
+
+.riley-lab-page .section-white{
+  background:
+    radial-gradient(900px 500px at 0% 0%, rgba(59,111,224,.12), transparent 60%),
+    var(--rl-ice);
+}
+
+.riley-lab-page .section-soft{
+  background:
+    radial-gradient(900px 500px at 100% 0%, rgba(111,192,111,.12), transparent 60%),
+    var(--rl-blue-100);
+}
+
+.riley-lab-page .kicker{
+  color: var(--rl-blue-700);
+  letter-spacing: .08em;
+}
+
+.riley-lab-page .project-title{
+  color: var(--rl-blue-900);
+}
+
+.riley-lab-page .project-metric{
+  color: var(--rl-blue-900);
+}
+
+.riley-lab-page .project-hero-copy p,
+.riley-lab-page .project-copy p{
+  color: rgba(36,50,79,.85);
+}
+
+/* Hero media: soft card treatment */
+.riley-lab-page .project-hero-media img{
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow:
+    0 14px 40px rgba(36,50,79,.18),
+    0 2px 8px rgba(36,50,79,.12);
+  padding: 12px;
+}
+
+/* Metrics band: match portal accent chips */
+.riley-lab-page .metrics-row{
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(36,50,79,.12);
+}
+
+.riley-lab-page .metric{
+  color: var(--rl-blue-900);
+}
+
+.riley-lab-page .metric:nth-child(1){
+  background: rgba(246,200,79,.28);
+}
+.riley-lab-page .metric:nth-child(2){
+  background: rgba(59,111,224,.20);
+}
+.riley-lab-page .metric:nth-child(3){
+  background: rgba(111,192,111,.22);
+}
+
+.riley-lab-page .metric span{
+  color: rgba(36,50,79,.75);
+}
+
+/* Buttons: clean academic blue */
+.riley-lab-page .btn.btn-primary{
+  background: linear-gradient(135deg, #2f61d6, #4477ea);
+  box-shadow: 0 12px 30px rgba(47,97,214,.28);
+}
+
+.riley-lab-page .btn.btn-primary:hover{
+  filter: brightness(1.04);
+}
+
+/* Preview device frame: subtle lab UI card */
+.riley-lab-page .device{
+  background: #ffffff;
+  border: 1px solid rgba(36,50,79,.12);
+  box-shadow: 0 14px 40px rgba(36,50,79,.12);
+}
+
 /*!* Dividers *!*/
-/*.industry-salon-page .metric + .metric{*/
+/*:is(.industry-salon-page, .riley-lab-page) .metric + .metric{*/
 /*  border-left: 1px solid rgba(0,0,0,.08);*/
 /*}*/
 
@@ -4873,9 +4980,9 @@ footer.site-footer .footer-bottom-inner{
 @media (max-width: 860px){
 
   /* Prevent “one-word-per-line” + hyphenation */
-  .industry-salon-page,
-  .industry-salon-page p,
-  .industry-salon-page li{
+  :is(.industry-salon-page, .riley-lab-page),
+  :is(.industry-salon-page, .riley-lab-page) p,
+  :is(.industry-salon-page, .riley-lab-page) li{
     hyphens: none;
     word-break: normal;
     overflow-wrap: break-word; /* safe wrapping without weird hyphenation */
@@ -4997,7 +5104,7 @@ footer.site-footer .footer-bottom-inner{
 @media (max-width: 860px){
 
   /* TWO-COL SECTIONS (Vision / Strategy / Reveal / Results) */
-  .industry-salon-page .container.project-two-col{
+  :is(.industry-salon-page, .riley-lab-page) .container.project-two-col{
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-template-areas:
@@ -5007,13 +5114,13 @@ footer.site-footer .footer-bottom-inner{
     align-items: start !important;
   }
 
-  .industry-salon-page .container.project-two-col > .project-copy{
+  :is(.industry-salon-page, .riley-lab-page) .container.project-two-col > .project-copy{
     grid-area: copy !important;}
-  .industry-salon-page .container.project-two-col > .project-media{
+  :is(.industry-salon-page, .riley-lab-page) .container.project-two-col > .project-media{
     grid-area: media !important;}
 
   /* HERO */
-  .industry-salon-page .container.project-hero-grid{
+  :is(.industry-salon-page, .riley-lab-page) .container.project-hero-grid{
     display: grid !important;
     grid-template-columns: 1fr !important;
     grid-template-areas:
@@ -5021,9 +5128,9 @@ footer.site-footer .footer-bottom-inner{
       "media" !important;
     gap: 18px !important;
   }
-  .industry-salon-page .container.project-hero-grid > .project-hero-copy{
+  :is(.industry-salon-page, .riley-lab-page) .container.project-hero-grid > .project-hero-copy{
     grid-area: copy !important;}
-  .industry-salon-page .container.project-hero-grid > .project-hero-media{
+  :is(.industry-salon-page, .riley-lab-page) .container.project-hero-grid > .project-hero-media{
     grid-area: media !important;}
 }
 
