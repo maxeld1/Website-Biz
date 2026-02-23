@@ -4922,6 +4922,23 @@ footer.site-footer .footer-bottom-inner{
   box-shadow: 0 14px 40px rgba(36,50,79,.12);
 }
 
+/* Riley Lab preview videos: avoid edge cropping */
+.riley-lab-page .device-desktop .preview-video{
+  object-fit: contain;
+  transform: none;
+  background: transparent;
+}
+
+/* Blend letterboxing into the portal palette */
+.riley-lab-page .device-desktop .device-clip{
+  background: var(--rl-ice);
+}
+
+/* Riley Lab desktop preview: match actual video aspect ratio (1660 × 832) */
+.riley-lab-page .device-desktop{
+  aspect-ratio: 1660 / 832;
+}
+
 /*!* Dividers *!*/
 /*:is(.industry-salon-page, .riley-lab-page) .metric + .metric{*/
 /*  border-left: 1px solid rgba(0,0,0,.08);*/
