@@ -4849,6 +4849,14 @@ footer.site-footer .footer-bottom-inner{
   color: rgba(20,20,20,.7);
 }
 
+/* AEO-friendly lead lines */
+.aeo-lede{
+  margin: 10px auto 0;
+  max-width: 60ch;
+  font-size: 1rem;
+  color: rgba(20,20,20,.78);
+}
+
 .home .who-for-grid{
   display: grid;
   gap: 24px;
