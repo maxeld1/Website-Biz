@@ -5093,48 +5093,12 @@ footer.site-footer .footer-bottom-inner{
   justify-content: center;
 }
 
-/* Sticky CTA bar (mobile only) */
-.mobile-cta-bar{
-  position: fixed;
-  left: 16px;
-  right: 16px;
-  bottom: 16px;
-  padding: 10px;
-  border-radius: 16px;
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(20,20,20,.08);
-  box-shadow: 0 12px 30px rgba(20,20,20,.18);
-  display: none;
-  gap: 10px;
-  align-items: center;
-  z-index: 9999;
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  backdrop-filter: blur(16px) saturate(120%);
-}
-
-.mobile-cta-bar .cta-primary{
-  flex: 1;
-  text-align: center;
-}
-
-.mobile-cta-bar .cta-link{
-  white-space: nowrap;
-}
-
 @media (max-width: 860px){
   .home .deliverables-grid,
   .home .case-grid,
   .home .how-grid,
   .home .testimonials-grid{
     grid-template-columns: 1fr;
-  }
-
-  .mobile-cta-bar{
-    display: flex;
-  }
-
-  .home{
-    padding-bottom: 86px;
   }
 }
 
