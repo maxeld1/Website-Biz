@@ -152,6 +152,39 @@
             <!--                </div>-->
             <!--            </div>-->
 
+            <div class="site-preview" data-preview>
+                <div class="preview-toggle" role="tablist" aria-label="Preview mode">
+                    <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" data-mode="desktop">
+                        Desktop
+                    </button>
+                    <button class="preview-tab" type="button" role="tab" aria-selected="false" data-mode="mobile">
+                        Mobile
+                    </button>
+                </div>
+
+                <div class="preview-stage">
+                    <!-- DESKTOP -->
+                    <div class="preview-pane is-active" data-pane="desktop" role="tabpanel">
+                        <div class="device device-desktop">
+                            <div class="device-clip">
+                                <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                                    <source src="/assets/videos/richie-scroll-through.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MOBILE -->
+                    <div class="preview-pane" data-pane="mobile" role="tabpanel" hidden>
+                        <div class="device device-mobile">
+                            <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                                <source src="/assets/videos/richie-scroll-through-mobile.mp4" type="video/mp4" />
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-copy">
                 <h2 class="project-metric">The Reveal</h2>
                 <p>
@@ -166,39 +199,6 @@
                 <a class="cta-link" href="/pages/intheworks/" target="_blank" rel="noopener">
                     View Website
                 </a>
-
-                <div class="site-preview" data-preview>
-                    <div class="preview-toggle" role="tablist" aria-label="Preview mode">
-                        <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" data-mode="desktop">
-                            Desktop
-                        </button>
-                        <button class="preview-tab" type="button" role="tab" aria-selected="false" data-mode="mobile">
-                            Mobile
-                        </button>
-                    </div>
-
-                    <div class="preview-stage">
-                        <!-- DESKTOP -->
-                        <div class="preview-pane is-active" data-pane="desktop" role="tabpanel">
-                            <div class="device device-desktop">
-                                <div class="device-clip">
-                                    <video class="preview-video" autoplay muted loop playsinline preload="metadata">
-                                        <source src="/assets/videos/richie-scroll-through.mp4" type="video/mp4" />
-                                    </video>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- MOBILE -->
-                        <div class="preview-pane" data-pane="mobile" role="tabpanel" hidden>
-                            <div class="device device-mobile">
-                                <video class="preview-video" autoplay muted loop playsinline preload="metadata">
-                                    <source src="/assets/videos/richie-scroll-through-mobile.mp4" type="video/mp4" />
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
         </div>

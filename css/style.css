@@ -5386,6 +5386,10 @@ footer.site-footer .footer-bottom-inner{
     gap: 18px !important;
   }
 
+  .richie-izzo-page .project-results .site-preview{
+    order: 2;
+  }
+
   .richie-izzo-page .container.project-two-col > .project-copy{
     order: 1;
   }
