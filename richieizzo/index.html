@@ -152,36 +152,6 @@
             <!--                </div>-->
             <!--            </div>-->
 
-            <div class="site-preview" data-preview>
-                <div class="preview-toggle" role="tablist" aria-label="Preview mode">
-                    <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" data-mode="desktop">
-                        Desktop
-                    </button>
-                    <button class="preview-tab" type="button" role="tab" aria-selected="false" data-mode="mobile">
-                        Mobile
-                    </button>
-                </div>
-
-                <div class="preview-stage">
-                    <!-- DESKTOP -->
-                    <div class="preview-pane is-active" data-pane="desktop" role="tabpanel">
-                        <div class="device device-desktop">
-                            <div class="device-clip">
-                                <img class="preview-video" src="/assets/images/previews/richie_izzo_preview.png" alt="Richie Izzo portfolio desktop preview" loading="lazy" decoding="async">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MOBILE -->
-                    <div class="preview-pane" data-pane="mobile" role="tabpanel" hidden>
-                        <div class="device device-mobile">
-                            <img class="preview-video" src="/assets/images/previews/richie_izzo_preview.png" alt="Richie Izzo portfolio mobile preview" loading="lazy" decoding="async">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <div class="project-copy">
                 <h2 class="project-metric">The Reveal</h2>
                 <p>
@@ -196,6 +166,39 @@
                 <a class="cta-link" href="/pages/intheworks/" target="_blank" rel="noopener">
                     View Website
                 </a>
+
+                <div class="site-preview" data-preview>
+                    <div class="preview-toggle" role="tablist" aria-label="Preview mode">
+                        <button class="preview-tab is-active" type="button" role="tab" aria-selected="true" data-mode="desktop">
+                            Desktop
+                        </button>
+                        <button class="preview-tab" type="button" role="tab" aria-selected="false" data-mode="mobile">
+                            Mobile
+                        </button>
+                    </div>
+
+                    <div class="preview-stage">
+                        <!-- DESKTOP -->
+                        <div class="preview-pane is-active" data-pane="desktop" role="tabpanel">
+                            <div class="device device-desktop">
+                                <div class="device-clip">
+                                    <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                                        <source src="/assets/videos/richie-scroll-through.mp4" type="video/mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MOBILE -->
+                        <div class="preview-pane" data-pane="mobile" role="tabpanel" hidden>
+                            <div class="device device-mobile">
+                                <video class="preview-video" autoplay muted loop playsinline preload="metadata">
+                                    <source src="/assets/videos/richie-scroll-through-mobile.mp4" type="video/mp4" />
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
@@ -207,13 +210,13 @@
         <p class="kicker">From the Client</p>
         <div class="container">
             <figure class="quote-card">
+                <img class="quote-logo" src="/assets/images/logos/richie_izzo_logo.png" alt="Richie Izzo logo" loading="lazy" decoding="async" width="1600" height="300">
                 <figcaption class="quote-meta">
                     <strong>Richie Izzo</strong>
                     <span>Performer &amp; Creator</span>
                 </figcaption>
                 <blockquote class="quote-text">
-                    "The site finally feels like me—bold, clean, and easy to navigate. It puts the work first and makes it
-                    simple for people to explore what I do."
+                    "The site finally feels like me!"
                 </blockquote>
             </figure>
         </div>
@@ -265,7 +268,7 @@
                     </div>
                 </a>
 
-                <a class="port-tile" href="/pages/intheworks/" data-tags="portfolio design" aria-label="Richie Izzo - Portfolio">
+                <a class="port-tile" href="/richieizzo/" data-tags="portfolio design" aria-label="Richie Izzo - Portfolio">
                     <img class="port-bg" src="../assets/images/previews/richie_izzo_preview.png" alt="" loading="lazy">
                     <div class="port-overlay" aria-hidden="true">
                         <img class="port-logo" src="../assets/images/logos/richie_izzo_logo_white_transparent.png" alt="">

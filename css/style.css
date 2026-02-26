@@ -5336,6 +5336,24 @@ footer.site-footer .footer-bottom-inner{
   box-shadow: 0 18px 40px rgba(20,20,20,.12);
 }
 
+.richie-izzo-page .device-desktop{
+  aspect-ratio: auto;
+}
+
+.richie-izzo-page .device-desktop .preview-video{
+  position: static;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: none;
+  background: transparent;
+}
+
+.richie-izzo-page .device-desktop .device-clip{
+  height: auto;
+  background: transparent;
+}
+
 .richie-izzo-page .quote-card{
   background: rgba(255,255,255,.9);
   border: 1px solid rgba(20,20,20,.08);
@@ -5992,6 +6010,38 @@ footer.site-footer .footer-bottom-inner{
 
 /* Mobile keeps its larger radius */
 .device-mobile{ border-radius: 30px; }
+
+/* Richie Izzo preview override (after base device rules) */
+.richie-izzo-page .device{
+  background: transparent;
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.richie-izzo-page .device-mobile{
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.richie-izzo-page .device-desktop{
+  aspect-ratio: 1920 / 946;
+}
+
+.richie-izzo-page .device-desktop .preview-video{
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: none;
+  background: transparent;
+}
+
+.richie-izzo-page .device-desktop .device-clip{
+  height: auto;
+  background: transparent;
+  border-radius: 8px;
+}
 
 /* Video: absolute + slightly oversized (no transform scaling) */
 .preview-video{
