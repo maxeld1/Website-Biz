@@ -1153,7 +1153,13 @@ html, body{  width: 100%;
     stroke-width: 2;
   }
   .quote-card{
-    padding-top: 75px !important;
+    padding-top: 26px !important;
+  }
+  .quote-card .quote-logo{
+    position: static;
+    width: 120px;
+    margin: 0 0 12px;
+    opacity: .5;
   }
   .quote-card .quote-watermark-industry{
     top: 12px !important;
@@ -1167,6 +1173,16 @@ html, body{  width: 100%;
   }
   .quote-text{
     margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 860px){
+  .quote-card .quote-logo{
+    position: static !important;
+    display: block;
+    width: 120px;
+    margin: 0 auto 12px;
+    opacity: .5;
   }
 }
 .quote-nav{
@@ -1209,6 +1225,17 @@ html, body{  width: 100%;
   box-shadow: var(--shadow-sm);
   padding: 22px;
   overflow: hidden;
+}
+
+.quote-card .quote-logo{
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  width: 140px;
+  height: auto;
+  opacity: .12;
+  pointer-events: none;
+  filter: saturate(0.9);
 }
 .quote-watermark-industry{
   position: absolute;
@@ -5312,6 +5339,107 @@ footer.site-footer .footer-bottom-inner{
 .richie-izzo-page .quote-card{
   background: rgba(255,255,255,.9);
   border: 1px solid rgba(20,20,20,.08);
+}
+
+/* Richie Izzo — mobile refinements */
+@media (max-width: 860px){
+  .richie-izzo-page .project-title{
+    font-size: clamp(28px, 7vw, 36px);
+  }
+
+  .richie-izzo-page .project-hero-media img{
+    width: 100%;
+    height: auto;
+  }
+
+  .richie-izzo-page .metric{
+    font-size: clamp(20px, 4.4vw, 26px);
+    line-height: 1.1;
+    padding: 14px 10px;
+  }
+}
+
+@media (max-width: 1024px){
+  /* Ensure text-first, media-second on Richie page */
+  .richie-izzo-page .container.project-two-col{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  .richie-izzo-page .container.project-two-col > .project-copy{
+    order: 1;
+  }
+
+  .richie-izzo-page .container.project-two-col > .project-media{
+    order: 2;
+  }
+
+  .richie-izzo-page .container.project-hero-grid{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 18px !important;
+  }
+
+  .richie-izzo-page .container.project-hero-grid > .project-hero-copy{
+    order: 1;
+  }
+
+  .richie-izzo-page .container.project-hero-grid > .project-hero-media{
+    order: 2;
+  }
+
+  .richie-izzo-page .project-copy,
+  .richie-izzo-page .project-hero-copy{
+    text-align: center;
+    width: 100%;
+    max-width: none;
+  }
+
+  .richie-izzo-page .project-copy p,
+  .richie-izzo-page .project-hero-copy p{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: none;
+    word-break: normal;
+    hyphens: none;
+    overflow-wrap: break-word;
+  }
+
+  .richie-izzo-page .project-media,
+  .richie-izzo-page .project-hero-media{
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .richie-izzo-page .container.project-two-col,
+  .richie-izzo-page .container.project-hero-grid{
+    width: 100% !important;
+    justify-items: stretch !important;
+  }
+
+  .richie-izzo-page .project-copy,
+  .richie-izzo-page .project-hero-copy,
+  .richie-izzo-page .project-copy p,
+  .richie-izzo-page .project-hero-copy p{
+    display: block !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    inline-size: 100% !important;
+    max-inline-size: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .richie-izzo-page .project-copy,
+  .richie-izzo-page .project-hero-copy{
+    padding-inline: 16px;
+    box-sizing: border-box;
+  }
 }
 
 /*!* Dividers *!*/
