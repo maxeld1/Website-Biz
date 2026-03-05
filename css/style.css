@@ -3448,7 +3448,9 @@ footer.site-footer .footer-bottom-inner{
   width: min(70%, 260px);
   height: auto;
   filter: drop-shadow(0 16px 30px rgba(0,0,0,.25));
-  object-fit: contain;}
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity .25s ease;}
 
 /* Optional wordmark if you use text instead of logos */
 .port-wordmark{  color: rgba(255,255,255,.92);
@@ -3462,6 +3464,10 @@ footer.site-footer .footer-bottom-inner{
 .port-tile:hover .port-bg{
   filter: brightness(.86);
   transform: scale(1.04);}
+
+.port-tile:hover .port-logo{
+  opacity: 0;
+}
 
 /* Keyboard */
 .port-tile:focus-visible{
@@ -6069,4 +6075,9 @@ footer.site-footer .footer-bottom-inner{
 
 .preview-pane[data-pane="mobile"] .device-mobile{
   width: min(280px, 80vw);
+}
+
+/* Industry Salon desktop preview: match actual video aspect ratio (1920 x 976) */
+.industry-salon-page .device-desktop{
+  aspect-ratio: 1920 / 976;
 }
