@@ -8750,3 +8750,74 @@ body::after{
     grid-template-columns: 1fr !important;
   }
 }
+
+/* Homepage hero interactive hover button, adapted for static HTML */
+.home .hero-cta .interactive-hover-button{
+  position: relative;
+  isolation: isolate;
+  min-height: 44px;
+  padding: 13px 48px 13px 20px;
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  transition: color .22s ease, border-color .22s ease, background .22s ease;
+}
+
+.home .hero-cta .interactive-hover-button::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  z-index: -1;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  background: #fff;
+  transform: translateY(-50%);
+  transition: width .28s ease, height .28s ease, right .28s ease;
+}
+
+.home .hero-cta .interactive-hover-button::after{
+  content: "→";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  color: var(--accent);
+  width: 12px;
+  height: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  line-height: 12px;
+  transform: translateY(-50%);
+  transition: color .22s ease, transform .22s ease;
+}
+
+.home .hero-cta .interactive-hover-button:hover,
+.home .hero-cta .interactive-hover-button:focus-visible{
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--accent);
+}
+
+.home .hero-cta .interactive-hover-button:hover::before,
+.home .hero-cta .interactive-hover-button:focus-visible::before{
+  right: 6px;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+}
+
+.home .hero-cta .interactive-hover-button:hover::after,
+.home .hero-cta .interactive-hover-button:focus-visible::after{
+  color: var(--accent);
+  transform: translate(2px, -50%);
+}
+
+@media (prefers-reduced-motion: reduce){
+  .home .hero-cta .interactive-hover-button,
+  .home .hero-cta .interactive-hover-button::before,
+  .home .hero-cta .interactive-hover-button::after{
+    transition: none;
+  }
+}
