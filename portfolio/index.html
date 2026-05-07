@@ -3,32 +3,27 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Portfolio | MaxWayStudio (Delco + Philly)</title>
-  <meta name="description" content="Recent builds for local service businesses in Delco + Philly. Design-forward sites built to drive calls and bookings." />
+  <title>Work | MaxWayStudio — Web Design for Delco + Philly Businesses</title>
+  <meta name="description" content="Recent builds for local service businesses in Delco + Philly. Design-forward sites built to drive calls, bookings, and trust." />
   <link rel="canonical" href="https://maxwaystudio.com/portfolio/">
-  <meta property="og:title" content="Portfolio | MaxWayStudio (Delco + Philly)" />
-  <meta property="og:description" content="Recent builds for local service businesses in Delco + Philly. Design-forward sites built to drive calls and bookings." />
+  <meta property="og:title" content="Work | MaxWayStudio — Web Design for Delco + Philly Businesses" />
+  <meta property="og:description" content="Recent builds for local service businesses in Delco + Philly. Design-forward sites built to drive calls, bookings, and trust." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://maxwaystudio.com/portfolio/" />
   <meta property="og:image" content="https://maxwaystudio.com/assets/images/previews/industry_salon_preview.png" />
   <meta property="og:site_name" content="MaxWayStudio" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Portfolio | MaxWayStudio (Delco + Philly)" />
-  <meta name="twitter:description" content="Recent builds for local service businesses in Delco + Philly. Design-forward sites built to drive calls and bookings." />
-  <meta name="twitter:image" content="https://maxwaystudio.com/assets/images/previews/industry_salon_preview.png" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png">
   <link rel="manifest" href="../manifest.webmanifest" />
-  <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css"
-  />
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
-      "name": "Portfolio | MaxWayStudio",
+      "name": "Work | MaxWayStudio",
       "description": "Recent builds for local service businesses in Delco + Philly.",
       "url": "https://maxwaystudio.com/portfolio/"
     }
@@ -40,79 +35,151 @@
 
 <main class="portfolio-page">
 
-  <!-- HERO (left aligned) -->
-  <section class="section section-panel portfolio-hero section-warm">
+  <!-- HERO -->
+  <section class="section section-soft portfolio-hero">
     <div class="container">
-      <p class="kicker">Projects</p>
-      <h1>Recent builds</h1>
-      <p class="aeo-lede">Portfolio of design-forward websites for local service businesses in Delco + Philly.</p>
-      <p class="maxw">
-        A few examples of design-forward sites and pages.
-      </p>
-
-      <div class="portfolio-hero-ctas">
-        <a class="btn btn-primary" href="/contact/">Start a Project</a>
-        <a class="cta-link" href="/services/">See services</a>
+      <div class="page-hero-inner reveal">
+        <p class="section-kicker">Selected work</p>
+        <h1>Sites built to earn trust<br>before the first call.</h1>
+        <p>
+          Each project below started with a clear goal — more bookings, better first impressions,
+          or a mobile experience that doesn't lose leads. Here's what shipped.
+        </p>
+        <div class="page-hero-ctas">
+          <a class="cta-primary" href="/contact/">Start a project</a>
+          <a class="cta-link" href="/services/">See services</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- CASE STUDY CARDS -->
   <section class="section section-white">
-    <div class="container projects">
+    <div class="container">
 
-      <div class="port-filter" aria-label="Portfolio filter">
+      <!-- Filter tabs -->
+      <nav class="port-tabs" aria-label="Portfolio categories" style="margin-bottom:8px;">
+        <button class="port-tab is-active" type="button" data-filter="all">All</button>
+        <button class="port-tab" type="button" data-filter="business">Business</button>
+        <button class="port-tab" type="button" data-filter="portfolio">Portfolio</button>
+        <button class="port-tab" type="button" data-filter="internal">Lab / Internal</button>
+      </nav>
+
+      <!-- Mobile select -->
+      <div class="port-filter" aria-label="Portfolio filter" style="margin-bottom:24px;">
         <label class="sr-only" for="portFilter">Filter projects</label>
         <select id="portFilter" class="port-select">
           <option value="all">All</option>
           <option value="business">Business</option>
           <option value="portfolio">Portfolio</option>
-          <option value="branding">Branding</option>
-          <option value="development">Development</option>
-          <option value="internal">Internal</option>
+          <option value="internal">Lab / Internal</option>
         </select>
-
       </div>
 
-      <!-- FILTER TABS (centered like the reference) -->
-      <nav class="port-tabs" aria-label="Portfolio categories">
-        <button class="port-tab is-active" type="button" data-filter="all">All</button>
-        <button class="port-tab" type="button" data-filter="business">Business</button>
-        <button class="port-tab" type="button" data-filter="portfolio">Portfolio</button>
-        <button class="port-tab" type="button" data-filter="branding">Branding</button>
-        <button class="port-tab" type="button" data-filter="development">Development</button>
-        <button class="port-tab" type="button" data-filter="internal">Internal</button>
-      </nav>
+      <!-- Case study grid -->
+      <div class="port-case-grid" id="portGrid">
 
-      <!-- GRID -->
-      <div class="port-grid">
-
-        <!-- Tile -->
-        <a class="port-tile" href="/industrysalon/" data-tags="business branding" aria-label="Industry Salon">
-          <img class="port-bg" src="../assets/images/previews/industry_salon_preview.png" alt="Industry Salon preview" loading="lazy" decoding="async" width="2858" height="1494">
-          <div class="port-overlay" aria-hidden="true">
-            <img class="port-logo" src="../assets/images/logos/industry_salon_logo_white_transparent.png" alt="Industry Salon logo" width="1600" height="300" loading="lazy" decoding="async">
+        <!-- Industry Salon -->
+        <a class="port-case-card reveal" href="/industrysalon/" data-tags="business branding" aria-label="Industry Salon Lounge case study">
+          <div class="port-case-img-wrap">
+            <img src="../assets/images/previews/industry_salon_preview.png"
+                 alt="Industry Salon Lounge website — modern salon in Newtown Square, PA"
+                 loading="lazy" decoding="async" width="2858" height="1494" />
+          </div>
+          <div class="port-case-body">
+            <div class="port-case-tags">
+              <span class="port-case-tag">Salon</span>
+              <span class="port-case-tag">Design + Build</span>
+              <span class="port-case-tag">Local SEO</span>
+            </div>
+            <h3>Industry Salon Lounge</h3>
+            <p class="port-case-desc">
+              A premium salon in Newtown Square needed a site that matched the experience inside —
+              elevated, welcoming, and easy to book from. Designed for mobile-first browsing,
+              with a clear booking path and a tone that builds trust before the first visit.
+            </p>
+            <span class="port-case-link">
+              View case study
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
-        <a class="port-tile" href="/richieizzo/" data-tags="portfolio design" aria-label="Richie Izzo - Portfolio">
-          <img class="port-bg" src="../assets/images/previews/richie_izzo_preview.png" alt="Richie Izzo portfolio preview" loading="lazy" decoding="async" width="3024" height="1470">
-          <div class="port-overlay" aria-hidden="true">
-            <img class="port-logo" src="../assets/images/logos/richie_izzo_logo_white_transparent.png" alt="Richie Izzo logo" width="639" height="142" loading="lazy" decoding="async">
+        <!-- Richie Izzo -->
+        <a class="port-case-card reveal" href="/richieizzo/" data-tags="portfolio design" aria-label="Richie Izzo portfolio site">
+          <div class="port-case-img-wrap">
+            <img src="../assets/images/previews/richie_izzo_preview.png"
+                 alt="Richie Izzo personal portfolio website"
+                 loading="lazy" decoding="async" width="3024" height="1470" />
+          </div>
+          <div class="port-case-body">
+            <div class="port-case-tags">
+              <span class="port-case-tag">Portfolio</span>
+              <span class="port-case-tag">Design + Build</span>
+              <span class="port-case-tag">Typography</span>
+            </div>
+            <h3>Richie Izzo — Portfolio</h3>
+            <p class="port-case-desc">
+              A personal portfolio site for a creative professional. Clean layout, strong typography,
+              and a presentation that leads with work rather than biography.
+              Designed to load fast and leave a strong impression.
+            </p>
+            <span class="port-case-link">
+              View case study
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
-        <a class="port-tile" href="/rileylab/" data-tags="internal development" aria-label="Riley Lab Portal">
-          <img class="port-bg" src="../assets/images/previews/riley_portal_preview.png" alt="Riley Lab Portal preview" loading="lazy" decoding="async" width="1876" height="1203">
-          <div class="port-overlay" aria-hidden="true">
-            <img class="port-logo" src="../assets/images/logos/riley-lab-logo-white.png" alt="Riley Lab logo" width="987" height="397" loading="lazy" decoding="async">
+        <!-- Riley Lab -->
+        <a class="port-case-card reveal" href="/rileylab/" data-tags="internal development" aria-label="Riley Lab Portal">
+          <div class="port-case-img-wrap">
+            <img src="../assets/images/previews/riley_portal_preview.png"
+                 alt="Riley Lab Portal — research lab website"
+                 loading="lazy" decoding="async" width="1876" height="1203" />
+          </div>
+          <div class="port-case-body">
+            <div class="port-case-tags">
+              <span class="port-case-tag">Research Lab</span>
+              <span class="port-case-tag">Build</span>
+              <span class="port-case-tag">Accessibility</span>
+            </div>
+            <h3>Riley Lab Portal</h3>
+            <p class="port-case-desc">
+              A clean, accessible research portal for an academic lab.
+              Focused on clear information hierarchy, fast performance,
+              and a structure that makes the lab's work easy to navigate and share.
+            </p>
+            <span class="port-case-link">
+              View project
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
-        <a class="port-tile" href="/pages/intheworks/" data-tags="business development branding" aria-label="Concord Limo LLC">
-          <img class="port-bg" src="../assets/images/previews/concord_limo_preview.png" alt="Concord Limo preview" loading="lazy" decoding="async" width="2834" height="1496">
-          <div class="port-overlay" aria-hidden="true">
-            <img class="port-logo" src="../assets/images/logos/concord_limo_logo_white_transparent.png" alt="Concord Limo logo" width="629" height="373" loading="lazy" decoding="async">
+        <!-- Concord Limo -->
+        <a class="port-case-card reveal" href="/concordlimo/" data-tags="business branding development" aria-label="Concord Limo LLC">
+          <div class="port-case-img-wrap">
+            <img src="../assets/images/previews/concord_limo_preview.png"
+                 alt="Concord Limo LLC website — luxury transportation in Delaware County"
+                 loading="lazy" decoding="async" width="2834" height="1496" />
+          </div>
+          <div class="port-case-body">
+            <div class="port-case-tags">
+              <span class="port-case-tag">Transportation</span>
+              <span class="port-case-tag">Design + Build</span>
+              <span class="port-case-tag">Booking Flow</span>
+            </div>
+            <h3>Concord Limo LLC</h3>
+            <p class="port-case-desc">
+              A luxury transportation company needed a site that conveyed professionalism
+              and made it easy to request a quote or book a ride. Designed to convert
+              mobile visitors into leads with a clear, confident first impression.
+            </p>
+            <span class="port-case-link">
+              View case study
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
           </div>
         </a>
 
@@ -120,12 +187,13 @@
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="section contact-v2 reveal section-soft" id="contact">
     <div class="container">
-      <p class="section-kicker">CONTACT</p>
-      <h2 class="section-title-2">Tell Me What You’re Building</h2>
+      <p class="section-kicker">Start a project</p>
+      <h2 class="section-title-2">Want something like this for your business?</h2>
       <p class="section-subtitle maxw">
-        Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
+        Share your goals and I'll reply with a clear recommendation and next steps.
       </p>
 
       <aside class="contact-v2-card" id="contact-form" aria-label="Contact form">
@@ -141,7 +209,6 @@
               <input class="input" type="text" name="name" autocomplete="name" required />
               <input type="text" name="_gotcha" style="display:none">
             </label>
-
             <label class="field">
               <span class="label">Email *</span>
               <input class="input" type="email" name="_replyto" autocomplete="email" required />
@@ -149,16 +216,15 @@
           </div>
 
           <label class="field">
-            <span class="label">Phone *</span>
+            <span class="label">Phone</span>
             <input class="input" id="phone" type="tel" name="phone" autocomplete="tel" />
           </label>
-
           <input type="hidden" name="phone_e164" id="phone_e164">
 
           <label class="field">
             <span class="label">What are we building? *</span>
-            <textarea class="textarea" name="message" rows="7" required
-                      placeholder="Example: We would like a 5-page site for our restaurant with a booking link, basic SEO, launch in ~3 weeks."></textarea>
+            <textarea class="textarea" name="message" rows="5" required
+                      placeholder="E.g. I run a hair salon in Media and need a site with a booking link and better mobile layout."></textarea>
           </label>
 
           <button class="btn btn-primary contact-v2-submit" type="submit">Send message</button>
@@ -179,151 +245,84 @@
   document.addEventListener("DOMContentLoaded", () => {
     const phoneInput = document.querySelector("#phone");
     if (!phoneInput) return;
-
-    const isIOS =
-            /iP(ad|hone|od)/.test(navigator.userAgent) ||
-            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
-
+    const isIOS = /iP(ad|hone|od)/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const opts = {
-      separateDialCode: true,
-      initialCountry: "us",
-      allowDropdown: true,
-      nationalMode: true,
-      formatOnDisplay: true,
-      useFullscreenPopup: false, // ✅ KEY: disables iOS fullscreen dropdown
+      separateDialCode: true, initialCountry: "us", allowDropdown: true,
+      nationalMode: true, formatOnDisplay: true, useFullscreenPopup: false,
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
     };
-
-    // ✅ Keep your "append to body" behavior for desktop / non-iOS
-    // iOS + body container is what tends to get weird with scrolling/keyboard.
-    if (!isIOS) {
-      opts.dropdownContainer = document.body;
-    }
-
+    if (!isIOS) opts.dropdownContainer = document.body;
     const iti = window.intlTelInput(phoneInput, opts);
-
     const form = phoneInput.closest("form");
     const hidden = document.querySelector("#phone_e164");
-    if (form && hidden) {
-      form.addEventListener("submit", () => {
-        hidden.value = iti.getNumber();
-      });
-    }
+    if (form && hidden) form.addEventListener("submit", () => { hidden.value = iti.getNumber(); });
   });
 </script>
 
 <script>
   (function () {
     const tabs   = Array.from(document.querySelectorAll('.port-tab'));
-    const tiles  = Array.from(document.querySelectorAll('.port-tile'));
+    const cards  = Array.from(document.querySelectorAll('.port-case-card'));
     const select = document.querySelector('#portFilter');
-    const DURATION = 420; // should match CSS timing
+    const DURATION = 320;
     let pendingHides = 0;
     let firstRects = new Map();
 
-    const getTags = (tile) =>
-            (tile.getAttribute('data-tags') || '').toLowerCase();
+    const getTags = el => (el.getAttribute('data-tags') || '').toLowerCase();
+    const matches = (el, f) => f === 'all' || getTags(el).includes(f);
 
-    const matches = (tile, filter) => {
-      if (filter === 'all') return true;
-      return getTags(tile).includes(filter);
-    };
-
-    function showTile(tile){
-      tile.classList.remove('is-gone');
-      requestAnimationFrame(() => tile.classList.remove('is-hidden'));
+    function showCard(el) {
+      el.style.display = '';
+      requestAnimationFrame(() => el.classList.remove('is-hidden', 'is-gone'));
     }
 
-    function hideTile(tile){
-      if (tile.classList.contains('is-hidden')) return;
-      tile.classList.add('is-hidden');
-      pendingHides += 1;
-
+    function hideCard(el) {
+      if (el.classList.contains('is-hidden')) return;
+      el.classList.add('is-hidden');
+      pendingHides++;
       let done = false;
       const finish = () => {
-        if (done) return;
-        done = true;
-        if (tile.classList.contains('is-hidden')) tile.classList.add('is-gone');
-        pendingHides -= 1;
-        if (pendingHides <= 0) runFlip();
-        tile.removeEventListener('transitionend', onEnd);
+        if (done) return; done = true;
+        if (el.classList.contains('is-hidden')) { el.classList.add('is-gone'); el.style.display = 'none'; }
+        if (--pendingHides <= 0) runFlip();
+        el.removeEventListener('transitionend', onEnd);
       };
-
-      const onEnd = (e) => {
-        if (e.propertyName !== 'opacity') return;
-        finish();
-      };
-
-      tile.addEventListener('transitionend', onEnd);
-      window.setTimeout(finish, DURATION + 60);
+      const onEnd = e => { if (e.propertyName === 'opacity') finish(); };
+      el.addEventListener('transitionend', onEnd);
+      setTimeout(finish, DURATION + 60);
     }
 
-    function runFlip(){
+    function runFlip() {
       requestAnimationFrame(() => {
-        tiles.forEach(tile => {
-          if (tile.classList.contains('is-gone')) return;
-          const first = firstRects.get(tile);
-          if (!first) return;
-          const last = tile.getBoundingClientRect();
-          const dx = first.left - last.left;
-          const dy = first.top - last.top;
+        cards.forEach(el => {
+          if (el.classList.contains('is-gone')) return;
+          const first = firstRects.get(el); if (!first) return;
+          const last = el.getBoundingClientRect();
+          const dx = first.left - last.left, dy = first.top - last.top;
           if (!dx && !dy) return;
-
-          tile.animate(
-            [
-              { transform: `translate(${dx}px, ${dy}px)` },
-              { transform: 'translate(0, 0)' }
-            ],
-            { duration: DURATION, easing: 'cubic-bezier(0.22,0.61,0.36,1)' }
-          );
+          el.animate([{transform:`translate(${dx}px,${dy}px)`},{transform:'translate(0,0)'}],
+            {duration: DURATION, easing:'cubic-bezier(0.22,0.61,0.36,1)'});
         });
       });
     }
 
-    function applyFilter(filter){
-      firstRects = new Map();
-      pendingHides = 0;
-      tiles.forEach(tile => {
-        if (!tile.classList.contains('is-gone')) {
-          firstRects.set(tile, tile.getBoundingClientRect());
-        }
-      });
-
-      // update active tab UI (desktop)
-      tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('data-filter') === filter));
-
-      // update select UI (mobile)
-      if (select && select.value !== filter) select.value = filter;
-
-      // apply to tiles
-      tiles.forEach(tile => {
-        if (matches(tile, filter)) showTile(tile);
-        else hideTile(tile);
-      });
+    function applyFilter(f) {
+      firstRects = new Map(); pendingHides = 0;
+      cards.forEach(el => { if (!el.classList.contains('is-gone')) firstRects.set(el, el.getBoundingClientRect()); });
+      tabs.forEach(t => t.classList.toggle('is-active', t.getAttribute('data-filter') === f));
+      if (select && select.value !== f) select.value = f;
+      cards.forEach(el => matches(el, f) ? showCard(el) : hideCard(el));
       if (pendingHides === 0) runFlip();
     }
 
-    // Desktop tabs
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        applyFilter(tab.getAttribute('data-filter'));
-      });
-    });
+    tabs.forEach(t => t.addEventListener('click', () => applyFilter(t.getAttribute('data-filter'))));
+    if (select) select.addEventListener('change', () => applyFilter(select.value));
 
-    // Mobile dropdown
-    if (select){
-      select.addEventListener('change', () => {
-        applyFilter(select.value);
-      });
-    }
-
-    // Initialize to "all" (or keep whatever is-active says)
-    const activeTab = tabs.find(t => t.classList.contains('is-active'));
-    applyFilter(activeTab ? activeTab.getAttribute('data-filter') : 'all');
+    const active = tabs.find(t => t.classList.contains('is-active'));
+    applyFilter(active ? active.getAttribute('data-filter') : 'all');
   })();
 </script>
-
-
 
 </body>
 </html>

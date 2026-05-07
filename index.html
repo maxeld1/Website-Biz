@@ -22,10 +22,6 @@
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png">
   <link rel="manifest" href="manifest.webmanifest" />
-  <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css"
-  />
   <link rel="stylesheet" href="css/style.css" />
   <script>document.documentElement.classList.remove('no-js');</script>
   <script type="application/ld+json">
@@ -34,7 +30,15 @@
       "@type": "LocalBusiness",
       "name": "MaxWayStudio",
       "url": "https://maxwaystudio.com",
-      "areaServed": ["Delaware County, PA", "Philadelphia, PA"]
+      "telephone": "+1-610-547-1325",
+      "email": "maxwaystudio@gmail.com",
+      "areaServed": ["Delaware County, PA", "Philadelphia, PA"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Media",
+        "addressRegion": "PA",
+        "addressCountry": "US"
+      }
     }
   </script>
 </head>
@@ -47,455 +51,397 @@
   <!-- 1) HERO -->
   <section class="section hero hero-premium section-soft">
     <div class="container hero-grid reveal">
+
       <div class="hero-copy">
+        <p class="section-kicker">Web design for Delco + Philly</p>
 
         <h1 class="hero-title">
-          The Max Way <br class="hide-mobile" />
-          to Build Online.
+          Your site should earn its keep<br class="hide-mobile" />
+          before the first call.
         </h1>
 
         <p class="hero-subtitle">
-          We combine strategy, design, and development to create scalable websites that support long-term business growth.
+          We design and build websites for local service businesses: structured so visitors
+          understand what you do, trust you within seconds, and know exactly how to reach you.
         </p>
 
         <div class="hero-cta">
-          <a class="cta-primary" href="/contact/">Get Started</a>
-          <a class="cta-link" href="/about/">Learn more</a>
+          <a class="cta-primary" href="/contact/">Book a free strategy call</a>
+          <a class="cta-link" href="/contact/#audit">Request a homepage audit</a>
         </div>
 
-        <p class="hero-trustline">Design-forward. Fast. Clear.</p>
+        <div class="hero-trust-pills" aria-label="Trust indicators">
+          <span class="trust-pill"><span class="trust-pill-dot" aria-hidden="true"></span>Media, PA based</span>
+          <span class="trust-pill"><span class="trust-pill-dot" aria-hidden="true"></span>Mobile-first builds</span>
+          <span class="trust-pill"><span class="trust-pill-dot" aria-hidden="true"></span>Launches in 2–4 weeks</span>
+        </div>
+      </div>
 
-        <div class="value-prop-rail" aria-label="Value proposition highlights">
-          <div class="value-prop-stage">
-            <div class="value-prop-item">
-              <span class="value-prop-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <path d="M14 4l6 6-6 6M4 10h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <span class="value-prop-label">Launch-ready in weeks, not months.</span>
-            </div>
-            <div class="value-prop-item">
-              <span class="value-prop-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M12 2v3M12 19v3M2 12h3M19 12h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <span class="value-prop-label">Design-forward, conversion-focused layouts.</span>
-            </div>
-            <div class="value-prop-item">
-              <span class="value-prop-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
-                  <path d="M13 2L3 14h7l-1 8 11-14h-7l0-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-                </svg>
-              </span>
-              <span class="value-prop-label">Fast load times and clean handoff.</span>
-            </div>
+      <!-- Browser mockup visual -->
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hm-browser">
+          <div class="hm-chrome">
+            <span class="hm-dot"></span>
+            <span class="hm-dot"></span>
+            <span class="hm-dot"></span>
+            <div class="hm-url">industrysalonlounge.com</div>
+          </div>
+          <div class="hm-content">
+            <img src="assets/images/previews/industry_salon_preview.png"
+                 alt=""
+                 width="960"
+                 height="600"
+                 loading="eager"
+                 decoding="async" />
+          </div>
+        </div>
+
+        <div class="hm-card hm-card-1">
+          <div class="hm-card-icon">🔍</div>
+          <div>
+            <div class="hm-card-label">Page 1 on Google</div>
+            <div class="hm-card-sub">"Newtown Square, PA salon"</div>
+          </div>
+        </div>
+
+        <div class="hm-card hm-card-2">
+          <div class="hm-card-icon">⭐</div>
+          <div>
+            <div class="hm-card-label">5-star review</div>
+            <div class="hm-card-sub">Industry Salon</div>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- 2) WHO THIS IS FOR -->
-  <section class="section section-white reveal who-for">
-    <div class="container who-for-grid">
-      <div class="section-head">
-        <p class="section-kicker">WHO THIS IS FOR</p>
-        <h2 class="section-title-2">Local service businesses that rely on calls, bookings, and trust.</h2>
-        <p class="section-subtitle maxw">
-          If you serve clients in Delco + Philly and need your website to pull its weight, you’re in the right place.
-        </p>
-      </div>
-
-      <ul class="who-for-list">
-        <li class="reveal">Salons, barbers, and beauty studios</li>
-        <li class="reveal">Wellness, med spa, and therapy practices</li>
-        <li class="reveal">Home services (HVAC, roofing, electrical, cleaning)</li>
-        <li class="reveal">Local professionals (law, accounting, real estate)</li>
-        <li class="reveal">Fitness, coaching, and specialized clinics</li>
-      </ul>
-
-      <div class="who-for-cta">
-        <a class="cta-primary" href="/contact/">Book a free strategy call</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7) FINAL CTA -->
-  <section class="section section-soft reveal final-cta">
-    <div class="container final-cta-inner">
-      <h2>Ready for a site that turns visitors into leads?</h2>
-      <p>Short call. Clear plan. Premium build.</p>
-      <div class="hero-cta">
-        <a class="cta-primary" href="/contact/">Book a free strategy call</a>
-        <a class="cta-link" href="/portfolio/">See some examples</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8) LOCAL CREDIBILITY -->
-  <section class="section section-white reveal local-strip">
-    <div class="container local-strip-inner">
-      <div class="local-strip-pin" aria-hidden="true">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M12 3c-3.3 0-6 2.6-6 5.9 0 4.4 6 11.1 6 11.1s6-6.7 6-11.1C18 5.6 15.3 3 12 3z" fill="none"/>
-          <circle cx="12" cy="9" r="2.5" fill="none"/>
-        </svg>
-      </div>
-      <div class="local-strip-copy">
-        <p class="local-strip-kicker">DELCO-BASED</p>
-        <h3 class="local-strip-title">Based in Media, PA — serving the greater Philly area.</h3>
-        <p class="local-strip-subtitle">Delco roots, local insight, and a studio built for small business growth.</p>
-      </div>
-      <div class="local-strip-dots" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9) BRANDS / LOGO MARQUEE -->
+  <!-- LOGO MARQUEE -->
   <section class="section section-tight section-white reveal">
     <div class="container">
       <div class="trust-head">
-        <p class="section-kicker">TRUSTED BY</p>
+        <p class="section-kicker">Trusted by local businesses</p>
       </div>
 
-      <div class="logo-marquee" aria-label="Trusted brands">
+      <div class="logo-marquee" aria-label="Clients">
         <div class="logo-track">
-          <!-- Set A -->
-          <img src="assets/images/logos/industry_salon_logo.png" alt="Industry Salon Logo" width="1600" height="300" loading="lazy" decoding="async" />
-          <img src="assets/images/logos/richie_izzo_logo.png" alt="Richie Izzo Logo" width="950" height="264" loading="lazy" decoding="async" />
-          <img src="assets/images/logos/concord_limo_logo.png" class="logo-marquee-img is-small" alt="Concord Limo Logo" width="1164" height="771" loading="lazy" decoding="async" />
-          <img src="assets/images/logos/riley-lab-logo.png" alt="Riley Lab Logo" width="1073" height="352" loading="lazy" decoding="async" />
-
-          <!-- Set B (duplicate for seamless loop) -->
-          <img src="assets/images/logos/industry_salon_logo.png" alt="Industry Salon Logo" width="1600" height="300" loading="lazy" decoding="async" />
-          <img src="assets/images/logos/richie_izzo_logo.png" alt="Richie Izzo Logo" width="950" height="264" loading="lazy" decoding="async" />
-          <img src="assets/images/logos/concord_limo_logo.png" class="logo-marquee-img is-small" alt="Concord Limo Logo" width="1164" height="771" loading="lazy" decoding="async" />
-          <img src="assets/images/logos/riley-lab-logo.png" alt="Riley Lab Logo" width="1073" height="352" loading="lazy" decoding="async" />
-
+          <img src="assets/images/logos/industry_salon_logo.png" alt="Industry Salon Lounge" width="1600" height="300" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/richie_izzo_logo.png" alt="Richie Izzo" width="950" height="264" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/concord_limo_logo.png" class="logo-marquee-img is-small" alt="Concord Limo" width="1164" height="771" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/riley-lab-logo.png" alt="Riley Lab" width="1073" height="352" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/industry_salon_logo.png" alt="Industry Salon Lounge" width="1600" height="300" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/richie_izzo_logo.png" alt="Richie Izzo" width="950" height="264" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/concord_limo_logo.png" class="logo-marquee-img is-small" alt="Concord Limo" width="1164" height="771" loading="lazy" decoding="async" />
+          <img src="assets/images/logos/riley-lab-logo.png" alt="Riley Lab" width="1073" height="352" loading="lazy" decoding="async" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 10) WORK PREVIEWS -->
+  <!-- 2) PROBLEM SECTION -->
+  <section class="section problem-section reveal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Why local sites fall short</p>
+        <h2 class="section-title-2">Your website may be quietly losing leads every day.</h2>
+        <p class="section-subtitle maxw">
+          Visitors form an opinion in seconds. If it's not immediately clear what you do,
+          where you're located, and how to reach you...they move on.
+        </p>
+      </div>
+
+      <div class="problem-grid">
+
+        <div class="problem-card reveal">
+          <div class="problem-card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 10l-4 4-2-2"/><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h3>No clear next step</h3>
+          <p>Visitors can't tell whether to call, book, or fill out a form, so they don't do anything and leave.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="problem-card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg>
+          </div>
+          <h3>Design that feels dated</h3>
+          <p>An outdated look signals an outdated experience. First impressions form before a single word is read.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="problem-card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h3>Broken on mobile</h3>
+          <p>Over 60% of local searches happen on phones. A cramped or slow mobile layout costs you real bookings.</p>
+        </div>
+
+        <div class="problem-card reveal">
+          <div class="problem-card-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3l18 18M10.5 10.5A3 3 0 1 0 13.5 13.5"/><path d="M21 12a9 9 0 0 0-9-9"/></svg>
+          </div>
+          <h3>No lead visibility</h3>
+          <p>You don't know if your contact form works, if anyone clicks your number, or where visitors drop off.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) TRANSFORMATION -->
+  <section class="section transform-section reveal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">What changes</p>
+        <h2 class="section-title-2">Here's what a better website actually fixes.</h2>
+        <p class="section-subtitle maxw">
+          Not design for design's sake: structure, clarity, and trust
+          that turn visitor attention into contact.
+        </p>
+      </div>
+
+      <div class="transform-grid">
+
+        <div class="transform-item reveal">
+          <div class="transform-num">01</div>
+          <h3>Clearer booking path</h3>
+          <p>One unmistakable next step on every page, so visitors know exactly what to do.</p>
+        </div>
+
+        <div class="transform-item reveal">
+          <div class="transform-num">02</div>
+          <h3>Stronger first impression</h3>
+          <p>Design that makes your business look established before anyone reads a word.</p>
+        </div>
+
+        <div class="transform-item reveal">
+          <div class="transform-num">03</div>
+          <h3>Built for phones</h3>
+          <p>Fast, readable, and thumb-friendly on every screen. Not just an afterthought!</p>
+        </div>
+
+        <div class="transform-item reveal">
+          <div class="transform-num">04</div>
+          <h3>Local SEO basics</h3>
+          <p>Pages structured so search engines can find you and show the right information.</p>
+        </div>
+
+        <div class="transform-item reveal">
+          <div class="transform-num">05</div>
+          <h3>Call + form tracking</h3>
+          <p>Know which leads came from your site, and where the gaps are.</p>
+        </div>
+
+        <div class="transform-item reveal">
+          <div class="transform-num">06</div>
+          <h3>Yours to own</h3>
+          <p>Clean code and a smooth handoff so you're never dependent on me to make changes.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) SELECTED WORK -->
   <section class="section section-panel reveal section-soft">
     <div class="container">
       <div class="section-head">
-        <p class="section-kicker">SELECTED WORK</p>
-        <h2 class="section-title-2">From Vision to Reality</h2>
+        <p class="section-kicker">Selected work</p>
+        <h2 class="section-title-2">Recent builds for local businesses.</h2>
         <p class="section-subtitle">
-          Thoughtful Design. Solid Engineering. Real Impact.
+          Each project starts with clarity on goals, then design and build that earns the click.
         </p>
       </div>
 
       <div class="work-grid">
-<!--        <a class="work-card" href="https://industrysalonlounge.com/">-->
-<!--          <div class="work-thumb">-->
-<!--            <img src="assets/images/previews/industry_salon_preview.png" alt="Industry Salon website preview" loading="lazy">-->
-<!--          </div>-->
-<!--          <div class="work-meta">-->
-<!--            <div class="work-title">Industry Salon Lounge</div>-->
-<!--            <div class="work-desc">Modern Salon site built for Salon in Newtown Square.</div>-->
-<!--&lt;!&ndash;            <div class="work-tags">&ndash;&gt;-->
-<!--&lt;!&ndash;              <span>Design</span><span>Build</span><span>SEO basics</span>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--          </div>-->
-<!--        </a>-->
-        <a class="work-tile" href="https://industrysalonlounge.com/" target="_blank" rel="noopener noreferrer">
-          <img class="work-tile-img" src="assets/images/previews/industry_salon_preview.png" alt="Industry Salon Lounge Website Preview" width="2858" height="1494" loading="lazy" decoding="async" />
 
+        <a class="work-tile" href="/industrysalon/" aria-label="Industry Salon Lounge case study">
+          <img class="work-tile-img" src="assets/images/previews/industry_salon_preview.png" alt="Industry Salon Lounge website — premium salon in Newtown Square, PA" width="2858" height="1494" loading="lazy" decoding="async" />
           <div class="work-tile-overlay">
             <div class="work-logo-frame">
-              <img
-                      src="assets/images/logos/industry_salon_logo_white_transparent.png"
-                      alt="Industry Salon Lounge"
-                      class="work-tile-logo"
-                      width="1600"
-                      height="300"
-                      loading="lazy"
-                      decoding="async"
-              >
+              <img src="assets/images/logos/industry_salon_logo_white_transparent.png" alt="Industry Salon Lounge" class="work-tile-logo" width="1600" height="300" loading="lazy" decoding="async" />
             </div>
           </div>
         </a>
 
-<!--        <a class="work-card" href="{{P}}pages/work/portfolio.html">-->
-<!--          <div class="work-thumb">-->
-<!--            <img src="assets/images/previews/richie_izzo_preview.png" alt="Portfolio site preview" loading="lazy">-->
-<!--          </div>-->
-<!--          <div class="work-meta">-->
-<!--            <div class="work-title">Portfolio - Richie Izzo</div>-->
-<!--            <div class="work-desc">Clean layout portfolio</div>-->
-<!--&lt;!&ndash;            <div class="work-tags">&ndash;&gt;-->
-<!--&lt;!&ndash;              <span>Responsive</span><span>Accessibility</span><span>Performance</span>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--          </div>-->
-<!--        </a>-->
-        <a class="work-tile" href="">
-          <img class="work-tile-img" src="assets/images/previews/richie_izzo_preview.png" alt="Portfolio Website Preview" width="3024" height="1470" loading="lazy" decoding="async" />
-
+        <a class="work-tile" href="/richieizzo/" aria-label="Richie Izzo portfolio site">
+          <img class="work-tile-img" src="assets/images/previews/richie_izzo_preview.png" alt="Richie Izzo portfolio site" width="3024" height="1470" loading="lazy" decoding="async" />
           <div class="work-tile-overlay">
             <div class="work-logo-frame">
-              <img
-                      src="assets/images/logos/richie_izzo_logo_white_transparent.png"
-                      alt="Portfolio - Richie Izzo"
-                      class="work-tile-logo"
-                      width="639"
-                      height="142"
-                      loading="lazy"
-                      decoding="async"
-              >
+              <img src="assets/images/logos/richie_izzo_logo_white_transparent.png" alt="Richie Izzo" class="work-tile-logo" width="639" height="142" loading="lazy" decoding="async" />
             </div>
           </div>
         </a>
 
-<!--        <a class="work-card" href="https://rileylab.github.io/">-->
-<!--          <div class="work-thumb">-->
-<!--            <img src="assets/images/previews/riley_portal_preview.png" alt="Landing page preview" loading="lazy">-->
-<!--          </div>-->
-<!--          <div class="work-meta">-->
-<!--            <div class="work-title">Riley Lab Portal</div>-->
-<!--            <div class="work-desc">CTA-focused</div>-->
-<!--&lt;!&ndash;            <div class="work-tags">&ndash;&gt;-->
-<!--&lt;!&ndash;              <span>Copy</span><span>Analytics</span><span>Speed</span>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--          </div>-->
-<!--        </a>-->
-        <a class="work-tile" href="https://rileylab.github.io/" target="_blank" rel="noopener noreferrer">
-          <img class="work-tile-img" src="assets/images/previews/riley_portal_preview.png" alt="Riley Lab Portal Website Preview" width="1876" height="1203" loading="lazy" decoding="async" />
-
+        <a class="work-tile" href="/rileylab/" target="_blank" rel="noopener noreferrer" aria-label="Riley Lab Portal">
+          <img class="work-tile-img" src="assets/images/previews/riley_portal_preview.png" alt="Riley Lab Portal website" width="1876" height="1203" loading="lazy" decoding="async" />
           <div class="work-tile-overlay">
             <div class="work-logo-frame">
-              <img
-                      src="assets/images/logos/riley-lab-logo-white.png"
-                      alt="Riley Lab Portal"
-                      class="work-tile-logo"
-                      width="987"
-                      height="397"
-                      loading="lazy"
-                      decoding="async"
-              >
+              <img src="assets/images/logos/riley-lab-logo-white.png" alt="Riley Lab" class="work-tile-logo" width="987" height="397" loading="lazy" decoding="async" />
             </div>
           </div>
         </a>
 
-<!--        <a class="work-card" href="https://discover.ourwave.org/exhibit/healing-in-color">-->
-<!--          <div class="work-thumb">-->
-<!--            <img src="assets/images/previews/healing_in_color_preview.png" alt="Landing page preview" loading="lazy">-->
-<!--          </div>-->
-<!--          <div class="work-meta">-->
-<!--            <div class="work-title">Healing in Color Exhibit</div>-->
-<!--            <div class="work-desc">Exhibit for Pheonix Team at Temple.</div>-->
-<!--&lt;!&ndash;            <div class="work-tags">&ndash;&gt;-->
-<!--&lt;!&ndash;              <span>Copy</span><span>Analytics</span><span>Speed</span>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
-<!--          </div>-->
-<!--        </a>-->
-        <a class="work-tile work-tile--concord" href="">
-          <img class="work-tile-img" src="assets/images/previews/concord_limo_preview.png"
-               alt="Concord Limo LLC Preview" width="2834" height="1496" loading="lazy" decoding="async" />
-
+        <a class="work-tile work-tile--concord" href="/concordlimo/" aria-label="Concord Limo LLC site">
+          <img class="work-tile-img" src="assets/images/previews/concord_limo_preview.png" alt="Concord Limo LLC website" width="2834" height="1496" loading="lazy" decoding="async" />
           <div class="work-tile-overlay">
             <div class="work-logo-frame">
-              <img
-                      src="assets/images/logos/concord_limo_logo_white_transparent.png"
-                      alt="Concord Limo LLC Website"
-                      class="work-tile-logo"
-                      width="629"
-                      height="373"
-                      loading="lazy"
-                      decoding="async"
-              >
+              <img src="assets/images/logos/concord_limo_logo_white_transparent.png" alt="Concord Limo LLC" class="work-tile-logo" width="629" height="373" loading="lazy" decoding="async" />
             </div>
           </div>
         </a>
+
       </div>
 
       <div class="center-btn">
-        <a class="cta-primary" href="/portfolio/">See Our Work</a>
+        <a class="cta-primary" href="/portfolio/">View all work</a>
       </div>
     </div>
   </section>
 
-  <!-- 11) TESTIMONIALS -->
-  <section class="section section-soft reveal section-white">
+  <!-- 5) SERVICES PREVIEW -->
+  <section class="section svc-prev-section reveal">
     <div class="container">
       <div class="section-head">
-        <p class="section-kicker">TESTIMONIALS</p>
-        <h2 class="section-title-2">What People Say</h2>
-      </div>
-
-      <div class="quote-meter" aria-hidden="true">
-        <span class="quote-meter-bar"></span>
-      </div>
-
-      <div class="quote-shell" aria-label="Testimonials">
-        <button class="quote-nav" type="button" data-quote-dir="-1" aria-label="Previous testimonial">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15 5l-7 7 7 7" fill="none" />
-          </svg>
-        </button>
-
-        <article class="quote-card" data-quote>
-          <span class="quote-watermark-industry" aria-hidden="true"></span>
-          <div class="quote-text">
-            “Working with Max on my salon website was such a special experience. We were both at the beginning of new business ventures, which made the process feel even more meaningful. Max reached out with genuine enthusiasm and brought so much patience and care to every step. He truly listened to every detail I shared and thoughtfully combined my vision with his own creativity to design a website that feels authentic to my brand. I never felt rushed, unheard, or overwhelmed only supported. I’m so grateful for his dedication and talent. I would highly recommend him!"
-          </div>
-          <div class="quote-meta">
-            <span class="quote-name">Mary Beth Small</span>
-            <span class="quote-role">Owner • Industry Salon Lounge</span>
-          </div>
-        </article>
-
-<!--        <article class="quote-card" data-quote>-->
-<!--          <span class="quote-watermark-concord" aria-hidden="true"></span>-->
-<!--          <div class="quote-text">-->
-<!--            “Max is cool. Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool.Max is cool."-->
-<!--          </div>-->
-<!--          <div class="quote-meta">-->
-<!--            <span class="quote-name">Arfan Eldabbas</span>-->
-<!--            <span class="quote-role">Owner • Concord Limo LLC</span>-->
-<!--          </div>-->
-<!--        </article>-->
-
-        <button class="quote-nav" type="button" data-quote-dir="1" aria-label="Next testimonial">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M9 5l7 7-7 7" fill="none" />
-          </svg>
-        </button>
-      </div>
-
-      <div class="center-btn">
-        <a class="cta-primary" href="/contact/">Request a
-          Quote</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 12) ABOUT -->
-  <section class="section reveal section-soft">
-    <div class="container about-simple">
-      <div class="about-copy">
-        <p class="section-kicker">ABOUT</p>
-        <h2 class="section-title-2">Hi, I’m Max.</h2>
-
-        <p class="section-subtitle center">
-          I grew up in Broomall, now live in Media, PA and proudly Delco.
-          I started out studying biology, which taught me how to think carefully and work methodically, and later earned a Master’s in Computer and Information Technology.
-          Today, I bring those two worlds together to design and build thoughtful, well-crafted websites that feel simple on the surface and solid underneath.
+        <p class="section-kicker">Services</p>
+        <h2 class="section-title-2">Three focused offers. No bloat.</h2>
+        <p class="section-subtitle maxw">
+          I'll recommend the right fit on our first call, not the most expensive one.
         </p>
       </div>
 
-      <div class="about-media">
-        <img src="assets/images/team/me.jpg" alt="Max"
-             loading="lazy" width="800" height="800" />
+      <div class="svc-prev-grid">
+
+        <div class="svc-prev-card">
+          <div class="svc-prev-top">
+            <span class="svc-prev-pill">Website Sprint</span>
+            <h3>Fast, conversion-ready website</h3>
+          </div>
+          <div class="svc-prev-body">
+            <p class="svc-prev-for">Best for: service businesses that need a professional site that builds trust and drives contacts.</p>
+            <p class="svc-prev-timeline">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              2–4 weeks
+            </p>
+            <ul class="svc-prev-list">
+              <li>Strategy + page structure</li>
+              <li>Modern design + mobile-first build</li>
+              <li>Local SEO basics + metadata</li>
+              <li>Contact form + call tracking setup</li>
+            </ul>
+            <a class="svc-prev-cta" href="/services/#website-sprint">Learn more</a>
+          </div>
+        </div>
+
+        <div class="svc-prev-card is-featured">
+          <div class="svc-prev-top">
+            <span class="svc-prev-pill">Local Lead System</span>
+            <h3>Visibility + lead flow add-on</h3>
+          </div>
+          <div class="svc-prev-body">
+            <p class="svc-prev-for">Best for: businesses that want to show up in local search and capture more of the leads they already get.</p>
+            <p class="svc-prev-timeline">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              1–2 weeks
+            </p>
+            <ul class="svc-prev-list">
+              <li>Google Business Profile setup</li>
+              <li>Local service pages + schema</li>
+              <li>CTA click + form submit tracking</li>
+              <li>Booking and call flow cleanup</li>
+            </ul>
+            <a class="svc-prev-cta" href="/services/#local-lead">Learn more</a>
+          </div>
+        </div>
+
+        <div class="svc-prev-card">
+          <div class="svc-prev-top">
+            <span class="svc-prev-pill">Calm Growth Retainer</span>
+            <h3>Ongoing updates + optimization</h3>
+          </div>
+          <div class="svc-prev-body">
+            <p class="svc-prev-for">Best for: businesses that want steady improvements, new pages, and consistent attention after launch.</p>
+            <p class="svc-prev-timeline">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              Monthly
+            </p>
+            <ul class="svc-prev-list">
+              <li>Monthly updates + new sections</li>
+              <li>Landing page or promo builds</li>
+              <li>Analytics review + iteration</li>
+              <li>Priority support + fast turnaround</li>
+            </ul>
+            <a class="svc-prev-cta" href="/services/#retainer">Learn more</a>
+          </div>
+        </div>
+
       </div>
+
+      <p class="svc-scope-note">
+        Not sure which fits? I'll scope the fastest path to a clean, conversion-ready launch after a free call.
+      </p>
     </div>
   </section>
 
-
-  <!-- 13) HOW IT WORKS (4-step process) -->
+  <!-- 6) PROCESS -->
   <section class="section section-soft reveal section-white process" id="process">
     <div class="container">
       <div class="section-head">
-        <p class="section-kicker">HOW IT WORKS</p>
+        <p class="section-kicker">How it works</p>
         <h2 class="section-title-2">A calm, structured path to launch.</h2>
         <p class="section-subtitle maxw">
-          No guesswork. No overbuilding. Just clear steps from idea → live site.
+          No guesswork. No overbuilding. Clear steps from first call to live site.
         </p>
       </div>
 
       <div class="process-grid">
-
-        <!-- TOP: single panel (swaps content) -->
         <div class="process-panel-wrap" aria-live="polite">
           <article class="process-panel" id="process-panel">
             <div class="process-panel-copy">
               <div class="process-lead">
                 <div class="process-badge" id="process-badge">Step 1</div>
                 <h3 id="process-title">Consult + scope</h3>
-                <p id="process-desc">
-                  We clarify goals, pages, and what “done” means before design starts.
-                </p>
+                <p id="process-desc">We clarify goals, pages, and what "done" means before design starts.</p>
               </div>
-
               <div class="process-body" id="process-body">
                 <p class="process-paragraph" id="process-p1"></p>
                 <p class="process-paragraph" id="process-p2"></p>
               </div>
-
               <div class="process-cta-row">
                 <a class="cta-primary" id="process-cta-primary" href="/contact/">Get started</a>
                 <a class="cta-link" id="process-cta-secondary" href="/portfolio/">See work</a>
               </div>
             </div>
-
             <div class="process-panel-media">
-              <img
-                      id="process-img"
-                      src="assets/images/process/consulting.jpg"
-                      alt="Consulting and scoping a website project"
-                      loading="lazy"
-                      decoding="async"
-                      width="6000"
-                      height="4000"
-              />
+              <img id="process-img" src="assets/images/process/consulting.jpg" alt="Consulting and scoping a website project" loading="lazy" decoding="async" width="6000" height="4000" />
             </div>
           </article>
         </div>
 
-        <!-- BOTTOM: clickable steps -->
         <div class="process-tabs" role="tablist" aria-label="Process steps">
           <button class="process-tab is-active" type="button" role="tab" aria-selected="true" data-step="1">
             <span class="process-tab-icon" aria-hidden="true">
-              <!-- icon: compass -->
-              <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-                <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M12.5 3L2.49999 3.00002C1.67157 3.00002 0.999999 3.67159 0.999999 4.50002V9.50002C0.999999 10.3284 1.67157 11 2.5 11H7.50002C7.63263 11 7.75981 11.0527 7.85358 11.1465L9.99999 13.2929V11.5C9.99999 11.2239 10.2239 11 10.5 11H12.5C13.3284 11 14 10.3284 14 9.50002V4.5C14 3.67157 13.3284 3 12.5 3ZM2.49999 2.00002L12.5 2C13.8807 2 15 3.11928 15 4.5V9.50002C15 10.8807 13.8807 12 12.5 12H11V14.5C11 14.7022 10.8782 14.8845 10.6913 14.9619C10.5045 15.0393 10.2894 14.9965 10.1464 14.8535L7.29292 12H2.5C1.11929 12 0 10.8807 0 9.50002V4.50002C0 3.11931 1.11928 2.00002 2.49999 2.00002Z"
-                        fill="#000000"
-                />
-              </svg>
+              <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5 3L2.49999 3.00002C1.67157 3.00002 0.999999 3.67159 0.999999 4.50002V9.50002C0.999999 10.3284 1.67157 11 2.5 11H7.50002C7.63263 11 7.75981 11.0527 7.85358 11.1465L9.99999 13.2929V11.5C9.99999 11.2239 10.2239 11 10.5 11H12.5C13.3284 11 14 10.3284 14 9.50002V4.5C14 3.67157 13.3284 3 12.5 3ZM2.49999 2.00002L12.5 2C13.8807 2 15 3.11928 15 4.5V9.50002C15 10.8807 13.8807 12 12.5 12H11V14.5C11 14.7022 10.8782 14.8845 10.6913 14.9619C10.5045 15.0393 10.2894 14.9965 10.1464 14.8535L7.29292 12H2.5C1.11929 12 0 10.8807 0 9.50002V4.50002C0 3.11931 1.11928 2.00002 2.49999 2.00002Z" fill="#000000"/></svg>
             </span>
-<!--            <span class="process-tab-title">Consult + scope</span>-->
+            <span class="process-tab-title">Consult</span>
           </button>
-
           <button class="process-tab" type="button" role="tab" aria-selected="false" data-step="2">
             <span class="process-tab-icon" aria-hidden="true">
-              <!-- icon: layout -->
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.73 10.456l.685-.742A2.454 2.454 0 0 1 23 11.433c0 2.744-3.938 5.032-7.947 5.941l1.396-1.434c3.007-1.002 5.55-2.746 5.55-4.507a1.595 1.595 0 0 0-.268-.977zm-19.53.25c0-3.745 5.101-6.434 9.664-6.505h.16c2.01 0 2.323.337 2.539.57a1.266 1.266 0 0 1 .331.918 2.856 2.856 0 0 1-.142.824 3.555 3.555 0 0 0-.17.991 1.863 1.863 0 0 0 1.632 1.882l.862-.84c-.873-.102-1.494-.342-1.494-1.042 0-.548.312-.997.312-1.815a2.27 2.27 0 0 0-.606-1.607c-.345-.372-.817-.88-3.264-.88h-.16C6.828 3.28 1.2 6.237 1.2 10.704c0 3.164 2.758 5.244 5.785 6.292a3.098 3.098 0 0 1 1.147-.683c-3.038-.84-5.932-2.76-5.932-5.609zM12 7.5A1.5 1.5 0 1 1 10.5 6 1.5 1.5 0 0 1 12 7.5zm-1 0a.5.5 0 1 0-.5.5.5.5 0 0 0 .5-.5zM6.5 11A1.5 1.5 0 1 1 8 9.5 1.5 1.5 0 0 1 6.5 11zM7 9.5a.5.5 0 1 0-.5.5.5.5 0 0 0 .5-.5zm3 4A1.5 1.5 0 1 1 8.5 12a1.5 1.5 0 0 1 1.5 1.5zm-1 0a.5.5 0 1 0-.5.5.5.5 0 0 0 .5-.5zm13.11-7.483L18.4 9.35l-7.45 7.25 1.4 1.4 7.25-7.449 3.383-3.661a.626.626 0 0 0-.873-.873zM9.368 17.619l1.439 1.738a2.94 2.94 0 0 1-1.63 2.234 3.92 3.92 0 0 1-1.626.359 3.598 3.598 0 0 1-1.733-.427s1.8-.968 1.809-2.464c.006-1.38 1.451-1.44 1.703-1.44zm.35 1.99l-.78-.94a.379.379 0 0 0-.311.395 3.191 3.191 0 0 1-.633 1.85 3.042 3.042 0 0 0 .772-.234 1.823 1.823 0 0 0 .952-1.07z"/></svg>
             </span>
-<!--            <span class="process-tab-title">Design &amp; structure</span>-->
+            <span class="process-tab-title">Design</span>
           </button>
-
           <button class="process-tab" type="button" role="tab" aria-selected="false" data-step="3">
             <span class="process-tab-icon" aria-hidden="true">
-              <!-- icon: spark -->
-              <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
-                <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M9.96424 2.68571C10.0668 2.42931 9.94209 2.13833 9.6857 2.03577C9.4293 1.93322 9.13832 2.05792 9.03576 2.31432L5.03576 12.3143C4.9332 12.5707 5.05791 12.8617 5.3143 12.9642C5.5707 13.0668 5.86168 12.9421 5.96424 12.6857L9.96424 2.68571ZM3.85355 5.14646C4.04882 5.34172 4.04882 5.6583 3.85355 5.85356L2.20711 7.50001L3.85355 9.14646C4.04882 9.34172 4.04882 9.6583 3.85355 9.85356C3.65829 10.0488 3.34171 10.0488 3.14645 9.85356L1.14645 7.85356C0.951184 7.6583 0.951184 7.34172 1.14645 7.14646L3.14645 5.14646C3.34171 4.9512 3.65829 4.9512 3.85355 5.14646ZM11.1464 5.14646C11.3417 4.9512 11.6583 4.9512 11.8536 5.14646L13.8536 7.14646C14.0488 7.34172 14.0488 7.6583 13.8536 7.85356L11.8536 9.85356C11.6583 10.0488 11.3417 10.0488 11.1464 9.85356C10.9512 9.6583 10.9512 9.34172 11.1464 9.14646L12.7929 7.50001L11.1464 5.85356C10.9512 5.6583 10.9512 5.34172 11.1464 5.14646Z"
-                        fill="#000000"
-                />
-              </svg>
+              <svg viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.96424 2.68571C10.0668 2.42931 9.94209 2.13833 9.6857 2.03577C9.4293 1.93322 9.13832 2.05792 9.03576 2.31432L5.03576 12.3143C4.9332 12.5707 5.05791 12.8617 5.3143 12.9642C5.5707 13.0668 5.86168 12.9421 5.96424 12.6857L9.96424 2.68571ZM3.85355 5.14646C4.04882 5.34172 4.04882 5.6583 3.85355 5.85356L2.20711 7.50001L3.85355 9.14646C4.04882 9.34172 4.04882 9.6583 3.85355 9.85356C3.65829 10.0488 3.34171 10.0488 3.14645 9.85356L1.14645 7.85356C0.951184 7.6583 0.951184 7.34172 1.14645 7.14646L3.14645 5.14646C3.34171 4.9512 3.65829 4.9512 3.85355 5.14646ZM11.1464 5.14646C11.3417 4.9512 11.6583 4.9512 11.8536 5.14646L13.8536 7.14646C14.0488 7.34172 14.0488 7.6583 13.8536 7.85356L11.8536 9.85356C11.6583 10.0488 11.3417 10.0488 11.1464 9.85356C10.9512 9.6583 10.9512 9.34172 11.1464 9.14646L12.7929 7.50001L11.1464 5.85356C10.9512 5.6583 10.9512 5.34172 11.1464 5.14646Z" fill="#000000"/></svg>
             </span>
-<!--            <span class="process-tab-title">Build &amp; polish</span>-->
+            <span class="process-tab-title">Build</span>
           </button>
-
           <button class="process-tab" type="button" role="tab" aria-selected="false" data-step="4">
             <span class="process-tab-icon" aria-hidden="true">
-              <!-- icon: rocket -->
-              <!-- License: Apache. Made by Iconscout: https://github.com/Iconscout/unicons -->
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"><path d="M22.6,2.1c-0.1-0.3-0.4-0.6-0.7-0.7C17.7,0.3,13.4,1.6,10.5,5L9.4,6.3L6.7,5.7C5.4,5.2,4,5.8,3.4,7l-2.2,3.9c-0.2,0.3-0.2,0.6,0,0.9c0.1,0.3,0.4,0.5,0.7,0.6l3.1,0.7c-0.3,0.8-0.4,1.6-0.6,2.4c0,0.3,0.1,0.6,0.3,0.8l3.1,3.1c0.2,0.2,0.4,0.3,0.7,0.3c0,0,0.1,0,0.1,0c0.9-0.1,1.7-0.2,2.5-0.5l0.6,3c0.1,0.3,0.3,0.6,0.6,0.7c0.1,0.1,0.3,0.1,0.4,0.1c0.2,0,0.3,0,0.5-0.1l3.9-2.2c1.1-0.6,1.7-2,1.4-3.3l-0.7-2.8l1.2-1.1C22.3,10.7,23.7,6.2,22.6,2.1z M7.3,8.8c-0.6,0.8-1.2,1.6-1.6,2.4l-2.1-0.5L5.1,8c0.2-0.4,0.6-0.5,1.1-0.4L7.9,8L7.3,8.8z M16,18.9l-2.7,1.5l-0.4-2c0.9-0.4,1.7-1,2.4-1.6l0.7-0.7l0.4,1.7C16.6,18.3,16.3,18.8,16,18.9z M16.7,8.8c-0.8,0-1.5-0.7-1.5-1.5c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5C18.2,8.1,17.6,8.8,16.7,8.8z"/></svg>
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.6,2.1c-0.1-0.3-0.4-0.6-0.7-0.7C17.7,0.3,13.4,1.6,10.5,5L9.4,6.3L6.7,5.7C5.4,5.2,4,5.8,3.4,7l-2.2,3.9c-0.2,0.3-0.2,0.6,0,0.9c0.1,0.3,0.4,0.5,0.7,0.6l3.1,0.7c-0.3,0.8-0.4,1.6-0.6,2.4c0,0.3,0.1,0.6,0.3,0.8l3.1,3.1c0.2,0.2,0.4,0.3,0.7,0.3c0,0,0.1,0,0.1,0c0.9-0.1,1.7-0.2,2.5-0.5l0.6,3c0.1,0.3,0.3,0.6,0.6,0.7c0.1,0.1,0.3,0.1,0.4,0.1c0.2,0,0.3,0,0.5-0.1l3.9-2.2c1.1-0.6,1.7-2,1.4-3.3l-0.7-2.8l1.2-1.1C22.3,10.7,23.7,6.2,22.6,2.1z M7.3,8.8c-0.6,0.8-1.2,1.6-1.6,2.4l-2.1-0.5L5.1,8c0.2-0.4,0.6-0.5,1.1-0.4L7.9,8L7.3,8.8z M16,18.9l-2.7,1.5l-0.4-2c0.9-0.4,1.7-1,2.4-1.6l0.7-0.7l0.4,1.7C16.6,18.3,16.3,18.8,16,18.9z M16.7,8.8c-0.8,0-1.5-0.7-1.5-1.5c0-0.8,0.7-1.5,1.5-1.5s1.5,0.7,1.5,1.5C18.2,8.1,17.6,8.8,16.7,8.8z"/></svg>
             </span>
-<!--            <span class="process-tab-title">Launch &amp; support</span>-->
+            <span class="process-tab-title">Launch</span>
           </button>
         </div>
       </div>
@@ -506,65 +452,105 @@
         "1": {
           "badge": "Step 1",
           "title": "Consult + scope",
-          "desc": "We clarify goals, pages, and what “done” means before design starts.",
-          "bullets": ["Quick audit + inspiration", "Page list + content checklist", "Timeline + estimate"],
+          "desc": "We align on goals, pages, and the fastest path to launch. No overbuilding.",
           "p": [
-            "We’ll align on goals, pages, and the fastest path to a credible launch — without overbuilding.",
-            "You’ll get a clear scope, timeline, and a simple content plan so design moves quickly."
+            "A quick audit of your current site, goals, and what visitors need to know. We settle on scope before a line of design is drawn.",
+            "You'll leave with a clear page list, a content checklist, and a realistic timeline."
           ],
           "img": "assets/images/process/consulting.jpg",
           "alt": "Consulting and scoping a website project",
-          "ctaPrimary": { "label": "Get started", "href": "/contact/" },
+          "ctaPrimary": { "label": "Book a call", "href": "/contact/" },
           "ctaSecondary": { "label": "See work", "href": "/portfolio/" }
         },
         "2": {
           "badge": "Step 2",
-          "title": "Design & structure",
-          "desc": "Clean layout, typography, and section flow built around clarity and conversion.",
-          "bullets": ["Content hierarchy + section planning", "Brand-aligned UI polish", "CTA placement that makes sense"],
+          "title": "Design direction",
+          "desc": "Layout, hierarchy, and visual tone built around your brand and your audience.",
           "p": [
-            "I design the structure first—layout, hierarchy, and flow—so the site feels effortless.",
-            "You’ll review a calm, modern direction that matches your brand and drives action."
+            "I design the structure first: what sections exist, in what order, and what each one needs to accomplish.",
+            "You'll review a calm, intentional direction that feels premium without feeling generic."
           ],
           "img": "assets/images/process/design.jpg",
-          "alt": "Designing a website layout and structure",
-          "ctaPrimary": { "label": "Request a quote", "href": "/contact/" },
-          "ctaSecondary": { "label": "View services", "href": "/services/" }
+          "alt": "Designing website layout and visual direction",
+          "ctaPrimary": { "label": "See services", "href": "/services/" },
+          "ctaSecondary": { "label": "View work", "href": "/portfolio/" }
         },
         "3": {
           "badge": "Step 3",
-          "title": "Build & polish",
-          "desc": "Mobile-first code with performance + accessibility baked in from the start.",
-          "bullets": ["Fast load, clean interactions", "Keyboard + contrast checks", "SEO basics: metadata + structure"],
+          "title": "Build + refine",
+          "desc": "Mobile-first code with performance and accessibility built in from day one.",
           "p": [
-            "I build mobile-first with performance and accessibility baked in from day one.",
-            "You get clean, maintainable code and polished interactions that feel premium."
+            "Clean HTML/CSS/JS. No bloated frameworks. Fast load times, accessible structure, and polished interactions.",
+            "You get to review and refine before anything goes live."
           ],
           "img": "assets/images/process/build.jpg",
-          "alt": "Building and polishing a website",
+          "alt": "Building and refining the website",
           "ctaPrimary": { "label": "See projects", "href": "/portfolio/" },
-          "ctaSecondary": { "label": "How I work", "href": "/about/" }
+          "ctaSecondary": { "label": "About the process", "href": "/about/" }
         },
         "4": {
           "badge": "Step 4",
-          "title": "Launch & support",
-          "desc": "We ship, verify everything, and you get a smooth handoff — with optional support after.",
-          "bullets": ["Deploy + QA checklist", "Analytics + basics configured", "Optional ongoing updates"],
+          "title": "Launch + handoff",
+          "desc": "We ship carefully, verify everything works, and hand it off so you own it completely.",
           "p": [
-            "We launch carefully: QA, forms, tracking, and final checks so everything works.",
-            "You get a smooth handoff, and optional support if you want updates after launch."
+            "QA checklist, form testing, analytics setup, and a final review before going live.",
+            "You walk away with a site you control and optional ongoing support if you want it."
           ],
           "img": "assets/images/process/industry_salon_preview.png",
-          "alt": "Launching a website and supporting updates",
-          "ctaPrimary": { "label": "Request a quote", "href": "/contact/" },
+          "alt": "Launching a website and handing off to the client",
+          "ctaPrimary": { "label": "Get started", "href": "/contact/" },
           "ctaSecondary": { "label": "See services", "href": "/services/" }
         }
       }
     </script>
   </section>
 
+  <!-- 7) TESTIMONIAL -->
+  <section class="section feat-testimonial reveal">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-kicker">Client feedback</p>
+        <h2 class="section-title-2">What it's like to work together.</h2>
+      </div>
 
-  <!-- 13.5) FAQ -->
+      <div class="feat-quote-wrap">
+        <div class="feat-quote-mark" aria-hidden="true">"</div>
+        <p class="feat-quote-text">
+          Working with Max on my salon website was such a special experience. We were both at the beginning of new business ventures, which made the process feel even more meaningful. Max reached out with genuine enthusiasm and brought so much patience and care to every step. He truly listened to every detail I shared and thoughtfully combined my vision with his own creativity to design a website that feels authentic to my brand. I never felt rushed, unheard, or overwhelmed — only supported. I'm so grateful for his dedication and talent. I would highly recommend him.
+        </p>
+        <div class="feat-quote-attr">
+          <div class="feat-quote-avatar" aria-hidden="true">MB</div>
+          <div>
+            <div class="feat-quote-name">Mary Beth Small</div>
+            <div class="feat-quote-role">Owner · Industry Salon Lounge, Newtown Square PA</div>
+          </div>
+          <img class="feat-quote-logo" src="assets/images/logos/industry_salon_logo.png" alt="Industry Salon Lounge" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL STRIP -->
+  <section class="section section-white reveal local-strip">
+    <div class="container local-strip-inner">
+      <div class="local-strip-pin" aria-hidden="true">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3c-3.3 0-6 2.6-6 5.9 0 4.4 6 11.1 6 11.1s6-6.7 6-11.1C18 5.6 15.3 3 12 3z" fill="none"/>
+          <circle cx="12" cy="9" r="2.5" fill="none"/>
+        </svg>
+      </div>
+      <div class="local-strip-copy">
+        <p class="local-strip-kicker">Delco-based</p>
+        <h3 class="local-strip-title">Based in Media, PA. Serving the greater Philly area.</h3>
+        <p class="local-strip-subtitle">Delco roots, local insight, and a studio built for small business growth.</p>
+      </div>
+      <div class="local-strip-dots" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
   <section class="section section-soft reveal faq">
     <div class="container">
       <div class="section-head">
@@ -575,70 +561,38 @@
       <div class="faq-grid">
         <details class="faq-item">
           <summary>I already have a website.</summary>
-          <p>That’s common. We’ll keep what works and rebuild the rest around clarity, speed, and conversion.</p>
+          <p>That's common. We'll keep what works and rebuild the rest around clarity, speed, and a lead flow that actually does something.</p>
         </details>
         <details class="faq-item">
           <summary>How long does it take?</summary>
-          <p>Most builds launch in 2–4 weeks depending on scope and content readiness.</p>
+          <p>Most builds launch in 2–4 weeks, depending on scope and how quickly content comes together. I keep milestones tight so nothing drags.</p>
         </details>
         <details class="faq-item">
-          <summary>Do you do marketing?</summary>
-          <p>I focus on the site and lead system foundation. I can coordinate with your marketing partner.</p>
+          <summary>Do you handle marketing or ads?</summary>
+          <p>I focus on the site and its lead system, the foundation. I can coordinate with your marketing partner or help you find one.</p>
         </details>
         <details class="faq-item">
           <summary>What does it cost?</summary>
-          <p>Projects are scoped to your goals. I’ll provide a clear estimate after a quick call.</p>
+          <p>Projects are scoped to your goals. No padded packages. I'll give you a clear estimate after a quick call, not before I understand what you need.</p>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- 14) CONTACT FORM -->
-  <section class="section contact-v2 reveal section-white" id="contact">
+  <!-- 8) FINAL CTA -->
+  <section class="section final-cta-band reveal">
     <div class="container">
-      <p class="section-kicker">CONTACT</p>
-      <h2 class="section-title-2">Tell Me What You’re Building</h2>
-      <p class="section-subtitle maxw">
-        Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
-      </p>
-
-      <aside class="contact-v2-card" id="contact-form" aria-label="Contact form">
-        <form class="contact-v2-form" action="https://formspree.io/f/xdazqwan" method="POST">
-          <div class="contact-v2-form-head">
-            <h2 class="contact-v2-form-title">Project Details</h2>
-            <p class="contact-v2-form-sub">The more context you share, the faster I can respond.</p>
-          </div>
-
-          <div class="form-grid">
-            <label class="field">
-              <span class="label">Name *</span>
-              <input class="input" type="text" name="name" autocomplete="name" required />
-              <input type="text" name="_gotcha" style="display:none">
-            </label>
-
-            <label class="field">
-              <span class="label">Email *</span>
-              <input class="input" type="email" name="_replyto" autocomplete="email" required />
-            </label>
-          </div>
-
-          <div class="field field-phone">
-            <label class="label" for="phone">Phone *</label>
-            <input class="input" id="phone" type="tel" name="phone" autocomplete="tel" />
-          </div>
-
-          <input type="hidden" name="phone_e164" id="phone_e164">
-
-          <label class="field">
-            <span class="label">What are we building? *</span>
-            <textarea class="textarea" name="message" rows="7" required
-                      placeholder="Example: We would like a 5-page site for our restaurant with a booking link, basic SEO, launch in ~3 weeks."></textarea>
-          </label>
-
-          <button class="btn btn-primary contact-v2-submit" type="submit">Send message</button>
-          <p class="contact-v2-note">Typical reply: within 1–2 business days.</p>
-        </form>
-      </aside>
+      <div class="final-cta-inner">
+        <h2>Want your business to feel more professional before the first phone call?</h2>
+        <p>
+          A short call, a clear plan, and a site that works as hard as you do.
+          No pressure, no hard sell...just a clear next step.
+        </p>
+        <div class="final-cta-btns">
+          <a class="cta-primary" href="/contact/">Book a free strategy call</a>
+          <a class="cta-link" href="/contact/#audit">Request a homepage audit</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -649,43 +603,6 @@
 <script src="js/partials.js"></script>
 <script src="js/main.js"></script>
 <script src="js/reviews.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const phoneInput = document.querySelector("#phone");
-    if (!phoneInput) return;
-
-    const isIOS =
-            /iP(ad|hone|od)/.test(navigator.userAgent) ||
-            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
-
-    const opts = {
-      separateDialCode: true,
-      initialCountry: "us",
-      allowDropdown: true,
-      nationalMode: true,
-      formatOnDisplay: true,
-      useFullscreenPopup: false, // ✅ KEY: disables iOS fullscreen dropdown
-      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
-    };
-
-    // ✅ Keep your "append to body" behavior for desktop / non-iOS
-    // iOS + body container is what tends to get weird with scrolling/keyboard.
-    if (!isIOS) {
-      opts.dropdownContainer = document.body;
-    }
-
-    const iti = window.intlTelInput(phoneInput, opts);
-
-    const form = phoneInput.closest("form");
-    const hidden = document.querySelector("#phone_e164");
-    if (form && hidden) {
-      form.addEventListener("submit", () => {
-        hidden.value = iti.getNumber();
-      });
-    }
-  });
-</script>
 
 </body>
 </html>

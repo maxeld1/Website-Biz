@@ -1,9 +1,3 @@
-<!--
-  Developed by: Max Eldabbas (maxeldabbas86@gmail.com)
-  Repo: https://github.com/maxeld1/industrysalon
-  Created: 2025-12-10
-  License: Proprietary — Not for redistribution without permission.
--->
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,10 +18,8 @@
   <meta name="twitter:image" content="https://maxwaystudio.com/assets/images/logos/maxwaystudiologo.png" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="apple-touch-icon" href="/favicon.png">
-  <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css"
-  />
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/css/intlTelInput.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <script type="application/ld+json">
     {
@@ -53,116 +45,159 @@
 
   <!-- HERO -->
   <section class="section services-hero section-soft">
-    <div class="container center">
-      <p class="kicker">Services</p>
-      <h1>Design-forward websites that drive calls &amp; bookings.</h1>
-      <p class="aeo-lede">Services for local service businesses in Delco + Philly.</p>
-      <p class="maxw" style="margin:0 auto;">
-        Built for local service businesses in Delco + Philly. Calm process, premium design, fast performance, and a clear lead system.
-      </p>
-
-      <div class="services-hero-ctas" style="margin-top:18px;">
-        <a class="cta-primary" href="/contact/">Book a free strategy call</a>
-        <a class="cta-link" href="/contact/#contact-form">Request a quick homepage audit</a>
+    <div class="container">
+      <div class="page-hero-inner reveal">
+        <p class="section-kicker">Services</p>
+        <h1>Three focused offers.<br>No bloat, no guesswork.</h1>
+        <p>
+          Every engagement starts with a free strategy call where I learn your goals
+          and recommend the leanest path to a site that earns its keep.
+          No padded packages. No unnecessary complexity.
+        </p>
+        <div class="page-hero-ctas">
+          <a class="cta-primary" href="/contact/">Book a free strategy call</a>
+          <a class="cta-link" href="/contact/#audit">Request a homepage audit</a>
+        </div>
       </div>
-
     </div>
   </section>
 
-  <!-- OFFERS -->
-  <section class="section section-white services-scope">
+  <!-- PACKAGES -->
+  <section class="section section-white" id="website-sprint">
     <div class="container center">
       <p class="section-kicker">Offers</p>
-      <h2>Clear packages for local growth.</h2>
-      <p class="maxw" style="margin-inline:auto;">
-        Each offer is designed for clarity, speed, and measurable leads. If you are unsure, I will recommend the best fit.
+      <h2>Pick your starting point.</h2>
+      <p class="maxw" style="margin-inline:auto; margin-bottom:0;">
+        I'll help you choose after a call — but here's how the three options are structured.
       </p>
 
-      <div class="scope-grid" style="margin-top:22px;">
-        <article class="scope-card reveal">
-          <div class="scope-top">
-            <span class="scope-pill">Website Sprint</span>
-            <span class="scope-price">2–4 weeks</span>
+      <div class="svc-scope-grid" style="margin-top:36px;">
+
+        <!-- Website Sprint -->
+        <article class="svc-scope-card reveal" id="website-sprint">
+          <div class="svc-scope-head">
+            <span class="svc-scope-badge">Website Sprint</span>
+            <h3>Fast, conversion-ready website</h3>
+            <p class="svc-scope-timeline">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              2–4 weeks
+            </p>
           </div>
-          <h3>Fast, conversion-ready website</h3>
-          <p><strong>Who it’s for:</strong> Local service businesses needing a premium, lead-focused site.</p>
-          <ul class="scope-list">
-            <li>Messaging + page structure</li>
-            <li>Modern design + mobile-first build</li>
-            <li>Core Web Vitals-friendly performance</li>
-            <li>Local SEO basics + CTAs</li>
-          </ul>
-          <a class="scope-cta" href="/contact/">Book a call</a>
+          <div class="svc-scope-body">
+            <p class="svc-scope-for">Best for local service businesses that need a professional, lead-focused site — from scratch or a full redesign.</p>
+            <hr class="svc-scope-divider">
+            <p class="svc-scope-section-label">What's included</p>
+            <ul class="svc-scope-list">
+              <li>Strategy call + page map</li>
+              <li>Messaging structure + CTA placement</li>
+              <li>Modern design + mobile-first build</li>
+              <li>Core Web Vitals-friendly performance</li>
+              <li>Local SEO basics + metadata</li>
+              <li>Contact form + basic tracking setup</li>
+              <li>Launch QA + clean handoff</li>
+            </ul>
+            <div class="svc-scope-outcome">
+              <strong>Outcome:</strong> A site visitors trust before they call — with a clear path to reach you on any device.
+            </div>
+            <a class="svc-scope-cta" href="/contact/">Book a free call</a>
+          </div>
         </article>
 
-        <article class="scope-card reveal">
-          <div class="scope-top">
-            <span class="scope-pill">Local Lead System</span>
-            <span class="scope-price">1–2 weeks</span>
+        <!-- Local Lead System -->
+        <article class="svc-scope-card is-featured reveal" id="local-lead">
+          <div class="svc-scope-head">
+            <span class="svc-scope-badge">Local Lead System</span>
+            <h3>Visibility + lead flow add-on</h3>
+            <p class="svc-scope-timeline">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              1–2 weeks
+            </p>
           </div>
-          <h3>Add-on for visibility + tracking</h3>
-          <p><strong>Who it’s for:</strong> Teams who want local discoverability and cleaner lead flow.</p>
-          <ul class="scope-list">
-            <li>GBP basics + review link setup</li>
-            <li>Local service pages + metadata</li>
-            <li>CTA click + form submit tracking</li>
-            <li>Booking/call flow cleanup</li>
-          </ul>
-          <a class="scope-cta" href="/contact/">Request audit</a>
+          <div class="svc-scope-body">
+            <p class="svc-scope-for">Best for businesses that already have a site but want to show up in local search and stop losing leads they never knew they had.</p>
+            <hr class="svc-scope-divider">
+            <p class="svc-scope-section-label">What's included</p>
+            <ul class="svc-scope-list">
+              <li>Google Business Profile setup + optimization</li>
+              <li>Review link + response setup</li>
+              <li>Local service pages + schema markup</li>
+              <li>CTA click + form submit tracking</li>
+              <li>Booking and call flow review</li>
+              <li>Homepage audit + quick wins</li>
+            </ul>
+            <div class="svc-scope-outcome">
+              <strong>Outcome:</strong> More of the people searching for you actually find you — and know exactly how to contact you.
+            </div>
+            <a class="svc-scope-cta" href="/contact/">Request an audit</a>
+          </div>
         </article>
 
-        <article class="scope-card reveal">
-          <div class="scope-top">
-            <span class="scope-pill">Calm Growth Retainer</span>
-            <span class="scope-price">Monthly</span>
+        <!-- Calm Growth Retainer -->
+        <article class="svc-scope-card reveal" id="retainer">
+          <div class="svc-scope-head">
+            <span class="svc-scope-badge">Calm Growth Retainer</span>
+            <h3>Ongoing updates + optimization</h3>
+            <p class="svc-scope-timeline">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              Monthly
+            </p>
           </div>
-          <h3>Ongoing updates + optimization</h3>
-          <p><strong>Who it’s for:</strong> Businesses that want steady improvements and fresh pages.</p>
-          <ul class="scope-list">
-            <li>Monthly updates + new sections</li>
-            <li>Landing page or promo build</li>
-            <li>Analytics review + iteration</li>
-            <li>Priority support</li>
-          </ul>
-          <a class="scope-cta" href="/contact/">Book a call</a>
+          <div class="svc-scope-body">
+            <p class="svc-scope-for">Best for businesses that want steady improvements after launch — new pages, promos, or refinements without hiring a full-time developer.</p>
+            <hr class="svc-scope-divider">
+            <p class="svc-scope-section-label">What's included</p>
+            <ul class="svc-scope-list">
+              <li>Monthly site updates + new sections</li>
+              <li>Landing page or promo builds</li>
+              <li>Analytics review + iteration notes</li>
+              <li>Priority support + fast turnaround</li>
+              <li>Seasonal content + offers</li>
+            </ul>
+            <div class="svc-scope-outcome">
+              <strong>Outcome:</strong> Your site gets better each month — without you needing to think about it.
+            </div>
+            <a class="svc-scope-cta" href="/contact/">Book a call</a>
+          </div>
         </article>
+
       </div>
 
-      <p class="maxw" style="margin:18px auto 0; opacity:.85;">
-        Need something custom? I’ll scope the fastest path to a clean, conversion-ready launch.
+      <p class="svc-scope-note" style="margin-top:22px;">
+        Not sure which fits? I'll scope the fastest path to your goals on our first call.
+        No commitment required.
       </p>
     </div>
   </section>
 
-  <!-- WHAT'S INCLUDED -->
+  <!-- WHAT'S ALWAYS INCLUDED -->
   <section class="section section-soft services-includes">
     <div class="container center">
-      <p class="section-kicker">What's included</p>
+      <p class="section-kicker">Always included</p>
       <h2>The essentials, kept tight.</h2>
       <p class="maxw" style="margin-inline:auto;">
-        Enough to launch with confidence, without the extra bloat.
+        Every project ships with this foundation — enough to launch with confidence, without unnecessary bloat.
       </p>
 
-      <div class="include-grid" style="margin-top:22px;">
+      <div class="include-grid" style="margin-top:32px;">
         <div class="include-item reveal">
           <span class="include-icon" aria-hidden="true">01</span>
           <h3>Messaging + structure</h3>
-          <p>Clear hierarchy, scroll flow, and CTA placement.</p>
+          <p>Clear hierarchy, scroll flow, and CTA placement that guides visitors to act.</p>
         </div>
         <div class="include-item reveal">
           <span class="include-icon" aria-hidden="true">02</span>
           <h3>Design + mobile build</h3>
-          <p>Premium UI that feels sharp on every screen.</p>
+          <p>Sharp on every screen — not a desktop site squeezed onto a phone.</p>
         </div>
         <div class="include-item reveal">
           <span class="include-icon" aria-hidden="true">03</span>
           <h3>Speed + SEO basics</h3>
-          <p>Fast load times, clean structure, and metadata.</p>
+          <p>Fast load times, clean semantic structure, and metadata that makes sense to search engines.</p>
         </div>
         <div class="include-item reveal">
           <span class="include-icon" aria-hidden="true">04</span>
           <h3>Forms + tracking</h3>
-          <p>Lead capture and simple analytics setup.</p>
+          <p>Lead capture that works, with simple analytics so you can see what's coming in.</p>
         </div>
       </div>
     </div>
@@ -171,74 +206,84 @@
   <!-- DELIVERABLES -->
   <section class="section section-white">
     <div class="container center">
-      <p class="section-kicker">Deliverables</p>
-      <h2>What you walk away with.</h2>
+      <p class="section-kicker">What you walk away with</p>
+      <h2>Clear outputs you can point to.</h2>
       <p class="maxw" style="margin-inline:auto;">
-        Clear outputs you can point to and use immediately.
+        No vague "deliverables." You'll have something tangible at every stage.
       </p>
 
-      <div class="grid three" style="margin-top:22px;">
-        <div class="card reveal">
+      <div class="grid three" style="margin-top:28px;">
+        <div class="card reveal" style="text-align:left;">
           <h3>Plan + structure</h3>
-          <p>Page map, CTA flow, and content checklist so build moves fast.</p>
+          <p>Page map, CTA flow, and a content checklist so the build moves fast and nothing gets forgotten.</p>
         </div>
-
-        <div class="card reveal">
+        <div class="card reveal" style="text-align:left;">
           <h3>Design + build</h3>
-          <p>Polished UI, responsive layout, and clean front-end code.</p>
+          <p>Polished, responsive UI in clean HTML/CSS/JS — maintainable code you can hand to anyone.</p>
         </div>
-
-        <div class="card reveal">
-          <h3>Launch + tracking</h3>
-          <p>Forms, basic analytics, metadata, and handoff guidance.</p>
+        <div class="card reveal" style="text-align:left;">
+          <h3>Launch + handoff</h3>
+          <p>QA checklist, basic analytics setup, metadata review, and a handoff guide so you're in control.</p>
         </div>
       </div>
 
-      <div class="svc-cta-row" style="margin-top:18px;">
-        <a class="cta-primary" href="/contact/">Request a Quote</a>
+      <div class="svc-cta-row" style="margin-top:28px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+        <a class="cta-primary" href="/contact/">Book a free strategy call</a>
         <a class="cta-link" href="/portfolio/">See examples</a>
       </div>
     </div>
   </section>
 
-
   <!-- FAQ -->
   <section class="section section-soft services-faq">
     <div class="container center">
       <p class="section-kicker">FAQ</p>
-      <h2>Quick answers.</h2>
+      <h2>Questions before you reach out.</h2>
 
-      <div class="services-faq-grid" style="margin-top:22px;">
+      <div class="services-faq-grid" style="margin-top:28px; display:grid; gap:10px; max-width:760px; margin-inline:auto; text-align:left;">
+
         <details class="services-faq-item">
           <summary>How fast can we launch?</summary>
-          <p>Depends on scope, but I keep cycles tight and ship in clear milestones.</p>
+          <p>Most Website Sprint projects launch in 2–4 weeks depending on scope and how quickly content comes together. I keep cycles tight and ship in clear milestones — no vague "it's almost done."</p>
         </details>
 
         <details class="services-faq-item">
-          <summary>Do you provide copy or photos?</summary>
-          <p>I can guide structure + tone and help you source visuals. If you have copy, I’ll refine it.</p>
+          <summary>What about pricing? Do you have fixed packages?</summary>
+          <p>I scope projects individually so you're not paying for things you don't need. I'll give you a clear, written estimate after a short call — not before I understand your goals. If a project isn't the right fit, I'll say so.</p>
         </details>
 
         <details class="services-faq-item">
-          <summary>Will I be able to edit my site?</summary>
-          <p>Yes—clean structure and a simple handoff so you can update confidently.</p>
+          <summary>Will I be able to edit my site after launch?</summary>
+          <p>Yes. The handoff is clean and intentional — you'll get documentation, and the code is structured so that basic updates don't require a developer. If you want help with ongoing changes, the Calm Growth Retainer covers that.</p>
         </details>
 
         <details class="services-faq-item">
-          <summary>Can you improve an existing site?</summary>
-          <p>Absolutely. UI polish + performance + accessibility improvements can be high-impact.</p>
+          <summary>Can you improve an existing site instead of rebuilding?</summary>
+          <p>Absolutely. Sometimes a targeted redesign of the homepage, a speed pass, or a better contact flow is all you need. I'll tell you honestly whether a rebuild makes sense or whether quick improvements would do more.</p>
         </details>
+
+        <details class="services-faq-item">
+          <summary>Do you write the copy or provide photos?</summary>
+          <p>I can guide structure, tone, and what each section needs to say. You provide the copy (or a rough draft I can refine) and any photos. I can help you source stock photography or find a local photographer if needed.</p>
+        </details>
+
+        <details class="services-faq-item">
+          <summary>What happens after the site launches?</summary>
+          <p>You own it completely. If anything comes up — a broken link, a form issue, a quick update — I'm available. For ongoing improvements, the Calm Growth Retainer keeps me in your corner every month.</p>
+        </details>
+
       </div>
-
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="section contact-v2 reveal section-white" id="contact">
     <div class="container">
-      <p class="section-kicker">CONTACT</p>
-      <h2 class="section-title-2">Tell Me What You’re Building</h2>
+      <p class="section-kicker">Contact</p>
+      <h2 class="section-title-2">Tell me what you're building.</h2>
       <p class="section-subtitle maxw">
-        Share your business, what you need, and your timeline. I’ll reply with next steps and a clear estimate.
+        Share your business, what you need, and your timeline.
+        I'll reply with next steps — usually within 1–2 business days.
       </p>
 
       <aside class="contact-v2-card" id="contact-form" aria-label="Contact form">
@@ -254,24 +299,22 @@
               <input class="input" type="text" name="name" autocomplete="name" required />
               <input type="text" name="_gotcha" style="display:none">
             </label>
-
             <label class="field">
               <span class="label">Email *</span>
               <input class="input" type="email" name="_replyto" autocomplete="email" required />
             </label>
           </div>
 
-          <label class="field">
-            <span class="label">Phone *</span>
+          <div class="field field-phone">
+            <label class="label" for="phone">Phone</label>
             <input class="input" id="phone" type="tel" name="phone" autocomplete="tel" />
-          </label>
-
+          </div>
           <input type="hidden" name="phone_e164" id="phone_e164">
 
           <label class="field">
             <span class="label">What are we building? *</span>
-            <textarea class="textarea" name="message" rows="7" required
-                      placeholder="Example: We would like a 5-page site for our restaurant with a booking link, basic SEO, launch in ~3 weeks."></textarea>
+            <textarea class="textarea" name="message" rows="6" required
+                      placeholder="E.g. 5-page site for a salon in Media, need booking integration, launch in ~3 weeks."></textarea>
           </label>
 
           <button class="btn btn-primary contact-v2-submit" type="submit">Send message</button>
@@ -283,47 +326,27 @@
 
 </main>
 
-
 <div data-include="footer"></div>
 
 <script src="../js/partials.js"></script>
 <script src="../js/main.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/intlTelInput.min.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const phoneInput = document.querySelector("#phone");
     if (!phoneInput) return;
-
-    const isIOS =
-            /iP(ad|hone|od)/.test(navigator.userAgent) ||
-            (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // iPadOS
-
+    const isIOS = /iP(ad|hone|od)/.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
     const opts = {
-      separateDialCode: true,
-      initialCountry: "us",
-      allowDropdown: true,
-      nationalMode: true,
-      formatOnDisplay: true,
-      useFullscreenPopup: false, // ✅ KEY: disables iOS fullscreen dropdown
+      separateDialCode: true, initialCountry: "us", allowDropdown: true,
+      nationalMode: true, formatOnDisplay: true, useFullscreenPopup: false,
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.5.6/build/js/utils.js",
     };
-
-    // ✅ Keep your "append to body" behavior for desktop / non-iOS
-    // iOS + body container is what tends to get weird with scrolling/keyboard.
-    if (!isIOS) {
-      opts.dropdownContainer = document.body;
-    }
-
+    if (!isIOS) opts.dropdownContainer = document.body;
     const iti = window.intlTelInput(phoneInput, opts);
-
     const form = phoneInput.closest("form");
     const hidden = document.querySelector("#phone_e164");
-    if (form && hidden) {
-      form.addEventListener("submit", () => {
-        hidden.value = iti.getNumber();
-      });
-    }
+    if (form && hidden) form.addEventListener("submit", () => { hidden.value = iti.getNumber(); });
   });
 </script>
 </body>
