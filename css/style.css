@@ -8466,3 +8466,273 @@ body::after{
     text-align: center;
   }
 }
+
+/* ================================
+   ABOUT + CONTACT REFINEMENTS
+================================ */
+.about-page .about-hero .container{
+  display: block;
+}
+
+.about-page .about-hero .page-hero-inner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 820px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-page .about-hero .page-hero-inner .hide-mobile{
+  display: none;
+}
+
+.about-page .about-hero .page-hero-inner h1{
+  max-width: 20ch;
+  margin-inline: auto;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.about-page .about-hero .page-hero-inner p{
+  max-width: 58ch;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.about-page .about-hero .page-hero-ctas{
+  justify-content: center;
+  width: 100%;
+}
+
+.about-bio-grid{
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  align-items: center;
+  max-width: 960px;
+}
+
+.about-bio-img-wrap{
+  display: flex;
+  justify-content: center;
+}
+
+.about-bio-img{
+  width: min(100%, 310px);
+  height: 360px;
+  max-width: none;
+  aspect-ratio: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.contact-page .contact-v2-grid{
+  display: grid !important;
+  align-items: center !important;
+  grid-template-columns: minmax(280px, 360px) minmax(560px, 760px) !important;
+  justify-content: center;
+  gap: clamp(28px, 5vw, 64px) !important;
+  width: 100%;
+}
+
+.contact-page main > .section.section-white{
+  padding-top: clamp(48px, 6vw, 84px) !important;
+}
+
+.contact-page .contact-v2-left{
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+  text-align: center;
+  align-self: center;
+}
+
+.contact-page .contact-v2-left .section-kicker,
+.contact-page .contact-v2-left .contact-social-label,
+.contact-page .contact-v2-left .contact-v2-micro,
+.contact-page .contact-v2-left > p{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+.contact-page .contact-social-grid{
+  justify-content: center;
+}
+
+.contact-page .contact-v2-card{
+  width: 100%;
+  max-width: 760px;
+  justify-self: center;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.contact-page .contact-v2-form{
+  padding: clamp(22px, 3vw, 34px);
+}
+
+.contact-page .contact-v2-form-head{
+  margin-bottom: 22px;
+  text-align: center;
+}
+
+.contact-page .contact-v2-form-title{
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.contact-page .contact-v2-form-sub,
+.contact-page .contact-v2-note{
+  color: var(--muted);
+}
+
+.contact-page .contact-v2-form .form-grid{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.contact-page .contact-v2-form .field{
+  display: block !important;
+  margin: 0 0 14px !important;
+}
+
+.contact-page .contact-v2-form .label{
+  display: block !important;
+  margin: 0 0 8px !important;
+  color: var(--ink) !important;
+  font-family: var(--font-sans) !important;
+  font-size: .86rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  text-transform: none !important;
+}
+
+.contact-page .contact-v2-form .input,
+.contact-page .contact-v2-form .textarea,
+.contact-page .contact-v2-form select{
+  width: 100% !important;
+  min-height: 44px !important;
+  display: block !important;
+  padding: 12px 14px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--line) !important;
+  background-color: #fff !important;
+  color: var(--ink) !important;
+  box-shadow: none !important;
+  font: inherit !important;
+  line-height: 1.35 !important;
+}
+
+.contact-page .contact-v2-form .textarea{
+  min-height: 150px !important;
+  resize: vertical;
+}
+
+.contact-page .contact-v2-form .input:focus,
+.contact-page .contact-v2-form .textarea:focus,
+.contact-page .contact-v2-form select:focus{
+  outline: none !important;
+  border-color: rgba(204,120,92,.6) !important;
+  box-shadow: 0 0 0 4px rgba(204,120,92,.14) !important;
+}
+
+.contact-page .iti{
+  width: 100% !important;
+  display: block !important;
+}
+
+.contact-page .iti__tel-input{
+  width: 100% !important;
+}
+
+.contact-page .iti input#phone,
+.contact-page .iti__tel-input#phone{
+  padding-left: 94px !important;
+}
+
+.contact-page .iti--separate-dial-code input#phone,
+.contact-page .iti--separate-dial-code .iti__tel-input#phone{
+  padding-left: 132px !important;
+}
+
+.contact-page .iti__selected-flag{
+  height: 100% !important;
+  padding: 0 12px !important;
+}
+
+.contact-page .contact-v2-form .field > div[style*="grid-template-columns"]{
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+  margin-top: 8px !important;
+}
+
+.contact-page .contact-v2-form .field > div[style*="grid-template-columns"] label{
+  min-height: 42px !important;
+  padding: 10px 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--line) !important;
+  background: #fff !important;
+  color: var(--muted) !important;
+  font-size: .9rem !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+}
+
+.contact-page .contact-v2-form .field > div[style*="grid-template-columns"] input{
+  accent-color: var(--accent);
+}
+
+.contact-page .contact-v2-submit{
+  width: 100%;
+  margin-top: 6px;
+}
+
+.contact-page .intake-after-step{
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-page .intake-after-num{
+  border-radius: 8px;
+  background: var(--surface-2);
+  color: var(--accent);
+}
+
+@media (max-width: 920px){
+  .contact-page .contact-v2-grid{
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-page .contact-v2-card{
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 700px){
+  .about-bio-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .about-bio-img{
+    width: min(100%, 320px);
+    height: 340px;
+  }
+
+  .contact-page .contact-v2-form .form-grid,
+  .contact-page .contact-v2-form .field > div[style*="grid-template-columns"]{
+    grid-template-columns: 1fr !important;
+  }
+}
