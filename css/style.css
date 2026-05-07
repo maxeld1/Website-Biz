@@ -7988,7 +7988,7 @@ header{
 }
 
 .brand-logo{
-  max-height: 48px;
+  max-height: 62px;
 }
 
 .site-nav a{
@@ -8528,10 +8528,11 @@ body::after{
 
 .contact-page .contact-v2-grid{
   display: grid !important;
-  align-items: center !important;
-  grid-template-columns: minmax(280px, 360px) minmax(560px, 760px) !important;
+  align-items: start !important;
+  grid-template-columns: minmax(0, 1fr) !important;
   justify-content: center;
-  gap: clamp(28px, 5vw, 64px) !important;
+  justify-items: center;
+  gap: clamp(28px, 4vw, 46px) !important;
   width: 100%;
 }
 
@@ -8541,10 +8542,10 @@ body::after{
 
 .contact-page .contact-v2-left{
   width: 100%;
-  max-width: 360px;
+  max-width: 980px;
   justify-self: center;
   text-align: center;
-  align-self: center;
+  align-self: start;
 }
 
 .contact-page .contact-v2-left .section-kicker,
@@ -8558,6 +8559,14 @@ body::after{
 
 .contact-page .contact-social-grid{
   justify-content: center;
+}
+
+.contact-page .contact-v2-left .intake-after{
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  max-width: 980px !important;
+  margin: 18px auto 0 !important;
 }
 
 .contact-page .contact-v2-card{
@@ -8718,6 +8727,11 @@ body::after{
 
   .contact-page .contact-v2-card{
     max-width: 720px;
+  }
+
+  .contact-page .contact-v2-left .intake-after{
+    grid-template-columns: 1fr !important;
+    max-width: 520px !important;
   }
 }
 
